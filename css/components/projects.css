@@ -1,0 +1,137 @@
+.projects-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+
+
+}
+
+.projects-page-container {
+  width: 1100px;
+}
+
+.project-page .projects-page-container .projects-pages {
+  display: flex;
+
+}
+
+.projects-page .project-image {
+  height: 100vh;
+  width: 45%;
+  position: absolute;
+  right: 0;
+}
+
+.project-full-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 45px;
+
+  max-width: 600px;
+}
+
+.project-full-content .project-content {
+  display: flex;
+  gap: 30px;
+  max-width: 600px;
+}
+
+
+.project-full-content .project-full-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.project-full-content .project-full-content-header .arrow-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 24px;
+  background-color: #dbd9d930;
+  border: 1px solid #E9E9E9;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.project-content-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-content-info div p {
+  color: #636363;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 180%;
+}
+
+.project-content-info .project-content-info-tags {
+  display: flex;
+  gap: 8px;
+}
+
+
+
+.project-content-info .project-content-info-tags .tag-green {
+  font-weight: 500;
+  padding-inline: 12px 8px;
+  border-radius: 200px;
+  color: #266E68;
+  background-color: #E6F8F7;
+}
+
+.project-content-info .project-content-info-tags .tag-purple {
+  font-weight: 500;
+  padding-inline: 12px 8px;
+  border-radius: 200px;
+  color: #6A4FAE;
+  background-color: #EBE6F8;
+}
+
+.project-content-info-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 74px 18px 24px;
+  border-radius: 19px;
+  background-color: #dbd9d930;
+}
+
+.project-content-info-card .project-information h3 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.project-content-info-card .project-information span {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.project-full-content .verify-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  color: #7157CF;
+  border: 1px solid #E9E9E9;
+  border-radius: 200px;
+  background-color: #FAFAFA;
+  font-weight: 700;
+  padding: 12px;
+}

@@ -53,13 +53,84 @@
           </div>
         </div>
       </div>
+
+      <div class="menu-hamburger">
+        <button class="menu-hamburger-button">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6667 3.33333C14.6667 2.96514 14.3682 2.66667 14 2.66667H1.99999C1.6318 2.66667 1.33332 2.96514 1.33332 3.33333C1.33332 3.70152 1.6318 4 1.99999 4H14C14.3682 4 14.6667 3.70152 14.6667 3.33333ZM1.52859 5.5286C1.26824 5.78895 1.26824 6.21106 1.52859 6.47141L3.05718 8L1.52859 9.5286C1.26824 9.78895 1.26824 10.2111 1.52859 10.4714C1.78894 10.7318 2.21105 10.7318 2.4714 10.4714L4.47139 8.47141C4.73174 8.21106 4.73174 7.78895 4.47139 7.5286L2.4714 5.5286C2.21105 5.26825 1.78894 5.26825 1.52859 5.5286ZM14.6667 8C14.6667 7.63181 14.3682 7.33333 14 7.33333H6.66666C6.29847 7.33333 5.99999 7.63181 5.99999 8C5.99999 8.36819 6.29847 8.66667 6.66666 8.66667H14C14.3682 8.66667 14.6667 8.36819 14.6667 8ZM14.6667 12.6667C14.6667 12.2985 14.3682 12 14 12H1.99999C1.6318 12 1.33332 12.2985 1.33332 12.6667C1.33332 13.0349 1.6318 13.3333 1.99999 13.3333H14C14.3682 13.3333 14.6667 13.0349 14.6667 12.6667Z" fill="#4A4A4A"/>
+            </svg>  
+        </button>        
+      </div>
     </header>
   
-    <div class="app-content">
-       <div class="home-page" id="home-page">
+    <aside class="drawer-mobile">
+      <div>
+        <header class="drawer-header">
+          <div>
+            <svg width="83" height="28" viewBox="0 0 83 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.7824 22.6247C4.76495 22.6247 1.08913 18.5404 1.08913 12.4685C1.08913 6.15157 5.03724 2.31238 10.8913 2.31238C15.9286 2.31238 19.4138 5.00798 19.9311 9.11946H16.8815C16.3642 6.39663 13.9681 4.89907 10.8913 4.89907C6.80708 4.89907 4.11147 7.6219 4.11147 12.4413C4.11147 17.2879 6.72539 20.0925 10.8369 20.0925C14.6216 20.0925 17.1538 17.9142 17.3444 14.2384H11.0275V12.0329H20.3668V13.476C20.3668 19.085 16.5548 22.6247 10.7824 22.6247ZM29.6216 22.6247C25.2923 22.6247 22.6512 19.684 22.6512 15.2458C22.6512 10.6987 25.2923 7.75804 29.5127 7.75804C34.2504 7.75804 36.5376 11.216 36.102 15.7359H25.4285C25.4829 18.7038 27.1166 20.392 29.6216 20.392C31.5548 20.392 32.9979 19.439 33.3519 17.9414H36.0203C35.6391 20.7732 33.0252 22.6247 29.6216 22.6247ZM29.4855 9.96353C27.2255 9.96353 25.7008 11.4066 25.4829 13.7483H33.3519C33.2702 11.0799 31.6093 9.96353 29.4855 9.96353ZM39.1334 5.77037V2.53021H41.938V5.77037H39.1334ZM39.1334 22.3796V7.97587H41.938V22.3796H39.1334Z" fill="black"/>
+              <rect x="46.3144" y="8.10274" width="29.7525" height="10.9434" rx="5.47172" fill="url(#paint0_linear_326_744)" stroke="#7573DC" stroke-width="2.39388"/>
+              <path d="M72.9522 26.4325L75.6675 21.0018C75.7278 20.8813 75.8416 20.7964 75.9743 20.773L81.8932 19.7285C82.2791 19.6604 82.3757 19.1512 82.0417 18.9464L70.5911 11.9284C70.2815 11.7386 69.8916 11.9989 69.9483 12.3577L72.151 26.3086C72.2156 26.7176 72.767 26.8029 72.9522 26.4325Z" fill="#C8C8C8"/>
+              <defs>
+              <linearGradient id="paint0_linear_326_744" x1="37.4559" y1="5.91298" x2="75.338" y2="20.8104" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6866DF"/>
+              <stop offset="0.615092" stop-color="#423FC3"/>
+              <stop offset="1" stop-color="#CE66DF"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+  
+          <button class="drawer-close">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.50055 6.4917L2.02972 9.96254C1.89986 10.0924 1.73458 10.1573 1.53389 10.1573C1.33319 10.1573 1.16791 10.0924 1.03805 9.96254C0.908192 9.83267 0.843262 9.6674 0.843262 9.4667C0.843262 9.26601 0.908192 9.10073 1.03805 8.97087L4.50889 5.50003L1.03805 2.0292C0.908192 1.89934 0.843262 1.73406 0.843262 1.53337C0.843262 1.33267 0.908192 1.1674 1.03805 1.03753C1.16791 0.907673 1.33319 0.842743 1.53389 0.842743C1.73458 0.842743 1.89986 0.907673 2.02972 1.03753L5.50055 4.50837L8.97139 1.03753C9.10125 0.907673 9.26653 0.842743 9.46722 0.842743C9.66792 0.842743 9.83319 0.907673 9.96305 1.03753C10.0929 1.1674 10.1578 1.33267 10.1578 1.53337C10.1578 1.73406 10.0929 1.89934 9.96305 2.0292L6.49222 5.50003L9.96305 8.97087C10.0929 9.10073 10.1578 9.26601 10.1578 9.4667C10.1578 9.6674 10.0929 9.83267 9.96305 9.96254C9.83319 10.0924 9.66792 10.1573 9.46722 10.1573C9.26653 10.1573 9.10125 10.0924 8.97139 9.96254L5.50055 6.4917Z" fill="#4A4A4A"/>
+              </svg>
+              
+          </button>
+        </header>
+
+        <div class="ghost-space"></div>
+        
+        <nav class="drawer-links">
+          <a href="https://www.linkedin.com/in/geissy-nunes-683109196/" target="_blank" class="drawer-link">
+            <span>LinkedIn</span>
+            <svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 12.8333L5.94218 7.6508C6.26317 7.27631 6.26317 6.72371 5.94218 6.34922L1.5 1.16668" stroke="#2B3F6C" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>            
+          </a>
+          <a href="#behance" class="drawer-link">
+            <span>Behance</span>
+            <svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 12.8333L5.94218 7.6508C6.26317 7.27631 6.26317 6.72371 5.94218 6.34922L1.5 1.16668" stroke="#2B3F6C" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>   
+          </a>
+          <a href="#dribbble" class="drawer-link drawer-link-pink">
+            <span>Dribbble</span>
+            <svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 12.8333L5.94218 7.6508C6.26317 7.27631 6.26317 6.72371 5.94218 6.34922L1.5 1.16668" stroke="#2B3F6C" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>   
+          </a>
+          <a href="#medium" class="drawer-link">
+            <span>Medium</span>
+            <svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 12.8333L5.94218 7.6508C6.26317 7.27631 6.26317 6.72371 5.94218 6.34922L1.5 1.16668" stroke="#2B3F6C" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>   
+          </a>
+        </nav>
+      </div>
+      
+      <footer class="drawer-language">
+        <span>Idioma</span>
+        <div class="switch">
+          <div class="toggle-thumb"></div>
+        </div>
+      </footer>
+    </aside>
+
+    <div class="scroll-slides">
+      <section class="slide slide-green">
         <main class="main">
           <span class="position-company">PRODUCT DESIGNER</span>
-        
           <div class="main-content">
             <h1>
               <span>Transforming complexity into simplicity and</span>
@@ -68,17 +139,14 @@
                 <div class="gradient-line"></div>
               </div>
             </h1>
-      
             <p>
               With over 3 years of experience in B2B products, I specialize in managing the entire process from discovery to delivery, creating strategic and impactful digital solutions.
             </p>
-      
             <div class="main-actions">
               <button id="talk-me">Talk to me</button>
               <button id="resume">Resume</button>
             </div>
           </div>
-    
           <div class="menu">
             <a href="#">
               <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,9 +171,9 @@
             </a>              
           </div>
         </main>
-       </div>
-
-       <div class="projects-page" id="projects-page">
+      </section>
+      <section class="slide slide-indigo">
+        <div class="projects-page" id="projects-page">
           <div class="projects-page-container">
             <div class="project-full-content">
               <div class="project-full-content-header">
@@ -157,7 +225,7 @@
                     </div>
                   </aside>
   
-                  <div>
+                  <div class="skills-container">
                     <h4>Applied skills</h4>
   
                     <p>Design thinking | Competitor analysis | Quantitative research</p>
@@ -177,7 +245,7 @@
                 <span>Conferir projeto</span>
                 <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M9.21967 4.74994C9.51256 4.45705 9.98744 4.45705 10.2803 4.74994L14.7803 9.24994C15.0732 9.54284 15.0732 10.0177 14.7803 10.3106L10.2803 14.8106C9.98744 15.1035 9.51256 15.1035 9.21967 14.8106C8.92678 14.5177 8.92678 14.0428 9.21967 13.7499L12.4393 10.5303H3.75C3.33579 10.5303 3 10.1945 3 9.78027C3 9.36606 3.33579 9.03027 3.75 9.03027H12.4393L9.21967 5.8106C8.92678 5.51771 8.92678 5.04284 9.21967 4.74994Z" fill="#7157CF"/>
-                  </svg>
+                </svg>
               </button>
             </div>
           </div>
@@ -186,82 +254,81 @@
             <img src="./images/fluent-app-background.png" alt="fluent-app" height="100%" />
           </div>
       </div>
-
-      <div class="about-me" id="about-me-page">
-        <header>
-          <h1>You can call me Gei</h1>
-          <p>I'm UX/UI Designer</p>
-        </header>
-
-        <main>
-          <section class="about-me-information">
-            <p>
-              With 4 years of experience in UX/UI, I am passionate about building and evolving experiences for both B2B and B2C products. My background in Psychology gives me a unique perspective on human behavior and user needs, leading to projects that not only solve problems but also strengthen connections.
-            </p>
-  
-            <p>
-              n my free time, I love to travel and explore the world, enjoying new places alongside the people I love. My bond with nature and animals is a constant source of inspiration—just like the solid foundation I find in my family.
-            </p>
-  
-            <button id="talk-me">Talk to me</button>
-          </section>
-
-          <div class="illustrations">
-            <div class="top-text">
-              <span>PSYCHOLOGY</span>
-            </div>
-            <div class="wrapper-container">
-              <div class="circle left">
-                <svg width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M37 21.8467L43.5 28.8467" stroke="white" stroke-linecap="round"/>
-                  <path d="M30.5 26.3467L34.5 34.8467" stroke="white" stroke-linecap="round"/>
-                  <path d="M6.5 7.84668C11.1667 2.68001 23.9 -4.55332 37.5 7.84668" stroke="white" stroke-linecap="round"/>
-                  <path d="M1.5 14.3467C5 18.8467 13.5905 27.3467 22 27.3467C34.5 27.3467 39.5 18.5133 43 14.3467" stroke="white" stroke-linecap="round"/>
-                  <path d="M7.5 21.3467L1 28.3467" stroke="white" stroke-linecap="round"/>
-                  <path d="M14.5 25.3467L10 34.8467" stroke="white" stroke-linecap="round"/>
-                  <path d="M22 27.3467V36.8467" stroke="white" stroke-linecap="round"/>
-                  </svg>                  
+      </section>
+      <section class="slide slide-purple">
+        <div class="about-me" id="about-me-page">
+          <header>
+            <h1>You can call me Gei</h1>
+            <p>I'm UX/UI Designer</p>
+          </header>
+          <main>
+            <section class="about-me-information">
+              <p>
+                With 4 years of experience in UX/UI, I am passionate about building and evolving experiences for both B2B and B2C products. My background in Psychology gives me a unique perspective on human behavior and user needs, leading to projects that not only solve problems but also strengthen connections.
+              </p>
+              <p>
+                n my free time, I love to travel and explore the world, enjoying new places alongside the people I love. My bond with nature and animals is a constant source of inspiration—just like the solid foundation I find in my family.
+              </p>
+              <div class="companies">
+                <img src="./images/logos/vivo-logo.png" alt="vivo" width="73px" height="23px" />
+                <img src="./images/logos/itforum-logo.png" alt="vivo" width="85px" height="19px" />
+                <img src="./images/logos/neoenergia-logo.png" alt="neoenergia" width="127px" height="31px" />
+                <img src="./images/logos/vale-logo.png" alt="vivo" width="87px" height="47px"/>
               </div>
-              <div class="circle center">
-                <img src="./images//profile.png" alt="Profile" class="avatar" />
+              <button id="talk-me">Talk to me</button>
+            </section>
+            <div class="illustrations">
+              <div class="top-text">
+                <span>PSYCHOLOGY</span>
               </div>
-              <div class="circle right">
-                <svg width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M37 21.8467L43.5 28.8467" stroke="white" stroke-linecap="round"/>
-                  <path d="M30.5 26.3467L34.5 34.8467" stroke="white" stroke-linecap="round"/>
-                  <path d="M6.5 7.84668C11.1667 2.68001 23.9 -4.55332 37.5 7.84668" stroke="white" stroke-linecap="round"/>
-                  <path d="M1.5 14.3467C5 18.8467 13.5905 27.3467 22 27.3467C34.5 27.3467 39.5 18.5133 43 14.3467" stroke="white" stroke-linecap="round"/>
-                  <path d="M7.5 21.3467L1 28.3467" stroke="white" stroke-linecap="round"/>
-                  <path d="M14.5 25.3467L10 34.8467" stroke="white" stroke-linecap="round"/>
-                  <path d="M22 27.3467V36.8467" stroke="white" stroke-linecap="round"/>
-                  </svg>                  
+              <div class="wrapper-container">
+                <div class="circle left">
+                  <svg class="circle-eye" width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37 21.8467L43.5 28.8467" stroke="white" stroke-linecap="round"/>
+                    <path d="M30.5 26.3467L34.5 34.8467" stroke="white" stroke-linecap="round"/>
+                    <path d="M6.5 7.84668C11.1667 2.68001 23.9 -4.55332 37.5 7.84668" stroke="white" stroke-linecap="round"/>
+                    <path d="M1.5 14.3467C5 18.8467 13.5905 27.3467 22 27.3467C34.5 27.3467 39.5 18.5133 43 14.3467" stroke="white" stroke-linecap="round"/>
+                    <path d="M7.5 21.3467L1 28.3467" stroke="white" stroke-linecap="round"/>
+                    <path d="M14.5 25.3467L10 34.8467" stroke="white" stroke-linecap="round"/>
+                    <path d="M22 27.3467V36.8467" stroke="white" stroke-linecap="round"/>
+                    </svg>                  
+                </div>
+                <div class="circle center">
+                  <img src="./images//profile.png" alt="Profile" class="avatar" />
+                </div>
+                <div class="circle right">
+                  <svg class="circle-eye" width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37 21.8467L43.5 28.8467" stroke="white" stroke-linecap="round"/>
+                    <path d="M30.5 26.3467L34.5 34.8467" stroke="white" stroke-linecap="round"/>
+                    <path d="M6.5 7.84668C11.1667 2.68001 23.9 -4.55332 37.5 7.84668" stroke="white" stroke-linecap="round"/>
+                    <path d="M1.5 14.3467C5 18.8467 13.5905 27.3467 22 27.3467C34.5 27.3467 39.5 18.5133 43 14.3467" stroke="white" stroke-linecap="round"/>
+                    <path d="M7.5 21.3467L1 28.3467" stroke="white" stroke-linecap="round"/>
+                    <path d="M14.5 25.3467L10 34.8467" stroke="white" stroke-linecap="round"/>
+                    <path d="M22 27.3467V36.8467" stroke="white" stroke-linecap="round"/>
+                    </svg>                  
+                </div>
+              </div>
+              <div class="bottom-text">
+                <span>Human-first</span>
+                <span>TRIPS</span>
               </div>
             </div>
-            <div class="bottom-text">
-              <span>Human-first</span>
-              <span>TRIPS</span>
+          </main>
+          <footer>
+            <div>
+              <span>Building solutions</span>
             </div>
-          </div>
-        </main>
-
-        <footer>
-          <div>
-            <span>Building solutions</span>
-          </div>
-
-          <div class="companies-logos">
-            <img src="./images/logos/vivo-logo.png" alt="vivo" width="73px" height="23px" />
-
-            <img src="./images/logos/itforum-logo.png" alt="vivo" width="85px" height="19px" />
-
-            <img src="./images/logos/neoenergia-logo.png" alt="neoenergia" width="127px" height="31px" />
-
-            <img src="./images/logos/vale-logo.png" alt="vivo" width="87px" height="47px"/>
-          </div>
-        </footer>
-      </div>
+            <div class="companies-logos">
+              <img src="./images/logos/vivo-logo.png" alt="vivo" width="73px" height="23px" />
+              <img src="./images/logos/itforum-logo.png" alt="vivo" width="85px" height="19px" />
+              <img src="./images/logos/neoenergia-logo.png" alt="neoenergia" width="127px" height="31px" />
+              <img src="./images/logos/vale-logo.png" alt="vivo" width="87px" height="47px"/>
+            </div>
+          </footer>
+        </div>
+      </section>
     </div>
-
   </div>
+  <script src="./scripts/main.js"></script>
 </body>
 </html>

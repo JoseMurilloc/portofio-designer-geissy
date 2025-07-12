@@ -23,7 +23,7 @@
 
 
 .about-me header p {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   color: #636363;
  }
@@ -34,6 +34,12 @@
   align-items: center;
   width: 1100px;
 }
+
+
+main .about-me-information .companies {
+  display: none;    
+}
+
 
 main .about-me-information {
   display: flex;
@@ -106,7 +112,7 @@ main .about-me-information #talk-me {
   align-items: center;
   padding: 30px 45px;
   border-radius: 24px;
-  margin-top: 45px;
+  margin-top: 35px;
 
   background-color: #F2F2F2;
   width: 1100px;
@@ -118,4 +124,83 @@ main .about-me-information #talk-me {
   justify-content: center;
   align-items: center;
   gap: 28px;
+}
+
+
+/* 🎉 Mobile version */
+
+@media (max-width: 768px) {
+  .about-me {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+    padding: 0px 24px;
+  }
+  
+  .about-me header {
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 24px;
+  }
+  
+  .about-me main {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+
+  main .about-me-information .companies {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    overflow-x: scroll;
+  }
+
+  main .about-me-information #talk-me {
+    width: 100%;
+  }
+  
+  .illustrations {
+    width: 100%;
+
+    border-radius: 24px;
+    padding: 20px 10px;
+    background-color: #e4e3e396;
+    margin-bottom: 24px;
+  }
+
+   
+  .illustrations .bottom-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  .illustrations span {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  .illustrations .wrapper-container {
+    gap: 40px;
+  }
+
+  .wrapper-container .circle .circle-eye {
+    width: 20px;
+    height: 16px;
+  }
+  
+  .illustrations .circle {
+    width: 122px;
+    height: 122px;
+  }
+  
+  
+  .about-me footer {
+    width: 100%;
+    margin-top: 20px;
+    display: none;
+  } 
 }

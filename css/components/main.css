@@ -1,3 +1,50 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-slides {
+  position: relative;
+  width: 100vw;
+}
+
+.slide {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  transition: background 0.5s;
+}
+
+.slide h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.slide p {
+  font-size: 1.25rem;
+}
+
+.slide-green {
+  background-color: #F8F8F8;
+}
+
+.slide-indigo {
+  background-color: #F8F8F8;
+}
+
+.slide-purple {
+  background-color: #F8F8F8;
+}
+
+.slide-blue {
+  background-color: #F8F8F8;
+}
+
 .home-page {
   display: flex;
   flex-direction: column;
@@ -15,12 +62,14 @@
   align-items: center;
   justify-content: center;
   max-width: 1100px;
+
 }
 
 .main .position-company {
   text-transform: uppercase;
   font-weight: 500;
   color: #464646;
+
 }
 
 .main .main-content {
@@ -45,14 +94,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  animation: auto linear 0s infinite normal none running 
 }
 
 .main-content h1 .gradient-text {
   font-weight: bold;
-  background: linear-gradient(90deg, #A042C2, #3A81D1, #00B5E2);
+  background: linear-gradient(90deg, #A042C2, #3A81D1, #00B5E2, #FFA500, #A042C2);
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  animation: gradientMove 3s linear infinite;
 }
 
 .main-content h1 .gradient-line {
@@ -122,4 +175,75 @@
   width: 1px;
 
   margin: 12px 0px;
+}
+
+/* Animation */
+
+@keyframes displayScale {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* 🎉 Mobile version */
+
+@media (max-width: 768px) {
+  .home-page {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 170px;
+  }
+  
+  .main {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .main .position-company {
+    font-size: 12px;
+    line-height: 140%;
+  }
+  
+  .main .main-content h1 {
+    font-size: 34px;
+    line-height: 45px;
+    max-width: 270px;
+  }
+
+  .main .main-content p {
+    font-size: 16px;
+    line-height: 140%;
+    max-width: 255px;
+  }
+  
+  .main-content h1 .gradient-line {
+    width: 164px;
+  }
+  
+  .main-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .menu {
+    display: none;
+  }
 }

@@ -2,11 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 100vh;
   width: 100vw;
-
-
 }
 
 .projects-page-container {
@@ -15,7 +12,6 @@
 
 .project-page .projects-page-container .projects-pages {
   display: flex;
-
 }
 
 .projects-page .project-image {
@@ -131,7 +127,72 @@
   color: #7157CF;
   border: 1px solid #E9E9E9;
   border-radius: 200px;
-  background-color: #FAFAFA;
+  background-color: #F2F2F2;
   font-weight: 700;
   padding: 12px;
+}
+
+/* 🎉 Mobile version */
+
+@media (max-width: 768px) {
+  .projects-page {
+    height: auto;
+  }
+
+  .projects-page .project-image {
+    display: none;
+  }
+
+  .projects-page-container {
+    width: 100%;
+  }
+
+  .project-full-content {
+    padding: 0px 32px;
+  }
+
+  .projects-page-container .project-content {
+    display: block;
+  }
+
+  .project-content .project-content-image {
+    padding: 0 14px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #9CE0DB;
+    border-radius: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0px;
+  }
+
+  .project-content .project-content-image img {
+    width: 165px;
+    height: 330px;
+  }
+
+  .project-content-info .project-content-info-tags {
+    display: none;
+  }
+  
+  .project-content-info div p {
+    font-size: 16px;
+    line-height: 155%;
+  }
+
+    
+  .project-content-info div p:first-child {
+    margin-top: 12px;
+  }
+
+  .project-content-info-card {
+    padding: 20px;
+  }
+
+  .skills-container h4 {
+    margin-top: 22px;
+    margin-bottom: 12px;
+  }
 }

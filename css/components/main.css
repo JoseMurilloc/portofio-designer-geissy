@@ -5,6 +5,15 @@ html {
 .scroll-slides {
   position: relative;
   width: 100vw;
+
+  overflow-x: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+  background-color: #F8F8F8;
+
 }
 
 .slide {
@@ -17,6 +26,8 @@ html {
   justify-content: center;
   font-family: inherit;
   transition: background 0.5s;
+
+  border-radius: 10px;
 }
 
 .slide h2 {
@@ -213,6 +224,7 @@ html {
   .main {
     max-width: 100%;
     height: auto;
+    padding-top: 100px;
   }
 
   .main .position-company {

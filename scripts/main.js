@@ -1,14 +1,9 @@
-const [hamburger] = document.getElementsByClassName('menu-hamburger-button');
-const [menu] = document.getElementsByClassName('drawer-mobile');
-const [close] = document.getElementsByClassName('drawer-close');
+const hamburger = document.getElementById('menu-hamburger-button');
 
+const drawer = document.getElementById("drawer-mobile");
 
 hamburger.onclick = () => {
-  hamburger.style.display = 'none';
-  menu.style.display = 'flex'; 
+  drawer.classList.toggle("change");
+  document.body.classList.toggle('no-scroll');
 };
 
-close.onclick = () => {
-  menu.style.display = 'none'; 
-  hamburger.style.display = 'flex';
-}

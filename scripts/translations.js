@@ -1,19 +1,33 @@
-const langElementButton = document.querySelector('.lang-button')
-const switchElementButton = document.querySelector('.switch')
-const toggleThumbElementDiv = document.querySelector('.toggle-thumb')
+const langElementButtons = document.querySelectorAll('.lang-button')
+const switches = document.querySelectorAll('.switch')
+const toggleThumbs = document.querySelectorAll('.toggle-thumb')
+
+
+const switchElementButtons = [...switches]
+const toggleThumbElementDivs = [...toggleThumbs]
 
 const Keys = {
   LANG: 'SELECT_LANG'
 }
 
+
 function moveSwitch (lang) {
-  if (lang === 'pt') {
-    toggleThumbElementDiv.style.left = 'auto';
-    toggleThumbElementDiv.style.right = '4px';
-  } else {
-    toggleThumbElementDiv.style.left = '4px';
-    toggleThumbElementDiv.style.right = 'auto';
-  }
+  console.log(lang)
+  const positions = {
+    pt: {
+      left: 'auto',
+      right: '4px'
+    },
+    en: {
+      left: '4px',
+      right: 'auto'
+    }
+  }[lang]
+
+  toggleThumbElementDivs.forEach(div => {
+    div.style.left = positions.left
+    div.style.right = positions.right
+  })
 }
 
 function changeLanguage(lang, callbackUpdateDownloadResumes) {
@@ -58,28 +72,31 @@ function changeLanguage(lang, callbackUpdateDownloadResumes) {
   /** 
    * 🎉 Toggle classes
    */
-  toggleThumbElementDiv.classList.remove(prevClasses.toggle)
-  switchElementButton.classList.remove(prevClasses.switch)
+  toggleThumbElementDivs.map(toggleTumbler => toggleTumbler.classList.remove(prevClasses.toggle))  
+  switchElementButtons.map(switchElementButton => switchElementButton.classList.remove(prevClasses.switch))
   
-  toggleThumbElementDiv.classList.add(nextClasses.toggle)
-  switchElementButton.classList.add(nextClasses.switch)
+  toggleThumbElementDivs.map(toggleTumbler => toggleTumbler.classList.add(nextClasses.toggle))
+  switchElementButtons.map(switchElementButton => switchElementButton.classList.add(nextClasses.switch))
 
   moveSwitch(lang)
 }
 
-langElementButton.onclick = () => {
-  const currentLanguage = localStorage.getItem(Keys.LANG);
+langElementButtons.forEach(button => {
+  button.onclick = () => {
+    const currentLanguage = localStorage.getItem(Keys.LANG);
+  
+    const browserLang = currentLanguage === 'pt' ? 'en' : 'pt';
+  
+    changeLanguage(browserLang, updateDownloadResumes);
+  }
 
-  const browserLang = currentLanguage === 'pt' ? 'en' : 'pt';
-
-  changeLanguage(browserLang, updateDownloadResumes);
-}
+})
 
 function inicializeSelectFlag () {
   const LANGUAGE_GUARD_BROWSER = localStorage.getItem(Keys.LANG);
 
-  switchElementButton.classList.add('switch-' + LANGUAGE_GUARD_BROWSER)
-  toggleThumbElementDiv.classList.add('toggle-thumb-' + LANGUAGE_GUARD_BROWSER)
+  switchElementButtons.map(switchElementButton => switchElementButton.classList.add('switch-' + LANGUAGE_GUARD_BROWSER))
+  toggleThumbElementDivs.map(toggleTumbler => toggleTumbler.classList.add('toggle-thumb-' + LANGUAGE_GUARD_BROWSER))
 
   moveSwitch(LANGUAGE_GUARD_BROWSER);
   changeLanguage(LANGUAGE_GUARD_BROWSER);

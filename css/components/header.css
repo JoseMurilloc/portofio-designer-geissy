@@ -65,32 +65,50 @@
   gap: 12px;
 }
 
-.header-content .header-actions button {
+.header-content .header-actions button:first-child {
   background-color: #F4F4F4;
   border: 1px solid #E2E2E2;
   padding: 10px 16px;
   border-radius: 16px;
+}
+
+.header-content .header-actions button > a {
 
   color: #646464;
   font-weight: 700;
   font-size: 14px;
 }
 
-.switch {
+.lang-button {
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+}
+
+.lang-button .switch {
   width: 55px;
   height: 32px;
-  background-color: #6A3EBE; 
-  border: 2px solid #A576F2;  
+  background-color: #FFFFFF; 
+  border: 2px solid #33333343;  
   border-radius: 999px;
   position: relative;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+.switch-en {
+  background-color: #6A3EBE !important; 
+  border: 2px solid #A576F2 !important;  
+}
+
+.switch-pt {
+  background-color: #1C703C !important; 
+  border: 2px solid #3dac68 !important;  
+}
+
 .toggle-thumb {
   width: 18px;
   height: 18px;
-  background-image: url('https://flagcdn.com/us.svg');
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -98,8 +116,17 @@
   top: 50%;
   left: 4px;
   transform: translateY(-50%);
-  transition: left 0.3s ease;
+  transition: left 3s ease;
+}
+
+.toggle-thumb-en {
+  background-image: url('https://flagcdn.com/us.svg');
   box-shadow: 0 0 0 3px #A576F2;
+}
+
+.toggle-thumb-pt {
+  background-image: url('https://flagcdn.com/br.svg');
+  box-shadow: 0 0 0 3px #3dac68; 
 }
 
 .drawer-mobile {
@@ -148,7 +175,7 @@
     display: none;
     overflow: hidden;
     position: fixed;
-    top: 80px;
+    top: 75px;
     left: 0;
     background-color: #F9F9F9;
     z-index: 999;
@@ -158,7 +185,7 @@
     justify-content: space-between;
 
    
-    height: 92vh;
+    height: calc(100vh - 60px);
     width: calc(100vw - 20px);
     transform: translateY(-200%);
     margin-left: 10px;
@@ -194,13 +221,13 @@
   .drawer-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
     padding: 0px 24px;
   }
 
   .drawer-links a {
     background-color: #e4e3e380;
-    padding: 12px 16px;
+    padding: 15px;
     border-radius: 16px;
 
     font-weight: 500;

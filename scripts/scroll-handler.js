@@ -1,11 +1,12 @@
 const slides = document.querySelectorAll('.slide');
 const header = document.querySelectorAll('.header')[0];
 
+/**
+ * Scroll handler: Slides
+ */
 window.addEventListener('scroll', function () {
   const PAGE_HEIGHT = window.innerHeight;
   const scrollY = window.scrollY;
-
-  let currentSectionIndex = 0;
 
   if (scrollY < PAGE_HEIGHT) {
     currentSectionIndex = 0; 
@@ -34,6 +35,35 @@ window.addEventListener('scroll', function () {
   } else {
     header.style.top = `10px`;
   }
+})
+
+/**
+ * Scroll handler: Icons menu
+ */
+window.addEventListener('scroll', function () {
+  const PAGE_HEIGHT = window.innerHeight;
+  const scrollY = window.scrollY;
+
+  const icons = ['menu-home-icon', 'menu-projects-icon', 'menu-about-icon']
+
+  const selectIconID = (() => {
+    if (scrollY < PAGE_HEIGHT) {
+      return 'menu-home-icon'
+    }
+
+    if (scrollY < PAGE_HEIGHT * 2) {
+      return 'menu-projects-icon'
+    } 
+
+    return 'menu-about-icon'
+  })()
+  
+  
+  icons.forEach(icon => {
+    const current = document.getElementById(icon);
+    
+    current.style.fill = current.id === selectIconID ? '#7157CF' : '#9C9C9C';
+  })
 });
 
 function removeSlides() {

@@ -38,7 +38,7 @@ const translations = {
     company: "DESIGNER DE PRODUTO",
     main_title_1: "Transformando complexidade em simplicidade e",
     main_title_2: "intuitividade.",
-    main_description: "Com mais de 3 anos de experiência em produtos B2B, especializo-me em gerenciar todo o processo, desde a descoberta até a entrega, criando soluções digitais estratégicas e impactantes.",
+    main_description: "Há 4 anos criando experiências que solucionam problemas reais com estratégia e propósito. Do discovery ao delivery,  apaixonada por estar presente em cada etapa do processo — entendendo pessoas, mapeando necessidades e transformando tudo isso em soluções.",
     talk_to_me: "Fale comigo",
     resume: "Currículo",
     about_me_title: "Você pode me chamar de Gei",

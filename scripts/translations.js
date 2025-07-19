@@ -6,11 +6,6 @@ const Keys = {
   LANG: 'SELECT_LANG'
 }
 
-
-console.log({
-  langElementButton
-})
-
 function moveSwitch (lang) {
   if (lang === 'pt') {
     toggleThumbElementDiv.style.left = 'auto';

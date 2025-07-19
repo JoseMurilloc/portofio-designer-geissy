@@ -132,6 +132,17 @@
   padding: 12px;
 }
 
+.project-information h3::before {
+  content: '+';
+  color: #7157CF;
+}
+
+.divider-info-project {
+  height: 33px;
+  width: 1px;
+  background-color: #E1E1E1;
+}
+
 /* 🎉 Mobile version */
 
 @media (max-width: 768px) {

@@ -43,10 +43,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  opacity: 0.9;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -54,6 +50,8 @@ a {
 a:hover,
 button:hover  {
   cursor: url('./../images/cursors/cursor-click.svg'), auto;
+  filter: brightness(0.95);
+
 }
 
 span:hover,

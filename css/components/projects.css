@@ -149,6 +149,8 @@
   .projects-page {
     height: auto;
     padding-top: 24px;
+    margin-top: 40px;
+    width: auto;
   }
 
   .projects-page .project-image {
@@ -160,7 +162,8 @@
   }
 
   .project-full-content {
-    padding: 0px 32px;
+    padding: 0px 16px;
+    gap: 24px;
   }
 
   .projects-page-container .project-content {

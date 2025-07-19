@@ -1,12 +1,27 @@
 const slides = document.querySelectorAll('.slide');
 const header = document.querySelectorAll('.header')[0];
 
+
+function isMobileUserAgent() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 /**
  * Scroll handler: Slides
  */
 window.addEventListener('scroll', function () {
   const PAGE_HEIGHT = window.innerHeight;
   const scrollY = window.scrollY;
+
+  if (isMobileUserAgent()) {
+    if (scrollY > 0) {
+      header.style.top = 0;
+    } else {
+      header.style.top = `10px`;
+    }
+    
+    return;
+  }
 
   if (scrollY < PAGE_HEIGHT) {
     currentSectionIndex = 0; 

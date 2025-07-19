@@ -11,6 +11,7 @@ body {
   background-color: #F8F8F8;
   overflow-y: scroll;
   scrollbar-width: none; 
+  cursor: url('./../images/cursors/cursor.svg'), auto;
 }
 
 body::-webkit-scrollbar {
@@ -40,4 +41,23 @@ img {
 
 button {
   cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover,
+button:hover  {
+  cursor: url('./../images/cursors/cursor-click.svg'), auto;
+}
+
+span:hover,
+p:hover,
+h1:hover {
+  cursor: url('./../images/cursors/cursor-copy.svg'), auto;
 }

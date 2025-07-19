@@ -69,6 +69,10 @@ main .about-me-information #talk-me {
 
   width: 145px;
   height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .illustrations {

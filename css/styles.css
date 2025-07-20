@@ -14,6 +14,11 @@
   background-color: #F8F8F8;
 }
 
+.no-blur-header {
+  background-color: #F9F9F9;
+  backdrop-filter: auto;
+}
+
 .no-scroll {
   overflow: hidden;
 }

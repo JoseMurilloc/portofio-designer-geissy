@@ -184,7 +184,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    height: calc(100vh - 75px);
+    height: calc(100% - 75px);
     width: calc(100vw - 20px);
     transform: translateY(-200%);
     margin-left: 10px;

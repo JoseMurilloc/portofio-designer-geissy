@@ -61,6 +61,10 @@ window.addEventListener('scroll', function () {
 
   const icons = ['menu-home-icon', 'menu-projects-icon', 'menu-about-icon']
 
+  if (isMobileUserAgent()) {
+    return;
+  }
+
   const selectIconID = (() => {
     if (scrollY < PAGE_HEIGHT) {
       return 'menu-home-icon'

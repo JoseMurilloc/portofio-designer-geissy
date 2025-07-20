@@ -185,7 +185,7 @@
     justify-content: space-between;
 
    
-    height: calc(100vh - 75px);
+    height: calc(100vh - 220px);
     width: calc(100vw - 20px);
     transform: translateY(-200%);
     margin-left: 10px;
@@ -249,7 +249,7 @@
     font-size: 16px;
     padding: 16px;
 
-    background-color: #F9F9F9;
+    background-color: #e4e3e380;
     border-radius: 16px;
 
     margin: 24px;

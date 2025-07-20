@@ -93,7 +93,7 @@ langElementButtons.forEach(button => {
 })
 
 function inicializeSelectFlag () {
-  const LANGUAGE_GUARD_BROWSER = localStorage.getItem(Keys.LANG);
+  const LANGUAGE_GUARD_BROWSER = localStorage.getItem(Keys.LANG) || 'en';
 
   switchElementButtons.map(switchElementButton => switchElementButton.classList.add('switch-' + LANGUAGE_GUARD_BROWSER))
   toggleThumbElementDivs.map(toggleTumbler => toggleTumbler.classList.add('toggle-thumb-' + LANGUAGE_GUARD_BROWSER))

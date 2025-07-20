@@ -65,14 +65,14 @@
   gap: 12px;
 }
 
-.header-content .header-actions button:first-child {
+.header-content .header-actions a:first-child {
   background-color: #F4F4F4;
   border: 1px solid #E2E2E2;
   padding: 10px 16px;
   border-radius: 16px;
 }
 
-.header-content .header-actions button > a {
+.header-content .header-actions > a {
 
   color: #646464;
   font-weight: 700;

@@ -1,4 +1,4 @@
-const links = document.getElementsByClassName('resumes')
+const links = document.querySelectorAll('.resumes')
 
 function downloadResumeHandler(link) {
   const lang = localStorage.getItem(Keys.LANG);

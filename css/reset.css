@@ -1,6 +1,13 @@
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+:root {
+  /* Hotspot ~ dedo do ponteiro; fallback pointer se o SVG falhar */
+  --cursor-click: url('./../images/cursors/cursor-click.svg') 6 2, pointer;
 }
 
 *, *:before, *:after {
@@ -9,13 +16,8 @@ html {
 
 body {
   background-color: #F8F8F8;
-  overflow-y: scroll;
-  scrollbar-width: none; 
+  overflow: visible;
   cursor: url('./../images/cursors/cursor.svg'), auto;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 
@@ -23,11 +25,6 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
   font-family: "Satoshi", sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: #111;
 }
 
 ol, ul {
@@ -38,23 +35,27 @@ img {
   max-width: 100%;
 }
 
-button {
-  cursor: pointer;
+/* Zonas clicáveis: mesmo cursor no elemento e nos filhos (texto, ícones) */
+a,
+a *,
+button,
+button *,
+[role="button"],
+[role="button"] *,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+label[for],
+summary {
+  cursor: var(--cursor-click);
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
+
 a:hover,
-button:hover  {
-  cursor: url('./../images/cursors/cursor-click.svg'), auto;
+button:hover {
   filter: brightness(0.95);
-
-}
-
-span:hover,
-p:hover,
-h1:hover {
-  cursor: url('./../images/cursors/cursor-copy.svg'), auto;
 }

@@ -1,213 +1,551 @@
-.projects-page {
+/* Projects showcase — horizontal scroll grid (max 98.75rem alinhado à hero) */
+
+.projects-showcase {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  min-height: 100svh;
+  padding: 3.5rem 0 4.5rem;
+  box-sizing: border-box;
 }
 
-.projects-page-container {
-  width: 1100px;
-}
-
-.project-page .projects-page-container .projects-pages {
+.projects-showcase-inner {
+  width: 100%;
+  max-width: 98.75rem;
+  margin: 0 auto;
+  padding: 0 5rem;
   display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.projects-page .project-image {
-  height: 100vh;
-  width: 45%;
+/*
+ * Modo unificado (data-projects-unified="true" no .projects-showcase):
+ * oculta o toggle e o pool de estudo após o JS mover os cards para a faixa do mercado.
+ * Para reativar Mercado/Estudo: data-projects-unified="false" + recarregar.
+ */
+.projects-showcase[data-projects-unified="true"] .projects-view-toggle {
+  display: none;
+}
+
+.projects-showcase[data-projects-unified="true"] .projects-showcase-heading {
+  justify-content: flex-start;
+}
+
+.projects-showcase.projects-showcase--unified .projects-pool[data-projects-pool="study"] {
+  display: none;
+}
+
+/* Título da seção + alternador Mercado / Estudo */
+.projects-showcase-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  width: 100%;
+}
+
+.projects-showcase-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #1e1e1e;
+}
+
+.projects-view-toggle {
+  --projects-toggle-pad: 0.1875rem;
+  --projects-toggle-gap: 0.125rem;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: var(--projects-toggle-pad);
+  border-radius: 62.4375rem;
+  background: #ebebeb;
+  gap: var(--projects-toggle-gap);
+  flex-shrink: 0;
+}
+
+.projects-view-toggle-slider {
   position: absolute;
-  right: 0;
+  z-index: 0;
+  top: var(--projects-toggle-pad);
+  bottom: var(--projects-toggle-pad);
+  left: var(--projects-toggle-pad);
+  width: calc((100% - (2 * var(--projects-toggle-pad)) - var(--projects-toggle-gap)) / 2);
+  border-radius: 62.4375rem;
+  background: #7157cf;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  pointer-events: none;
 }
 
-.project-full-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  gap: 45px;
-
-  max-width: 600px;
+.projects-view-toggle[data-active="study"] .projects-view-toggle-slider {
+  transform: translateX(calc(100% + var(--projects-toggle-gap)));
 }
 
-.project-full-content .project-content {
-  display: flex;
-  gap: 30px;
-  max-width: 600px;
-}
-
-
-.project-full-content .project-full-content-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.project-full-content .project-full-content-header .arrow-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 24px;
-  background-color: #dbd9d930;
-  border: 1px solid #E9E9E9;
+.projects-view-toggle-btn {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.25;
+  padding: 0.5625rem 1.125rem;
+  border-radius: 62.4375rem;
+  color: #1e1e1e;
   cursor: pointer;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: not-allowed;
-  opacity: 0.3;
+  transition: color 0.3s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.project-content-info {
+.projects-view-toggle-btn:hover:not([aria-pressed="true"]) {
+  color: #3d3d3d;
+}
+
+.projects-view-toggle-btn[aria-pressed="true"] {
+  color: #ffffff;
+}
+
+.projects-view-toggle-btn:focus-visible {
+  outline: 0.125rem solid #6845c7;
+  outline-offset: 0.125rem;
+}
+
+/* Duas faixas horizontais empilhadas — transição ao alternar Mercado / Estudo */
+.projects-pools {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  isolation: isolate;
+}
+
+.projects-pool {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+  z-index: 0;
+  transition:
+    opacity 0.28s ease-in-out,
+    transform 0.28s ease-in-out;
+}
+
+.projects-pool--active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.projects-pools:focus-visible {
+  outline: 0.125rem solid #6845c7;
+  outline-offset: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-pool {
+    transition-duration: 0.01ms;
+  }
+}
+
+.projects-scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  padding-bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: var(--cursor-click);
+}
+
+.projects-scroll:focus-visible {
+  outline: 0.125rem solid #6845c7;
+  outline-offset: 0.25rem;
+}
+
+.projects-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.projects-scroll.projects-scroll--grabbing {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+.project-card {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  flex: 0 0 min(32.5rem, calc(100vw - 10rem));
+  scroll-snap-align: start;
+  min-width: 0;
 }
 
-.project-content-info div p {
-  color: #636363;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 180%;
+/* FluencyForge & Habit — mais estreitos que o card web (BBEE) */
+.project-card--narrow {
+  flex: 0 0 min(25rem, calc(100vw - 10rem));
 }
 
-.project-content-info .project-content-info-tags {
+/* Card — Figma node 678:937 (Portfolio) */
+.project-card-link {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 2rem;
+  background: #ffffff;
+  border: 0.0625rem solid #e8e8e8;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 
-
-
-.project-content-info .project-content-info-tags .tag-green {
-  font-weight: 500;
-  padding-inline: 12px 8px;
-  border-radius: 200px;
-  color: #266E68;
-  background-color: #E6F8F7;
+.project-card-link:hover {
+  border-color: #dcd8f0;
+  box-shadow: 0 1.25rem 3rem rgba(113, 87, 207, 0.12);
+  transform: translateY(-0.125rem);
+  filter: none;
 }
 
-.project-content-info .project-content-info-tags .tag-purple {
-  font-weight: 500;
-  padding-inline: 12px 8px;
-  border-radius: 200px;
-  color: #6A4FAE;
-  background-color: #EBE6F8;
+/* Card sem link — ainda em desenvolvimento */
+.project-card-link--wip {
+  position: relative;
+  cursor: default;
 }
 
-.project-content-info-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 18px 74px 18px 24px;
-  border-radius: 19px;
-  background-color: #dbd9d930;
+.project-card-link--wip:hover {
+  border-color: #e8e8e8;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.06);
+  transform: none;
 }
 
-.project-content-info-card .project-information h3 {
+.project-card-soon-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  padding: 0.4375rem 0.9375rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5a3ab0;
+  background: rgba(255, 255, 255, 0.96);
+  border: 0.0625rem solid rgba(113, 87, 207, 0.4);
+  border-radius: 62.4375rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.06);
+  pointer-events: none;
 }
 
-.project-content-info-card .project-information span {
-  font-weight: 400;
-  font-size: 12px;
+.project-card-media--wip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 248, 248, 0.45);
+  pointer-events: none;
 }
 
-.project-full-content .verify-project {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.project-card-media {
+  position: relative;
+  flex-shrink: 0;
+  aspect-ratio: 16 / 10;
+  background: #f2f2f2;
+  overflow: hidden;
   width: 100%;
-  gap: 10px;
-  color: #7157CF;
-  border: 1px solid #E9E9E9;
-  border-radius: 200px;
-  background-color: #F2F2F2;
-  font-weight: 700;
-  padding: 12px;
 }
 
-.project-information h3::before {
-  content: '+';
-  color: #7157CF;
+.project-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.45s ease;
 }
 
-.divider-info-project {
-  height: 33px;
-  width: 1px;
-  background-color: #E1E1E1;
+/* FluencyForge & Habit — capa com mesma altura que o BBEE; ~1.25rem entre mockup e fundo */
+.project-card-media--phone-mockup {
+  aspect-ratio: unset;
+  height: calc(min(32.5rem, calc(100vw - 10rem)) * 10 / 16);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-/* 🎉 Mobile version */
+.project-card-media--phone-mockup img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
 
-@media (max-width: 768px) {
-  .projects-page {
-    height: auto;
-    padding-top: 24px;
-    margin-top: 40px;
-    width: auto;
+.project-card-media--fluency {
+  background-color: #aae7e3;
+  background-image: none;
+}
+
+.project-card-media--habit {
+  background-color: #eef5fb;
+  background-image: url("./../../images/card-bg-habit-calendar.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card-link:hover .project-card-media img {
+    transform: scale(1.06);
   }
 
-  .projects-page .project-image {
-    display: none;
+  .project-card-link:hover .project-card-media--phone-mockup img {
+    transform: scale(1.04);
   }
 
-  .projects-page-container {
+  .project-card-link--wip:hover .project-card-media img,
+  .project-card-link--wip:hover .project-card-media--phone-mockup img {
+    transform: none;
+  }
+}
+
+/* Corpo do card — preenche a altura restante para igualar à referência BBEE na faixa */
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0;
+}
+
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 1.125rem;
+  align-items: flex-start;
+  padding: 1.5rem 1.3125rem 1.625rem;
+  background: #f8f8f8;
+}
+
+/* Faixa inferior do frame: título (#181818) à esquerda, pills de plataforma à direita */
+.project-card-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.875rem 1.25rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.project-card-roles,
+.project-card-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5625rem;
+  align-items: center;
+}
+
+.project-card-footer .project-card-platforms {
+  flex-shrink: 0;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.project-tag--role {
+  box-sizing: border-box;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #484848;
+  background: #f2f2f2;
+  border: 0.0625rem solid #e9e9e9;
+  border-radius: 62.4375rem;
+}
+
+.project-tag--platform {
+  box-sizing: border-box;
+  min-height: 2.875rem;
+  padding: 0 1.125rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9c832a;
+  background: rgba(245, 212, 94, 0.18);
+  border: 0.074rem solid rgba(245, 216, 118, 0.51);
+  border-radius: 62.4375rem;
+}
+
+/* FluencyForge — cor primária (teal/mint) derivada da capa #aae7e3; pill clara como BBEE/habit */
+.project-tag--platform-fluency {
+  color: #0d6d64;
+  background: rgba(13, 109, 100, 0.12);
+  border: 0.074rem solid rgba(13, 109, 100, 0.3);
+}
+
+/* Habit tracker — azul alinhado ao fundo #eef5fb da capa; mesmo peso visual da pill âmbar */
+.project-tag--platform-habit {
+  color: #1e5a9a;
+  background: rgba(30, 90, 154, 0.1);
+  border: 0.074rem solid rgba(30, 90, 154, 0.28);
+}
+
+.project-card-name {
+  margin: 0;
+  flex: 1 1 8.75rem;
+  min-width: 0;
+  width: auto;
+  max-width: 100%;
+  font-size: 1.875rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #181818;
+}
+
+.project-card-link:hover .project-card-cta {
+  gap: 0.625rem;
+  color: #5a3ab0;
+}
+
+.project-card-cta svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 56.25rem) {
+  .projects-showcase-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .slide-indigo {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
+  .projects-showcase {
+    min-height: auto;
+    align-items: stretch;
+    padding: 2rem 0 2.5rem;
+  }
+
+  .projects-showcase-inner {
+    padding: 0 1.25rem;
+    gap: 2rem;
+  }
+
+  .projects-view-toggle-btn {
+    font-size: 0.9375rem;
+    padding: 0.5rem 0.875rem;
+  }
+
+  .projects-scroll {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1.25rem;
+    overflow-x: visible;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    cursor: default;
+    touch-action: auto;
+  }
+
+  .project-card,
+  .project-card--narrow {
+    flex: 0 0 auto;
     width: 100%;
+    max-width: 100%;
   }
 
-  .project-full-content {
-    padding: 0px 16px;
-    gap: 24px;
+  .project-card-media--phone-mockup {
+    height: calc((100vw - 2.5rem) * 10 / 16);
+    padding: 1.25rem;
   }
 
-  .projects-page-container .project-content {
-    display: block;
+  .project-card-soon-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.6875rem;
+    padding: 0.3125rem 0.625rem;
+    letter-spacing: 0.05em;
   }
 
-  .project-content .project-content-image {
-    padding: 0 14px;
+  .project-card-link:hover {
+    transform: none;
+  }
+
+  .project-card-content {
+    padding: 1.25rem 1.125rem 1.375rem;
+    gap: 1.125rem;
+  }
+
+  .project-card-footer {
+    gap: 0.75rem 0.875rem;
+  }
+
+  .project-card-footer .project-card-platforms {
+    margin-left: 0;
     width: 100%;
-    margin: 0 auto;
-    background-color: #9CE0DB;
-    border-radius: 24px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px 0px;
+    justify-content: flex-start;
   }
 
-  .project-content .project-content-image img {
-    width: 165px;
-    height: 330px;
+  .project-tag--role {
+    font-size: 0.9375rem;
+    min-height: 2.125rem;
+    padding: 0 0.75rem;
+    border-radius: 62.4375rem;
   }
 
-  .project-content-info .project-content-info-tags {
-    display: none;
-  }
-  
-  .project-content-info div p {
-    font-size: 16px;
-    line-height: 155%;
+  .project-tag--platform {
+    font-size: 1rem;
+    min-height: 2.5rem;
+    padding: 0 0.875rem;
+    border-radius: 62.4375rem;
   }
 
-    
-  .project-content-info div p:first-child {
-    margin-top: 12px;
-  }
-
-  .project-content-info-card {
-    padding: 20px;
-  }
-
-  .skills-container h4 {
-    margin-top: 22px;
-    margin-bottom: 12px;
+  .project-card-name {
+    font-size: 1.375rem;
+    flex: 1 1 100%;
   }
 }

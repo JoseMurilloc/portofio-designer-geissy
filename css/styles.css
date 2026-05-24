@@ -1,14 +1,11 @@
 .app {
-  width: 100%;
-  background-color: #DBD3F8;
-  padding: 10px;
 }
 
 .app-content {
   display: flex;
   flex-direction: column;
   
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
 
   background-color: #F8F8F8;

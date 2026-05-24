@@ -1,54 +1,60 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 80px;
+  padding: 0.75rem 0;
 
-  border-bottom: 1px solid #c9c9c9;
+  border-bottom: 0.0625rem solid #c9c9c9;
 
   position: fixed;
-  top: 10px;
-  width: calc(100% - 20px);
+  top: 0.625rem;
+  width: calc(100% - 1.25rem);
   background-color: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
 
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 0.625rem;
+  border-top-right-radius: 0.625rem;
 
   z-index: 99;
 
   animation: fadeIn 0.5s ease-in-out forwards;
 }
 
+.header .header-inner {
+  width: 100%;
+  max-width: 98.75rem;
+  margin: 0 auto;
+  padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header .header-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 2rem;
 }
 
 .header .header-content .divider {
-  width: 1px;
-  height: 20px;
+  width: 0.0625rem;
+  height: 1.25rem;
   background-color: #E0E0E0;
 }
 
 .header .menu-hamburger {
   display: none;
-  cursor: pointer;
 }
 
 .menu-hamburger .menu-hamburger-button {
   background-color: #e4e3e380;
-  border-radius: 12px;
-  padding: 15px;
+  border-radius: 0.75rem;
+  padding: 0.9375rem;
 
   border: none;
 }
 
 .header .header-content .social {
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 
@@ -62,71 +68,92 @@
 
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
-.header-content .header-actions a:first-child {
+.header-content .header-actions .resumes {
   background-color: #F4F4F4;
-  border: 1px solid #E2E2E2;
-  padding: 10px 16px;
-  border-radius: 16px;
+  border: 0.0625rem solid #E2E2E2;
+  padding: 0.625rem 1rem;
+  border-radius: 20rem;
 }
 
 .header-content .header-actions > a {
-
+  text-decoration: none;
   color: #646464;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.header-content .header-actions .talk-to-me {
+  padding: 0.625rem 1rem;
+  border-radius: 20rem;
+  border: 0.0625rem solid #7573DC;
+  background: #6A3EBE;
+  color: #FFFFFF;
 }
 
 .lang-button {
-  padding: 0px;
+  padding: 0rem;
   border: none;
   background-color: transparent;
 }
 
 .lang-button .switch {
-  width: 55px;
-  height: 32px;
+  width: 3.4375rem;
+  height: 2rem;
   background-color: #FFFFFF; 
-  border: 2px solid #33333343;  
-  border-radius: 999px;
+  border: 0.125rem solid #33333343;  
+  border-radius: 62.4375rem;
   position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  transition:
+    background-color 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .switch-en {
   background-color: #6A3EBE !important; 
-  border: 2px solid #A576F2 !important;  
+  border: 0.125rem solid #A576F2 !important;  
 }
 
 .switch-pt {
   background-color: #1C703C !important; 
-  border: 2px solid #3dac68 !important;  
+  border: 0.125rem solid #3dac68 !important;  
 }
 
 .toggle-thumb {
-  width: 18px;
-  height: 18px;
+  width: 1.125rem;
+  height: 1.125rem;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  left: 4px;
+  left: 0.25rem;
   transform: translateY(-50%);
-  transition: left 3s ease;
+  transition:
+    left 0.42s cubic-bezier(0.34, 1.1, 0.64, 1),
+    box-shadow 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toggle-thumb-en {
+  left: 0.25rem;
   background-image: url('https://flagcdn.com/us.svg');
-  box-shadow: 0 0 0 3px #A576F2;
+  box-shadow: 0 0 0 0.1875rem #A576F2;
 }
 
 .toggle-thumb-pt {
+  left: calc(100% - 0.25rem - 1.125rem);
   background-image: url('https://flagcdn.com/br.svg');
-  box-shadow: 0 0 0 3px #3dac68; 
+  box-shadow: 0 0 0 0.1875rem #3dac68; 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-button .switch,
+  .toggle-thumb {
+    transition: none;
+  }
 }
 
 .drawer-mobile {
@@ -153,13 +180,14 @@
 
 /* 🎉 Mobile version */
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .header { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0.9375rem;
+  }
 
-    padding: 15px;
+  .header .header-inner {
+    max-width: 100%;
+    padding: 0;
   }
 
   .header .header-content {
@@ -175,7 +203,7 @@
     display: none;
     overflow: hidden;
     position: fixed;
-    top: 75px;
+    top: 4.6875rem;
     left: 0;
     background-color: #F9F9F9;
     z-index: 999;
@@ -184,10 +212,10 @@
     flex-direction: column;
     justify-content: space-between;
 
-    height: calc(100% - 75px);
-    width: calc(100vw - 20px);
+    height: calc(100% - 4.6875rem);
+    width: calc(100vw - 1.25rem);
     transform: translateY(-200%);
-    margin-left: 10px;
+    margin-left: 0.625rem;
 
     transition: 0.3s ease;
   }
@@ -196,41 +224,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 0.75rem 1.25rem;
   
-    border-bottom: 1px solid #c9c9c9;
+    border-bottom: 0.0625rem solid #c9c9c9;
   
     width: 100%;
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0.625rem);
   }
 
   .ghost-space {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .drawer-header .drawer-close {
     background-color: #e4e3e380;
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 0.75rem;
+    padding: 0.9375rem;
     border: none;
   }
 
   .drawer-links {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 0px 24px;
+    gap: 0.875rem;
+    padding: 0rem 1.5rem;
   }
 
   .drawer-links a {
     background-color: #e4e3e380;
-    padding: 15px;
-    border-radius: 16px;
+    padding: 0.9375rem;
+    border-radius: 1rem;
 
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
 
     display: flex;
     justify-content: space-between;
@@ -245,13 +273,13 @@
 
     font-weight: 500;
     color: #000000;
-    font-size: 16px;
-    padding: 16px;
+    font-size: 1rem;
+    padding: 1rem;
 
     background-color: #e4e3e380;
-    border-radius: 16px;
+    border-radius: 1rem;
 
-    margin: 24px;
+    margin: 1.5rem;
   }
 
   /* change */

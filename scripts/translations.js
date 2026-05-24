@@ -11,25 +11,6 @@ const Keys = {
 }
 
 
-function moveSwitch (lang) {
-  console.log(lang)
-  const positions = {
-    pt: {
-      left: 'auto',
-      right: '4px'
-    },
-    en: {
-      left: '4px',
-      right: 'auto'
-    }
-  }[lang]
-
-  toggleThumbElementDivs.forEach(div => {
-    div.style.left = positions.left
-    div.style.right = positions.right
-  })
-}
-
 function changeLanguage(lang, callbackUpdateDownloadResumes) {
   /**
    * 📃 Armazena nova lang selecionada.
@@ -68,6 +49,15 @@ function changeLanguage(lang, callbackUpdateDownloadResumes) {
     element.textContent = translations[lang][key] || key;
   });
 
+  document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+    const key = element.getAttribute("data-i18n-aria");
+    const value = translations[lang][key];
+    if (value) element.setAttribute("aria-label", value);
+  });
+
+  if (typeof window.syncAboutLearnMoreButton === 'function') {
+    window.syncAboutLearnMoreButton(lang);
+  }
 
   /** 
    * 🎉 Toggle classes
@@ -77,8 +67,6 @@ function changeLanguage(lang, callbackUpdateDownloadResumes) {
   
   toggleThumbElementDivs.map(toggleTumbler => toggleTumbler.classList.add(nextClasses.toggle))
   switchElementButtons.map(switchElementButton => switchElementButton.classList.add(nextClasses.switch))
-
-  moveSwitch(lang)
 }
 
 langElementButtons.forEach(button => {
@@ -98,7 +86,6 @@ function inicializeSelectFlag () {
   switchElementButtons.map(switchElementButton => switchElementButton.classList.add('switch-' + LANGUAGE_GUARD_BROWSER))
   toggleThumbElementDivs.map(toggleTumbler => toggleTumbler.classList.add('toggle-thumb-' + LANGUAGE_GUARD_BROWSER))
 
-  moveSwitch(LANGUAGE_GUARD_BROWSER);
   changeLanguage(LANGUAGE_GUARD_BROWSER);
 }
 

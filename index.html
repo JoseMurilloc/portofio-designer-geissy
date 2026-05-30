@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./images/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon-180.png" />
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/global.css" />
   <link rel="stylesheet" href="./css/components/header.css" />
@@ -14,7 +18,7 @@
   <link rel="stylesheet" href="./css/components/experience.css" />
   <link rel="stylesheet" href="./css/styles.css" />
 
-  <title>Portfolio</title>
+  <title>Geissy | Product Designer</title>
 </head>
 <body>
   <div class="app">
@@ -206,7 +210,14 @@
                             <span class="project-tag project-tag--role" data-i18n="project_role_ui">UI Designer</span>
                           </div>
                           <div class="project-card-footer">
-                            <h3 class="project-card-name" data-i18n="project_card_1_title">BBEE - Smart apiculture</h3>
+                            <div class="project-card-heading">
+                              <h3 class="project-card-name" data-i18n="project_card_1_title">BBEE - Smart apiculture</h3>
+                              <p class="project-card-meta">
+                                <span data-i18n="project_card_1_type">Real project</span>
+                                <span class="project-card-meta-dot" aria-hidden="true"></span>
+                                <time datetime="2023" data-i18n="project_card_1_year">2023</time>
+                              </p>
+                            </div>
                             <div class="project-card-platforms">
                               <span class="project-tag project-tag--platform" data-i18n="project_plat_web">Web</span>
                               <span class="project-tag project-tag--platform" data-i18n="project_plat_app">App</span>
@@ -232,7 +243,14 @@
                             <span class="project-tag project-tag--role" data-i18n="project_role_ui">UI Designer</span>
                           </div>
                           <div class="project-card-footer">
-                            <h3 class="project-card-name" data-i18n="project_card_2_title">FluencyForge</h3>
+                            <div class="project-card-heading">
+                              <h3 class="project-card-name" data-i18n="project_card_2_title">FluencyForge</h3>
+                              <p class="project-card-meta">
+                                <span data-i18n="project_card_2_type">Study project</span>
+                                <span class="project-card-meta-dot" aria-hidden="true"></span>
+                                <time datetime="2024" data-i18n="project_card_2_year">2024</time>
+                              </p>
+                            </div>
                             <div class="project-card-platforms">
                               <span class="project-tag project-tag--platform project-tag--platform-fluency" data-i18n="project_tag_mobile">Mobile</span>
                             </div>
@@ -292,10 +310,22 @@
                   <div class="about-photo-flip">
                     <div class="about-photo-flip-inner">
                       <div class="about-photo-face about-photo-face--front">
-                        <img src="./images/about-mobile-front.png" alt="Geissy portrait" width="800" height="800" />
+                        <img
+                          data-i18n-img="about_photo_front_mobile"
+                          src="./images/about-photo-front-mobile-en.png"
+                          alt="Geissy portrait"
+                          width="351"
+                          height="312"
+                        />
                       </div>
                       <div class="about-photo-face about-photo-face--back" aria-hidden="true">
-                        <img src="./images/about-mobile-back.png" alt="" width="800" height="800" />
+                        <img
+                          data-i18n-img="about_photo_back_mobile"
+                          src="./images/about-mobile-back.png"
+                          alt=""
+                          width="350"
+                          height="525"
+                        />
                       </div>
                     </div>
                   </div>
@@ -342,10 +372,22 @@
               <div class="about-photo-flip">
                 <div class="about-photo-flip-inner">
                   <div class="about-photo-face about-photo-face--front">
-                    <img src="./images/photo:about.png" alt="Geissy portrait" width="350" />
+                    <img
+                      data-i18n-img="about_photo_front"
+                      src="./images/about-photo-front-en.png"
+                      alt="Geissy portrait"
+                      width="350"
+                      height="525"
+                    />
                   </div>
                   <div class="about-photo-face about-photo-face--back" aria-hidden="true">
-                    <img src="./images/photo-about-back.png" alt="" width="350" />
+                    <img
+                      data-i18n-img="about_photo_back_desktop"
+                      src="./images/photo-about-back.png"
+                      alt=""
+                      width="350"
+                      height="525"
+                    />
                   </div>
                 </div>
               </div>

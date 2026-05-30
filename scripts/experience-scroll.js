@@ -3,17 +3,23 @@
   if (!el) return;
 
   const DRAG_THRESHOLD_PX = 5;
+  const AXIS_LOCK_THRESHOLD_PX = 8;
 
   let activePointerId = null;
+  let activePointerType = '';
   let originClientX = 0;
+  let originClientY = 0;
   let originScrollLeft = 0;
   let frozen = false;
+  let verticalIntent = false;
   let moved = false;
   let suppressClick = false;
   let rafId = 0;
   let pendingClientX = 0;
 
-  el.style.touchAction = 'none';
+  if (!window.matchMedia('(max-width: 56.25rem)').matches) {
+    el.style.touchAction = 'none';
+  }
 
   function maxScrollLeft() {
     return Math.max(0, el.scrollWidth - el.clientWidth);
@@ -54,70 +60,117 @@
     );
   }
 
+  function removeDocumentListeners() {
+    document.removeEventListener('pointermove', onPointerMove);
+    document.removeEventListener('pointerup', onPointerUp);
+    document.removeEventListener('pointercancel', onPointerCancel);
+  }
+
+  function clearActivePointer() {
+    activePointerId = null;
+    activePointerType = '';
+    frozen = false;
+    verticalIntent = false;
+    moved = false;
+    document.body.style.userSelect = '';
+    el.classList.remove('experience-scroll--grabbing');
+    removeDocumentListeners();
+  }
+
   function endDrag(clientX) {
     if (activePointerId == null) return;
 
     const pid = activePointerId;
+    const pointerType = activePointerType;
     const wasFrozen = frozen;
     const didDrag = wasFrozen && moved;
 
     if (wasFrozen) {
       flushMove(typeof clientX === 'number' ? clientX : pendingClientX);
+      if (pointerType === 'touch') {
+        try {
+          el.releasePointerCapture(pid);
+        } catch (_) {
+          /* ignore */
+        }
+      }
     } else if (rafId) {
       cancelAnimationFrame(rafId);
       rafId = 0;
     }
 
-    try {
-      el.releasePointerCapture(pid);
-    } catch (_) {
-      /* ignore */
-    }
-
-    activePointerId = null;
-    frozen = false;
-    moved = false;
-    document.body.style.userSelect = '';
-    el.classList.remove('experience-scroll--grabbing');
+    clearActivePointer();
 
     if (didDrag) {
       suppressClick = true;
     }
   }
 
+  function lockHorizontalDrag(pointerId, clientX) {
+    frozen = true;
+    moved = true;
+    originClientX = clientX;
+    originScrollLeft = el.scrollLeft;
+    el.classList.add('experience-scroll--grabbing');
+    document.body.style.userSelect = 'none';
+
+    if (activePointerType === 'touch') {
+      try {
+        el.setPointerCapture(pointerId);
+      } catch (_) {
+        /* ignore */
+      }
+    }
+  }
+
   function onPointerDown(e) {
     if (e.button !== undefined && e.button !== 0) return;
     if (isInteractiveScrollTarget(e.target)) return;
+    if (activePointerId != null) return;
 
     activePointerId = e.pointerId;
+    activePointerType = e.pointerType || '';
     originClientX = e.clientX;
+    originClientY = e.clientY;
     originScrollLeft = el.scrollLeft;
     frozen = false;
+    verticalIntent = false;
     moved = false;
 
-    try {
-      el.setPointerCapture(e.pointerId);
-    } catch (_) {
-      /* ignore */
+    if (activePointerType !== 'touch') {
+      document.body.style.userSelect = 'none';
     }
 
-    document.body.style.userSelect = 'none';
+    document.addEventListener('pointermove', onPointerMove, { passive: false });
+    document.addEventListener('pointerup', onPointerUp, { passive: true });
+    document.addEventListener('pointercancel', onPointerCancel, { passive: true });
   }
 
   function onPointerMove(e) {
-    if (e.pointerId !== activePointerId) return;
+    if (e.pointerId !== activePointerId || verticalIntent) return;
 
     const dx = e.clientX - originClientX;
+    const dy = e.clientY - originClientY;
+    const absDx = Math.abs(dx);
+    const absDy = Math.abs(dy);
 
-    if (!frozen && Math.abs(dx) > DRAG_THRESHOLD_PX) {
-      frozen = true;
-      moved = true;
-      originClientX = e.clientX;
-      originScrollLeft = el.scrollLeft;
-      el.classList.add('experience-scroll--grabbing');
+    if (!frozen) {
+      if (activePointerType === 'touch') {
+        if (absDy > AXIS_LOCK_THRESHOLD_PX && absDy >= absDx) {
+          verticalIntent = true;
+          clearActivePointer();
+          return;
+        }
+
+        if (absDx <= AXIS_LOCK_THRESHOLD_PX || absDx <= absDy) return;
+
+        lockHorizontalDrag(e.pointerId, e.clientX);
+      } else if (absDx > DRAG_THRESHOLD_PX) {
+        lockHorizontalDrag(e.pointerId, e.clientX);
+      } else {
+        return;
+      }
     }
-
-    if (!frozen) return;
 
     e.preventDefault();
     scheduleMove(e.clientX);
@@ -135,10 +188,6 @@
   }
 
   el.addEventListener('pointerdown', onPointerDown, { passive: true });
-  el.addEventListener('pointermove', onPointerMove, { passive: false });
-  el.addEventListener('pointerup', onPointerUp, { passive: true });
-  el.addEventListener('pointercancel', onPointerCancel, { passive: true });
-  el.addEventListener('lostpointercapture', onPointerCancel, { passive: true });
 
   el.addEventListener(
     'click',

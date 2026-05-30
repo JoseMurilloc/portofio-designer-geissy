@@ -10,6 +10,28 @@ const Keys = {
   LANG: 'SELECT_LANG'
 }
 
+const aboutPhotoImages = {
+  en: {
+    about_photo_front: './images/about-photo-front-en.png',
+    about_photo_front_mobile: './images/about-photo-front-mobile-en.png',
+    about_photo_back_mobile: './images/about-mobile-back.png',
+    about_photo_back_desktop: './images/photo-about-back.png',
+  },
+  pt: {
+    about_photo_front: './images/about-photo-front-pt.png',
+    about_photo_front_mobile: './images/about-photo-front-mobile-pt.png',
+    about_photo_back_mobile: './images/about-photo-back-mobile-pt.png',
+    about_photo_back_desktop: './images/about-photo-back-pt.png',
+  },
+}
+
+function updateAboutPhotoImages(lang) {
+  document.querySelectorAll('[data-i18n-img]').forEach((img) => {
+    const key = img.getAttribute('data-i18n-img')
+    const src = aboutPhotoImages[lang]?.[key]
+    if (src) img.src = src
+  })
+}
 
 function changeLanguage(lang, callbackUpdateDownloadResumes) {
   /**
@@ -58,6 +80,8 @@ function changeLanguage(lang, callbackUpdateDownloadResumes) {
   if (typeof window.syncAboutLearnMoreButton === 'function') {
     window.syncAboutLearnMoreButton(lang);
   }
+
+  updateAboutPhotoImages(lang)
 
   /** 
    * 🎉 Toggle classes

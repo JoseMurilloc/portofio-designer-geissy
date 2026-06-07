@@ -1,7 +1,74 @@
-const header = document.querySelectorAll('.header')[0];
+const header = document.querySelector('.header');
+const siteFooter = document.querySelector('.site-footer');
 
 function isMobileUserAgent() {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+let headerIsHidden = false;
+let headerIsAnimating = false;
+
+function setHeaderHidden(isHidden) {
+  if (!header || isHidden === headerIsHidden || headerIsAnimating) return;
+
+  headerIsHidden = isHidden;
+  headerIsAnimating = true;
+
+  header.classList.remove('header--hide', 'header--show');
+
+  void header.offsetWidth;
+
+  if (isHidden) {
+    header.classList.remove('header--is-hidden');
+    header.classList.add('header--hide');
+  } else {
+    header.style.visibility = 'visible';
+    header.classList.add('header--show');
+  }
+
+  header.addEventListener(
+    'animationend',
+    (event) => {
+      if (event.target !== header) return;
+
+      header.classList.remove('header--hide', 'header--show');
+      headerIsAnimating = false;
+
+      if (headerIsHidden) {
+        header.classList.add('header--is-hidden');
+      } else {
+        header.classList.remove('header--is-hidden');
+        header.style.visibility = '';
+      }
+    },
+    { once: true }
+  );
+}
+
+let lastScrollY = window.scrollY;
+
+function isFooterInViewport() {
+  if (!siteFooter) return false;
+
+  const footerTop = siteFooter.getBoundingClientRect().top;
+
+  return footerTop <= window.innerHeight;
+}
+
+function updateHeaderVisibilityOnScroll() {
+  if (!header || !siteFooter) return;
+
+  const scrollY = window.scrollY;
+  const isScrollingUp = scrollY < lastScrollY;
+  const footerReached = isFooterInViewport();
+
+  if (footerReached && !isScrollingUp) {
+    setHeaderHidden(true);
+  } else if (headerIsHidden || header.classList.contains('header--is-hidden')) {
+    setHeaderHidden(false);
+  }
+
+  lastScrollY = scrollY;
 }
 
 /**
@@ -11,6 +78,10 @@ window.addEventListener(
   'scroll',
   function () {
     const scrollY = window.scrollY;
+
+    updateHeaderVisibilityOnScroll();
+
+    if (!header) return;
 
     if (isMobileUserAgent()) {
       if (scrollY > 0) {
@@ -29,6 +100,8 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+updateHeaderVisibilityOnScroll();
 
 /**
  * Scroll handler: Icons menu
@@ -101,3 +174,12 @@ function initFadeInUpSections() {
 
 removeSlides();
 initFadeInUpSections();
+
+const backToTopLink = document.getElementById('back-to-top');
+
+if (backToTopLink) {
+  backToTopLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}

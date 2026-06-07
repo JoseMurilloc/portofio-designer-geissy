@@ -14,7 +14,27 @@
 
   z-index: 99;
 
-  animation: fadeIn 0.5s ease-in-out forwards;
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.header.header--hide {
+  animation: headerSlideOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+.header.header--show {
+  animation: headerSlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: auto;
+}
+
+.header.header--is-hidden {
+  transform: translate3d(0, calc(-100% - 1.5rem), 0);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .header .header-inner {
@@ -150,6 +170,32 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header.header--hide,
+  .header.header--show {
+    animation: none;
+  }
+
+  .header.header--hide {
+    transform: translate3d(0, calc(-100% - 1.5rem), 0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .header.header--show {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .header.header--is-hidden {
+    transform: translate3d(0, calc(-100% - 1.5rem), 0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   .lang-button .switch,
   .toggle-thumb {
     transition: none;
@@ -166,14 +212,31 @@
 
 
 /* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  to {
+@keyframes headerSlideOut {
+  0% {
+    transform: translate3d(0, 0, 0);
     opacity: 1;
-    transform: translateY(0%);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, calc(-100% - 1.5rem), 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes headerSlideIn {
+  0% {
+    transform: translate3d(0, calc(-100% - 1.5rem), 0);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
   }
 }
 

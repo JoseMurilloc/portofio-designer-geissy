@@ -68,7 +68,7 @@ function changeLanguage(lang, callbackUpdateDownloadResumes) {
    */
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
-    element.textContent = translations[lang][key] || key;
+    element.textContent = translations[lang][key] ?? key;
   });
 
   document.querySelectorAll("[data-i18n-aria]").forEach((element) => {

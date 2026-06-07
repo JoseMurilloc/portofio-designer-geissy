@@ -8,6 +8,8 @@ html {
 :root {
   /* Hotspot ~ dedo do ponteiro; fallback pointer se o SVG falhar */
   --cursor-click: url('./../images/cursors/cursor-click.svg') 6 2, pointer;
+  --cursor-lock: url('./../images/cursors/cursor-lock.png') 24 24, pointer;
+  --cursor-external: url('./../images/cursors/cursor-external.png') 12 36, pointer;
 }
 
 *, *:before, *:after {

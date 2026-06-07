@@ -22,30 +22,34 @@
 
 /*
  * Modo unificado (data-projects-unified="true" no .projects-showcase):
- * oculta o toggle e o pool de estudo após o JS mover os cards para a faixa do mercado.
+ * oculta o pool de estudo após o JS mover os cards para a faixa do mercado.
  * Para reativar Mercado/Estudo: data-projects-unified="false" + recarregar.
  */
-.projects-showcase[data-projects-unified="true"] .projects-view-toggle {
-  display: none;
-}
-
-.projects-showcase[data-projects-unified="true"] .projects-showcase-heading {
-  justify-content: flex-start;
-}
-
 .projects-showcase.projects-showcase--unified .projects-pool[data-projects-pool="study"] {
   display: none;
 }
 
-/* Título da seção + alternador Mercado / Estudo */
+/* Título da seção + filtros por plataforma */
 .projects-showcase-heading {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
   width: 100%;
+}
+
+.projects-showcase-headings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.projects-showcase-eyebrow {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #989898;
 }
 
 .projects-showcase-title {
@@ -57,65 +61,45 @@
   color: #1e1e1e;
 }
 
-.projects-view-toggle {
-  --projects-toggle-pad: 0.1875rem;
-  --projects-toggle-gap: 0.125rem;
-  position: relative;
-  display: inline-flex;
+.projects-filter {
+  display: flex;
   flex-direction: row;
-  align-items: stretch;
-  padding: var(--projects-toggle-pad);
-  border-radius: 62.4375rem;
-  background: #ebebeb;
-  gap: var(--projects-toggle-gap);
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
 }
 
-.projects-view-toggle-slider {
-  position: absolute;
-  z-index: 0;
-  top: var(--projects-toggle-pad);
-  bottom: var(--projects-toggle-pad);
-  left: var(--projects-toggle-pad);
-  width: calc((100% - (2 * var(--projects-toggle-pad)) - var(--projects-toggle-gap)) / 2);
-  border-radius: 62.4375rem;
-  background: #7157cf;
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
-  pointer-events: none;
-}
-
-.projects-view-toggle[data-active="study"] .projects-view-toggle-slider {
-  transform: translateX(calc(100% + var(--projects-toggle-gap)));
-}
-
-.projects-view-toggle-btn {
-  position: relative;
-  z-index: 1;
+.projects-filter-btn {
   margin: 0;
-  border: none;
-  background: transparent;
+  border: 0.0625rem solid #e8e8e8;
+  background: #ffffff;
   font-family: inherit;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.25;
   padding: 0.5625rem 1.125rem;
   border-radius: 62.4375rem;
-  color: #1e1e1e;
+  color: #989898;
   cursor: pointer;
-  transition: color 0.3s ease-in-out;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.projects-view-toggle-btn:hover:not([aria-pressed="true"]) {
-  color: #3d3d3d;
+.projects-filter-btn:hover:not(.projects-filter-btn--active) {
+  color: #6e6e6e;
+  border-color: #dcdcdc;
 }
 
-.projects-view-toggle-btn[aria-pressed="true"] {
-  color: #ffffff;
+.projects-filter-btn--active {
+  color: #5a3ab0;
+  background: rgba(113, 87, 207, 0.1);
+  border-color: rgba(113, 87, 207, 0.45);
 }
 
-.projects-view-toggle-btn:focus-visible {
+.projects-filter-btn:focus-visible {
   outline: 0.125rem solid #6845c7;
   outline-offset: 0.125rem;
 }
@@ -158,6 +142,22 @@
 @media (prefers-reduced-motion: reduce) {
   .projects-pool {
     transition-duration: 0.01ms;
+  }
+
+  .project-card.project-card--reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-card.project-card--reveal-pending,
+  .project-card.project-card--reveal-visible,
+  .project-card.project-card--filter-rise,
+  .project-card.project-card--filter-rise.project-card--filter-rise-visible {
+    transition: none;
+  }
+
+  .project-card.project-card--filter-rise {
+    transform: none;
   }
 }
 
@@ -203,7 +203,46 @@
   min-width: 0;
 }
 
-/* FluencyForge & Habit — mais estreitos que o card web (BBEE) */
+.project-card[hidden] {
+  display: none;
+}
+
+.project-card.project-card--reveal-pending {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+.project-card.project-card--reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card.project-card--reveal-pending,
+.project-card.project-card--reveal-visible {
+  transition:
+    opacity 600ms ease-out var(--reveal-delay, 0ms),
+    transform 600ms ease-out var(--reveal-delay, 0ms);
+}
+
+.project-card.project-card--filter-rise {
+  opacity: 1;
+  transform: translateY(2.75rem);
+}
+
+.project-card.project-card--filter-rise.project-card--filter-rise-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-showcase--filter-reveal .project-card.project-card--filter-rise {
+  transition: none;
+}
+
+.projects-showcase--filter-reveal .project-card.project-card--filter-rise.project-card--filter-rise-visible {
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* FluencyForge — mais estreito que o card web (BBEE) */
 .project-card--narrow {
   flex: 0 0 min(25rem, calc(100vw - 10rem));
 }
@@ -290,7 +329,7 @@
   transition: transform 0.45s ease;
 }
 
-/* FluencyForge & Habit — capa com mesma altura que o BBEE; ~1.25rem entre mockup e fundo */
+/* FluencyForge — capa com mesma altura que o BBEE; ~1.25rem entre mockup e fundo */
 .project-card-media--phone-mockup {
   aspect-ratio: unset;
   height: calc(min(32.5rem, calc(100vw - 10rem)) * 10 / 16);
@@ -311,16 +350,8 @@
 }
 
 .project-card-media--fluency {
-  background-color: #aae7e3;
+  background-color: #25958b;
   background-image: none;
-}
-
-.project-card-media--habit {
-  background-color: #eef5fb;
-  background-image: url("./../../images/card-bg-habit-calendar.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -415,18 +446,11 @@
   border-radius: 62.4375rem;
 }
 
-/* FluencyForge — cor primária (teal/mint) derivada da capa #aae7e3; pill clara como BBEE/habit */
+/* FluencyForge — teal claro #25958b / escuro #1b6f68 */
 .project-tag--platform-fluency {
-  color: #0d6d64;
-  background: rgba(13, 109, 100, 0.12);
-  border: 0.074rem solid rgba(13, 109, 100, 0.3);
-}
-
-/* Habit tracker — azul alinhado ao fundo #eef5fb da capa; mesmo peso visual da pill âmbar */
-.project-tag--platform-habit {
-  color: #1e5a9a;
-  background: rgba(30, 90, 154, 0.1);
-  border: 0.074rem solid rgba(30, 90, 154, 0.28);
+  color: #1b6f68;
+  background: rgba(37, 149, 139, 0.12);
+  border: 0.074rem solid rgba(27, 111, 104, 0.35);
 }
 
 .project-card-heading {
@@ -483,6 +507,10 @@
 }
 
 @media (max-width: 56.25rem) {
+  .projects-showcase-eyebrow {
+    font-size: 1.125rem;
+  }
+
   .projects-showcase-title {
     font-size: 2rem;
   }
@@ -505,7 +533,7 @@
     gap: 2rem;
   }
 
-  .projects-view-toggle-btn {
+  .projects-filter-btn {
     font-size: 0.9375rem;
     padding: 0.5rem 0.875rem;
   }
@@ -523,7 +551,8 @@
   }
 
   .project-card,
-  .project-card--narrow {
+  .project-card--narrow,
+  .project-card--spotlight {
     flex: 0 0 auto;
     width: 100%;
     max-width: 100%;
@@ -585,5 +614,752 @@
 
   .project-card-meta {
     font-size: 0.875rem;
+  }
+}
+
+/* ── Spotlight cards — layout compartilhado; cores por tema (--vivo | --bbee | --fluency) ── */
+
+.projects-scroll.projects-scroll--spotlight {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.5rem;
+  overflow-x: visible;
+  overflow-y: visible;
+  scroll-snap-type: none;
+  cursor: default;
+  touch-action: auto;
+}
+
+.project-card--spotlight {
+  flex: unset;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 100%;
+  align-self: stretch;
+  isolation: isolate;
+}
+
+.project-card--spotlight > .project-spotlight,
+.project-card--spotlight > a.project-spotlight {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 100%;
+}
+
+.project-card--spotlight-full {
+  grid-column: 1 / -1;
+}
+
+a.project-spotlight {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.project-spotlight:hover {
+  filter: none;
+}
+
+.project-spotlight {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.4s ease;
+  --spotlight-top-bg: #3e3832;
+  --spotlight-visual-bg: #3e3832;
+  --spotlight-bottom-bg: #4a443c;
+  --spotlight-divider: #6b6358;
+  --spotlight-name: #ffffff;
+  --spotlight-subtitle: #d4cdc4;
+  --spotlight-date: #f5f2ed;
+  --spotlight-tag-color: #f5e6b8;
+  --spotlight-tag-border: #9c832a;
+  --spotlight-row-label: #ffffff;
+  --spotlight-row-text: rgba(255, 255, 255, 0.92);
+  --spotlight-bullet: rgba(255, 255, 255, 0.85);
+  --spotlight-hover-shadow: rgba(0, 0, 0, 0.14);
+}
+
+.project-spotlight--vivo {
+  --spotlight-top-bg: #5f0e81;
+  --spotlight-visual-bg: #5f0e81;
+  --spotlight-bottom-bg: #70009f;
+  --spotlight-divider: #923db6;
+  --spotlight-subtitle: #d6bfdf;
+  --spotlight-date: #fcf5ff;
+  --spotlight-tag-color: #f3d5ff;
+  --spotlight-tag-border: #820db4;
+  --spotlight-hover-shadow: rgba(95, 14, 129, 0.28);
+}
+
+.project-spotlight--vivo .project-spotlight-visual {
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.project-spotlight--fluency .project-spotlight-visual,
+.project-spotlight--bbee .project-spotlight-visual {
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+
+.project-spotlight--fluency .project-spotlight-mockups,
+.project-spotlight--bbee .project-spotlight-mockups {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: scale(1.05);
+  transform-origin: center bottom;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-spotlight--fluency .project-spotlight-expand,
+.project-spotlight--bbee .project-spotlight-expand {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.project-spotlight--fluency .project-spotlight-expand-inner,
+.project-spotlight--bbee .project-spotlight-expand-inner {
+  opacity: 1;
+  overflow: visible;
+  background: var(--spotlight-bottom-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.project-spotlight--fluency .project-spotlight-expand-inner .project-spotlight-row--features,
+.project-spotlight--bbee .project-spotlight-expand-inner .project-spotlight-row--features {
+  align-items: center;
+  width: 100%;
+  padding-top: 1.375rem;
+  padding-bottom: 1.375rem;
+}
+
+.project-spotlight--fluency .project-spotlight-expand-inner .project-spotlight-row--features .project-spotlight-row-label,
+.project-spotlight--bbee .project-spotlight-expand-inner .project-spotlight-row--features .project-spotlight-row-label {
+  align-self: center;
+}
+
+.project-spotlight--vivo .project-spotlight-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(7.5rem, 32%);
+  max-height: 7.5rem;
+  object-fit: contain;
+  border-radius: 1.375rem;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-spotlight--bbee {
+  --spotlight-top-bg: #ffffff;
+  --spotlight-visual-bg: #ededed;
+  --spotlight-bottom-bg: #ffffff;
+  --spotlight-divider: #e8e8e8;
+  --spotlight-name: #181818;
+  --spotlight-subtitle: #5c5c5c;
+  --spotlight-date: #5c5c5c;
+  --spotlight-tag-color: #9c832a;
+  --spotlight-tag-border: rgba(156, 131, 42, 0.45);
+  --spotlight-row-label: #181818;
+  --spotlight-row-text: rgba(30, 30, 30, 0.88);
+  --spotlight-bullet: #9a9a9a;
+  --spotlight-hover-shadow: rgba(0, 0, 0, 0.12);
+}
+
+.project-spotlight--fluency {
+  --spotlight-top-bg: #ffffff;
+  --spotlight-visual-bg: #ededed;
+  --spotlight-bottom-bg: #ffffff;
+  --spotlight-divider: #e8e8e8;
+  --spotlight-name: #262626;
+  --spotlight-subtitle: #262626;
+  --spotlight-date: #262626;
+  --spotlight-tag-color: #262626;
+  --spotlight-tag-border: rgba(38, 38, 38, 0.35);
+  --spotlight-row-label: #262626;
+  --spotlight-row-text: #262626;
+  --spotlight-bullet: #6e6e6e;
+  --spotlight-hover-shadow: rgba(0, 0, 0, 0.12);
+}
+
+.project-spotlight--fluency .project-spotlight-top .project-spotlight-divider,
+.project-spotlight--fluency .project-spotlight-bottom .project-spotlight-divider,
+.project-spotlight--bbee .project-spotlight-top .project-spotlight-divider,
+.project-spotlight--bbee .project-spotlight-bottom .project-spotlight-divider {
+  background: #e8e8e8;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card--spotlight:hover > .project-spotlight,
+  .project-card--spotlight:hover > a.project-spotlight,
+  .project-card--spotlight > .project-spotlight:focus-within,
+  .project-card--spotlight > a.project-spotlight:focus-within {
+    box-shadow: 0 0.75rem 2.5rem var(--spotlight-hover-shadow);
+  }
+
+  .project-card--spotlight:hover > .project-spotlight--vivo,
+  .project-card--spotlight:hover > .project-spotlight--vivo *,
+  .project-card--spotlight > .project-spotlight--vivo:focus-within,
+  .project-card--spotlight > .project-spotlight--vivo:focus-within *,
+  .project-card--spotlight > .project-spotlight--vivo.project-spotlight--lock-cursor,
+  .project-card--spotlight > .project-spotlight--vivo.project-spotlight--lock-cursor * {
+    cursor: url('../../images/cursors/cursor-lock.png') 24 24, pointer;
+  }
+
+  .project-card--spotlight:hover > a.project-spotlight--bbee,
+  .project-card--spotlight:hover > a.project-spotlight--bbee *,
+  .project-card--spotlight:hover > a.project-spotlight--fluency,
+  .project-card--spotlight:hover > a.project-spotlight--fluency *,
+  .project-card--spotlight > a.project-spotlight--bbee.project-spotlight--external-cursor,
+  .project-card--spotlight > a.project-spotlight--bbee.project-spotlight--external-cursor *,
+  .project-card--spotlight > a.project-spotlight--fluency.project-spotlight--external-cursor,
+  .project-card--spotlight > a.project-spotlight--fluency.project-spotlight--external-cursor * {
+    cursor: url('../../images/cursors/cursor-external.png') 12 36, pointer;
+  }
+
+  .project-card--spotlight:hover > a.project-spotlight--bbee .project-spotlight-expand,
+  .project-card--spotlight:hover > a.project-spotlight--fluency .project-spotlight-expand,
+  .project-card--spotlight > a.project-spotlight--bbee:focus-within .project-spotlight-expand,
+  .project-card--spotlight > a.project-spotlight--fluency:focus-within .project-spotlight-expand {
+    display: block;
+  }
+
+  .project-card--spotlight:hover > a.project-spotlight--fluency .project-spotlight-mockups,
+  .project-card--spotlight > a.project-spotlight--fluency:focus-within .project-spotlight-mockups,
+  .project-card--spotlight:hover > a.project-spotlight--bbee .project-spotlight-mockups,
+  .project-card--spotlight > a.project-spotlight--bbee:focus-within .project-spotlight-mockups {
+    transform: scale(1.12);
+  }
+
+  .project-card--spotlight:hover > .project-spotlight--vivo .project-spotlight-logo,
+  .project-card--spotlight > .project-spotlight--vivo:focus-within .project-spotlight-logo {
+    transform: scale(1.08);
+  }
+}
+
+.project-spotlight-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 1.75rem 0 0;
+  background: var(--spotlight-top-bg);
+}
+
+.project-spotlight-divider {
+  display: block;
+  width: 100%;
+  height: 0.0625rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: var(--spotlight-divider);
+  flex-shrink: 0;
+}
+
+.project-spotlight-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 0 1.75rem 1.25rem;
+}
+
+.project-spotlight-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+}
+
+.project-spotlight-icon {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.625rem;
+  object-fit: cover;
+  display: block;
+}
+
+.project-spotlight-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.project-spotlight-name {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--spotlight-name);
+}
+
+.project-spotlight-subtitle {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--spotlight-subtitle);
+}
+
+.project-spotlight-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.625rem;
+  flex-shrink: 0;
+}
+
+.project-spotlight-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5625rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--spotlight-date);
+  white-space: nowrap;
+}
+
+.project-spotlight-date-sep {
+  flex-shrink: 0;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.project-spotlight-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4375rem;
+}
+
+.project-spotlight-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3125rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--spotlight-tag-color);
+  border: 0.0625rem solid var(--spotlight-tag-border);
+  border-radius: 62.4375rem;
+  white-space: nowrap;
+}
+
+.project-spotlight-date-bar {
+  flex-shrink: 0;
+}
+
+.project-spotlight-date-bar .project-spotlight-date {
+  margin: 0;
+}
+
+.project-spotlight-date-bar--mobile {
+  display: none;
+}
+
+@media (min-width: 48.0625rem) {
+  .project-spotlight--fluency .project-spotlight-header,
+  .project-spotlight--bbee .project-spotlight-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "tags date"
+      "title date";
+    column-gap: 1.5rem;
+    row-gap: 0.625rem;
+    align-items: start;
+  }
+
+  .project-spotlight--fluency .project-spotlight-brand,
+  .project-spotlight--bbee .project-spotlight-brand,
+  .project-spotlight--fluency .project-spotlight-titles,
+  .project-spotlight--bbee .project-spotlight-titles,
+  .project-spotlight--fluency .project-spotlight-meta,
+  .project-spotlight--bbee .project-spotlight-meta {
+    display: contents;
+  }
+
+  .project-spotlight--fluency .project-spotlight-tags,
+  .project-spotlight--bbee .project-spotlight-tags {
+    grid-area: tags;
+    justify-content: flex-start;
+    align-self: start;
+  }
+
+  .project-spotlight--fluency .project-spotlight-name,
+  .project-spotlight--bbee .project-spotlight-name {
+    grid-area: title;
+    align-self: end;
+  }
+
+  .project-spotlight--fluency .project-spotlight-date,
+  .project-spotlight--bbee .project-spotlight-date {
+    grid-area: date;
+    justify-self: end;
+    align-self: start;
+  }
+}
+
+.project-spotlight-visual {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.75rem 1rem 0;
+  background: var(--spotlight-visual-bg);
+  overflow: hidden;
+  min-height: 16rem;
+}
+
+.project-spotlight-mockups {
+  display: block;
+  width: auto;
+  max-width: min(36rem, 100%);
+  max-height: 16rem;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: scale(1);
+  transform-origin: center bottom;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-spotlight-mockups--phone {
+  max-height: 18rem;
+}
+
+.project-spotlight-bottom {
+  flex-shrink: 0;
+  margin-top: auto;
+  background: var(--spotlight-bottom-bg);
+  position: relative;
+  z-index: 1;
+}
+
+.projects-scroll.projects-scroll--spotlight .project-card--spotlight:not(.project-card--spotlight-full) .project-spotlight-bottom {
+  display: flex;
+  flex-direction: column;
+  min-height: 11rem;
+}
+
+.projects-scroll.projects-scroll--spotlight .project-card--spotlight:not(.project-card--spotlight-full) .project-spotlight-bottom > .project-spotlight-row:first-child {
+  flex: 1 1 auto;
+  align-items: start;
+}
+
+.projects-scroll.projects-scroll--spotlight .project-card--spotlight:not(.project-card--spotlight-full) .project-spotlight-bottom > .project-spotlight-row:first-child .project-spotlight-row-label {
+  align-self: start;
+  padding-top: 0.1em;
+}
+
+.project-spotlight-row {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  column-gap: 1.5rem;
+  align-items: center;
+  padding: 1.375rem 1.75rem;
+}
+
+.project-spotlight-row-label {
+  grid-column: 1;
+  align-self: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--spotlight-row-label);
+}
+
+.project-spotlight-row--features {
+  align-items: start;
+  padding-bottom: 1.5rem;
+}
+
+.project-spotlight-row--features .project-spotlight-row-label {
+  align-self: start;
+  padding-top: 0.1em;
+}
+
+.project-spotlight-row-text {
+  grid-column: 2;
+  margin: 0;
+  padding-left: 0.75rem;
+  max-width: none;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--spotlight-row-text);
+  text-align: left;
+}
+
+.project-spotlight-features {
+  grid-column: 2;
+  margin: 0;
+  padding: 0 0 0 0.75rem;
+  list-style: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--spotlight-row-text);
+}
+
+.project-spotlight-features li {
+  position: relative;
+  padding-left: 0;
+  text-align: left;
+}
+
+.project-spotlight-features li::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 0.68em;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: var(--spotlight-bullet);
+  transform: translateY(-50%);
+}
+
+.project-spotlight-features li + li {
+  margin-top: 0.375rem;
+}
+
+.project-spotlight-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  align-items: stretch;
+  transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-spotlight-expand-inner {
+  overflow: hidden;
+  min-height: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+@media (hover: none) {
+  .project-spotlight-expand {
+    grid-template-rows: 1fr;
+  }
+
+  .project-spotlight-expand-inner {
+    opacity: 1;
+  }
+
+  .project-spotlight--fluency .project-spotlight-expand,
+  .project-spotlight--bbee .project-spotlight-expand {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-spotlight-expand {
+    grid-template-rows: 1fr;
+  }
+
+  .project-spotlight-expand-inner {
+    opacity: 1;
+    transition: none;
+  }
+
+  .project-spotlight-mockups,
+  .project-spotlight-logo {
+    transition: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  .projects-scroll.projects-scroll--spotlight {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--spotlight-full {
+    grid-column: auto;
+  }
+
+  .project-card--spotlight {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .projects-scroll.projects-scroll--spotlight .project-card--spotlight:not(.project-card--spotlight-full) .project-spotlight-bottom {
+    min-height: 0;
+  }
+
+  .project-spotlight-top {
+    padding: 1.25rem 0 0;
+  }
+
+  .project-spotlight-header {
+    padding: 0 1.25rem 1rem;
+  }
+
+  .project-spotlight-visual {
+    padding: 1.25rem 0.75rem 0;
+  }
+
+  .project-spotlight-mockups {
+    max-width: 100%;
+    max-height: 10rem;
+  }
+
+  .project-spotlight--fluency .project-spotlight-visual,
+  .project-spotlight--bbee .project-spotlight-visual {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .project-spotlight--fluency .project-spotlight-mockups,
+  .project-spotlight--bbee .project-spotlight-mockups {
+    max-height: none;
+    transform: scale(1.02);
+  }
+
+  .project-spotlight--vivo .project-spotlight-visual {
+    padding: 2rem 1.25rem;
+    min-height: 12rem;
+  }
+
+  .project-spotlight--vivo .project-spotlight-logo {
+    max-width: min(6.5rem, 40%);
+    max-height: 6.5rem;
+  }
+
+  .project-spotlight-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title tags"
+      "subtitle subtitle";
+    column-gap: 0.75rem;
+    row-gap: 0.5rem;
+    align-items: center;
+    padding: 0 1.25rem 1rem;
+  }
+
+  .project-spotlight-brand,
+  .project-spotlight-titles,
+  .project-spotlight-meta {
+    display: contents;
+  }
+
+  .project-spotlight-name {
+    grid-area: title;
+    align-self: center;
+  }
+
+  .project-spotlight-subtitle {
+    grid-area: subtitle;
+  }
+
+  .project-spotlight-tags {
+    grid-area: tags;
+    justify-content: flex-end;
+    align-self: center;
+  }
+
+  .project-spotlight-meta .project-spotlight-date {
+    display: none;
+  }
+
+  .project-spotlight-date-bar--mobile {
+    display: block;
+  }
+
+  .project-spotlight-date-bar {
+    padding: 0.875rem 1.25rem;
+    background: var(--spotlight-bottom-bg);
+    border-top: 0.0625rem solid var(--spotlight-divider);
+    text-align: center;
+  }
+
+  .project-spotlight-date-bar .project-spotlight-date {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project-spotlight--fluency .project-spotlight-visual {
+    flex: 0 0 auto;
+    min-height: 0;
+    padding: 0.5rem 0.5rem 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-spotlight--fluency .project-spotlight-mockups {
+    transform: scale(1.22);
+    transform-origin: center center;
+    object-position: center center;
+    width: 100%;
+  }
+
+  .project-spotlight-bottom > .project-spotlight-row:first-child {
+    padding-bottom: 0.875rem;
+  }
+
+  .project-spotlight-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.625rem;
+    padding: 1.125rem 1.25rem;
+  }
+
+  .project-spotlight-row-label,
+  .project-spotlight-row-text,
+  .project-spotlight-features {
+    grid-column: 1;
+  }
+
+  .project-spotlight-row-text,
+  .project-spotlight-features {
+    max-width: none;
+    text-align: left;
+    font-size: 1rem;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .project-spotlight-row--features {
+    padding-bottom: 1.25rem;
+  }
+
+  .project-spotlight-bottom > hr.project-spotlight-divider,
+  .project-spotlight-row:has(.project-spotlight-row-label[data-i18n="project_spotlight_user_label"]),
+  .project-spotlight-expand {
+    display: none;
   }
 }

@@ -494,10 +494,6 @@ button.about-button .about-button-label {
   background: #000000;
 }
 
-.footer-mobile {
-  display: none;
-}
-
 @media (max-width: 75rem) {
   .about-copy h1 {
     font-size: 2.625rem;

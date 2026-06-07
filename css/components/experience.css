@@ -383,24 +383,6 @@ a.experience-logo-wrap:focus-visible {
   align-self: center;
 }
 
-.experience-footer {
-  margin-top: auto;
-  width: 100%;
-  box-sizing: border-box;
-  background: #432c95;
-  padding: 1rem 1.25rem 1.5rem;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.experience-footer p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  color: #ffffff;
-}
-
 @media (max-width: 56.25rem) {
   .experience-inner {
     padding: 2.5rem 1.5rem 0;

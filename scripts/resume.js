@@ -1,16 +1,22 @@
 const links = document.querySelectorAll('.resumes');
 
-/* Nomes alinhados aos ficheiros em /assets (PT com NFD típico do macOS) */
-const RESUME_PT =
-  'Curri\u0301culo - Geissy Maysla Nunes Rodrigues - Versa\u0303o portugue\u0302s.pdf';
-const RESUME_EN = 'Resume - Geissy Maysla Nunes Rodrigues - Version English.pdf';
+const RESUMES = {
+  pt: {
+    href: './assets/resume-pt.pdf',
+    download: 'Curr\u00edculo - Geissy Maysla | Product Desiner.pdf',
+  },
+  en: {
+    href: './assets/resume-en.pdf',
+    download: 'Curr\u00edculo - Geissy Maysla | Product Designer:English.pdf',
+  },
+};
 
 function downloadResumeHandler(link) {
-  const lang = localStorage.getItem(Keys.LANG);
+  const lang = localStorage.getItem(Keys.LANG) || 'en';
+  const resume = RESUMES[lang === 'pt' ? 'pt' : 'en'];
 
-  const file = lang === 'pt' ? RESUME_PT : RESUME_EN;
-  link.href = './assets/' + encodeURIComponent(file);
-  link.setAttribute('download', '');
+  link.href = resume.href;
+  link.setAttribute('download', resume.download);
   link.setAttribute('target', '_blank');
 }
 

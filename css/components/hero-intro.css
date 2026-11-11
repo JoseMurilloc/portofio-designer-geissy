@@ -1,0 +1,65 @@
+/*
+ * Entrada da primeira seção no load.
+ *
+ * `.hero-intro-armed` é aplicado no <html> antes do primeiro paint, então tudo
+ * que o JS ainda vai ajustar (i18n, switch de idioma, medição do stack, imagens)
+ * acontece com a seção invisível. Depois `.hero-intro-playing` roda uma única
+ * animação de baixo para cima.
+ *
+ * A animação nunca toca em `.project-card--spotlight-full`: o transform dos
+ * cards é controlado por projects.css + projects-scroll-stack.js.
+ */
+
+.scroll-slides > section[data-hero-intro] {
+  opacity: 1;
+  transition: none;
+  will-change: auto;
+}
+
+.hero-intro-armed .header,
+.hero-intro-armed [data-hero-intro] .home-projects-intro,
+.hero-intro-armed [data-hero-intro] .projects-pools {
+  opacity: 0;
+}
+
+.hero-intro-armed .header {
+  pointer-events: none;
+}
+
+.hero-intro-playing .header,
+.hero-intro-playing [data-hero-intro] .home-projects-intro,
+.hero-intro-playing [data-hero-intro] .projects-pools {
+  animation: heroIntroRise 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-intro-playing [data-hero-intro] .home-projects-intro {
+  animation-delay: 0.04s;
+}
+
+.hero-intro-playing .header {
+  animation-delay: 0.12s;
+}
+
+.hero-intro-playing [data-hero-intro] .projects-pools {
+  animation-delay: 0.18s;
+}
+
+@keyframes heroIntroRise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro-playing .header,
+  .hero-intro-playing [data-hero-intro] .home-projects-intro,
+  .hero-intro-playing [data-hero-intro] .projects-pools {
+    animation: none;
+  }
+}

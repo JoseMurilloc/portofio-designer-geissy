@@ -617,7 +617,137 @@
   }
 }
 
-/* ── Spotlight cards — layout compartilhado; cores por tema (--vivo | --bbee | --fluency) ── */
+/* ScrollStack — pin track + sticky viewport (scroll-driven) */
+.projects-stack-pin {
+  position: relative;
+  width: 100%;
+}
+
+.projects-stack-sticky {
+  width: 100%;
+}
+
+@media (min-width: 48.0625rem) and (prefers-reduced-motion: no-preference) {
+  /*
+   * main.css vem depois no <head>, então o ID sozinho empata e perde:
+   * o .slide extra é o que garante a vitória sobre o padding de 8.25rem.
+   */
+  .slide .projects-showcase#projects-page,
+  .projects-showcase {
+    padding-top: 0;
+    padding-bottom: 5.5rem;
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  /*
+   * O sticky NÃO pode ser mais alto que a viewport: se for, o navegador
+   * não consegue fixá-lo no topo e o conteúdo "escorrega" para baixo.
+   */
+  .projects-stack-pin .projects-stack-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100svh;
+    max-height: 100svh;
+    box-sizing: border-box;
+    padding: 7.25rem 0 4.5rem;
+    overflow: hidden;
+  }
+
+  .projects-stack-pin .projects-showcase-inner.projects-showcase-inner--home {
+    width: 100%;
+    gap: 2rem;
+  }
+
+  /*
+   * MacBook Air / desktop baixo: o bloco centralizado + overflow hidden
+   * empurrava o "bem-vindo" para debaixo do header.
+   */
+  @media (max-height: 62rem) {
+    .projects-stack-pin .projects-stack-sticky {
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 7.25rem 0 4.5rem;
+    }
+
+    .projects-stack-pin .projects-showcase-inner.projects-showcase-inner--home {
+      gap: 1.25rem;
+    }
+  }
+
+  /*
+   * Estado inicial 100% CSS (primeiro paint, sem JS):
+   * IT Forum no lugar; Orla Campo já abaixo da viewport. Sem jump no load.
+   */
+  .projects-scroll.projects-scroll--spotlight[data-scroll-stack] {
+    position: relative;
+    display: block;
+    /* visible: quem recorta o card entrando é o sticky, não o stage */
+    overflow: visible;
+    height: var(--scroll-stack-stage-height, 20.5rem);
+    min-height: var(--scroll-stack-stage-height, 20.5rem);
+    padding-bottom: 0;
+    scroll-snap-type: none;
+    touch-action: pan-y;
+    cursor: default;
+    isolation: isolate;
+  }
+
+  .projects-scroll[data-scroll-stack] > .project-card--spotlight-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    /*
+     * Altura própria, nunca a do stage.
+     * Com `height: 100%` (.project-card--spotlight) o card assumia a altura do
+     * stage, e measure() calcula o stage a partir da altura do card — a cada
+     * medição o card crescia ITEM_STACK_DISTANCE (28px).
+     */
+    height: auto;
+    z-index: 1;
+    transform-origin: top center;
+    backface-visibility: hidden;
+    will-change: transform;
+    /* Anula transition do card-reveal — era ela que “animava” o jump no load */
+    transition: none !important;
+    /* IT Forum (primeiro full): posição inicial correta */
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  /* `min-height: 100%` do wrapper anulava o max-height do card (min vence max). */
+  .projects-scroll[data-scroll-stack] > .project-card--spotlight-full > .project-spotlight,
+  .projects-scroll[data-scroll-stack] > .project-card--spotlight-full > a.project-spotlight {
+    min-height: 0;
+  }
+
+  /*
+   * Orla Campo e demais full cards após o primeiro.
+   * Usa ~ (não :not(:first-child)): whitespace no HTML faz o IT Forum
+   * NÃO ser :first-child, e ele acabava recebendo translateY(100vh).
+   */
+  .projects-scroll[data-scroll-stack] > .project-card--spotlight-full ~ .project-card--spotlight-full {
+    z-index: 2;
+    transform: translate3d(0, 100vh, 0) scale(1);
+    pointer-events: none;
+  }
+
+  /* Cards ocultos (estudo) não entram no stage */
+  .projects-scroll[data-scroll-stack] > .project-card--suppressed,
+  .projects-scroll[data-scroll-stack] > .project-card[hidden] {
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* ── Spotlight cards — layout compartilhado; cores por tema (--orla | --bbee | --fluency) ── */
 
 .projects-scroll.projects-scroll--spotlight {
   display: grid;
@@ -652,6 +782,54 @@
   grid-column: 1 / -1;
 }
 
+@media (min-width: 48.0625rem) {
+  .project-card--spotlight[data-row-height-sync] {
+    overflow: visible;
+  }
+
+  .project-card--spotlight[data-row-height-sync] > .project-spotlight,
+  .project-card--spotlight[data-row-height-sync] > a.project-spotlight {
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .project-card--spotlight[data-row-height-sync] .project-spotlight-top {
+    flex: 0 0 auto;
+  }
+
+  .project-card--spotlight[data-row-height-sync] .project-spotlight-visual {
+    flex: 0 0 var(--spotlight-ref-visual-height);
+    height: var(--spotlight-ref-visual-height);
+    min-height: var(--spotlight-ref-visual-height);
+    max-height: var(--spotlight-ref-visual-height);
+    overflow: hidden;
+  }
+
+  .project-card--spotlight[data-row-height-sync] .project-spotlight-mockups {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: scale(1.05);
+    transform-origin: center bottom;
+  }
+
+  .project-card--spotlight[data-row-height-sync] .project-spotlight-bottom {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .projects-scroll.projects-scroll--spotlight .project-card--spotlight[data-row-height-sync] .project-spotlight-bottom {
+    min-height: 0;
+  }
+}
+
 a.project-spotlight {
   text-decoration: none;
   color: inherit;
@@ -684,7 +862,7 @@ a.project-spotlight:hover {
   --spotlight-hover-shadow: rgba(0, 0, 0, 0.14);
 }
 
-.project-spotlight--vivo {
+.project-spotlight--orla {
   --spotlight-top-bg: #5f0e81;
   --spotlight-visual-bg: #5f0e81;
   --spotlight-bottom-bg: #70009f;
@@ -696,7 +874,263 @@ a.project-spotlight:hover {
   --spotlight-hover-shadow: rgba(95, 14, 129, 0.28);
 }
 
-.project-spotlight--vivo .project-spotlight-visual {
+.project-card--suppressed {
+  display: none !important;
+}
+
+.project-spotlight--itforum {
+  --spotlight-top-bg: #173c44;
+  --spotlight-visual-bg: #173c44;
+  --spotlight-bottom-bg: #123238;
+  --spotlight-divider: #2a5a62;
+  --spotlight-subtitle: #b7cfcf;
+  --spotlight-date: #e8f5c8;
+  --spotlight-tag-color: #d1f95d;
+  --spotlight-tag-border: #6a9a38;
+}
+
+.project-spotlight--itforum,
+.project-spotlight--orla,
+.project-spotlight--fluency,
+.project-spotlight--bbee {
+  box-shadow: none;
+}
+
+.project-spotlight--itforum-hero,
+.project-spotlight--orla-hero {
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: stretch;
+  height: 20.5rem;
+  min-height: 20.5rem;
+  max-height: 20.5rem;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.project-spotlight--itforum-hero {
+  background: #ececec;
+}
+
+.project-spotlight--orla-hero {
+  position: relative;
+  overflow: hidden;
+  background: #f9f1fe;
+  border: 0.0625rem solid rgba(95, 14, 129, 0.2);
+  --spotlight-hover-shadow: transparent;
+}
+
+.project-spotlight-nda {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.375rem 1.25rem 0.375rem 0.375rem;
+  border-radius: 62.4375rem;
+  background: #ffffff;
+  color: #4a0a66;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  pointer-events: none;
+}
+
+.project-spotlight-nda-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: #e4c8f3;
+  color: #5f0e81;
+}
+
+.project-spotlight-nda-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (min-width: 48.0625rem) and (max-height: 62rem) {
+  .project-spotlight--itforum-hero,
+  .project-spotlight--orla-hero {
+    height: 18.75rem;
+    min-height: 18.75rem;
+    max-height: 18.75rem;
+  }
+}
+
+.project-spotlight-orla-mark {
+  border-radius: 0.5rem;
+}
+
+.project-spotlight-itforum-copy {
+  display: flex;
+  flex: 0 1 38%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.25rem;
+  min-width: 0;
+  max-width: 26rem;
+  padding: 2.5rem 1.5rem 2.5rem 2.75rem;
+  z-index: 1;
+}
+
+.project-spotlight-itforum-mark {
+  display: block;
+  width: 1.875rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.project-spotlight-itforum-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.project-spotlight-itforum-title {
+  margin: 0;
+  color: #1a1a1a;
+  font-family: inherit;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.project-spotlight-itforum-desc {
+  margin: 0;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  max-width: 22rem;
+}
+
+.project-spotlight-itforum-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: -0.125rem;
+  min-height: 2.875rem;
+  padding: 0.9375rem 1.375rem;
+  border-radius: 62.4375rem;
+  background: rgba(22, 60, 67, 0.13);
+  color: #173c44;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.project-spotlight-itforum-cta svg {
+  flex-shrink: 0;
+}
+
+.project-spotlight--itforum-hero .project-spotlight-itforum-copy,
+.project-spotlight--orla-hero .project-spotlight-itforum-copy {
+  flex: 0 1 36%;
+  max-width: 28rem;
+  height: auto;
+  justify-content: center;
+  gap: 1.125rem;
+  padding: 2.5rem 1.5rem 2.5rem 3rem;
+}
+
+.project-spotlight--orla-hero .project-spotlight-itforum-copy {
+  justify-content: flex-start;
+  padding: 2.5rem 1.5rem 2.75rem 3rem;
+}
+
+.project-spotlight--itforum-hero .project-spotlight-itforum-cta,
+.project-spotlight--orla-hero .project-spotlight-itforum-cta {
+  margin-top: 0.25rem;
+}
+
+.project-spotlight--orla-hero .project-spotlight-itforum-cta {
+  background: rgba(95, 14, 129, 0.12);
+  color: #5f0e81;
+}
+
+.project-spotlight--orla-hero .project-spotlight-itforum-mark {
+  width: 1.875rem;
+  height: 1.875rem;
+  object-fit: cover;
+}
+
+.project-spotlight-itforum-preview {
+  position: relative;
+  display: flex;
+  flex: 1 1 64%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 0;
+  min-height: 0;
+  padding: 1.5rem 5.5rem 0 1rem;
+  overflow: hidden;
+}
+
+.project-spotlight-itforum-preview::before {
+  display: none;
+}
+
+.project-spotlight--itforum-hero .project-spotlight-itforum-mockup {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100%, 26rem);
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: top left;
+  border-radius: 0.75rem;
+  box-shadow: -0.5rem 0 1.75rem rgba(0, 0, 0, 0.14);
+  transform: translateY(0.75rem);
+  transform-origin: bottom center;
+  transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card--spotlight:hover > a.project-spotlight--itforum-hero .project-spotlight-itforum-mockup,
+  .project-card--spotlight > a.project-spotlight--itforum-hero:focus-visible .project-spotlight-itforum-mockup {
+    transform: translateY(0.75rem) scale(1.06);
+  }
+
+  .project-card--spotlight:hover > a.project-spotlight--itforum-hero .project-spotlight-itforum-cta,
+  .project-card--spotlight > a.project-spotlight--itforum-hero:focus-within .project-spotlight-itforum-cta {
+    background: rgba(22, 60, 67, 0.2);
+  }
+
+  .project-card--spotlight:hover > a.project-spotlight--orla-hero .project-spotlight-itforum-cta,
+  .project-card--spotlight > a.project-spotlight--orla-hero:focus-within .project-spotlight-itforum-cta {
+    background: rgba(95, 14, 129, 0.2);
+  }
+
+  .project-card--spotlight:hover > a.project-spotlight--itforum-hero,
+  .project-card--spotlight:hover > a.project-spotlight--orla-hero,
+  .project-card--spotlight > a.project-spotlight--itforum-hero:focus-within,
+  .project-card--spotlight > a.project-spotlight--orla-hero:focus-within {
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-spotlight--itforum-hero .project-spotlight-itforum-mockup {
+    transition-duration: 0.01ms;
+  }
+}
+
+.project-spotlight--orla .project-spotlight-visual,
+.project-spotlight--itforum:not(.project-spotlight--itforum-hero) .project-spotlight-visual {
   align-items: center;
   justify-content: center;
   padding: 2.5rem 1.5rem;
@@ -757,7 +1191,7 @@ a.project-spotlight:hover {
   align-self: center;
 }
 
-.project-spotlight--vivo .project-spotlight-logo {
+.project-spotlight--orla .project-spotlight-logo {
   display: block;
   width: auto;
   height: auto;
@@ -765,6 +1199,19 @@ a.project-spotlight:hover {
   max-height: 7.5rem;
   object-fit: contain;
   border-radius: 1.375rem;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-spotlight--itforum .project-spotlight-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(14rem, 72%);
+  max-height: 3.5rem;
+  object-fit: contain;
+  border-radius: 0;
   transform: scale(1);
   transform-origin: center center;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -783,7 +1230,6 @@ a.project-spotlight:hover {
   --spotlight-row-label: #181818;
   --spotlight-row-text: rgba(30, 30, 30, 0.88);
   --spotlight-bullet: #9a9a9a;
-  --spotlight-hover-shadow: rgba(0, 0, 0, 0.12);
 }
 
 .project-spotlight--fluency {
@@ -799,7 +1245,6 @@ a.project-spotlight:hover {
   --spotlight-row-label: #262626;
   --spotlight-row-text: #262626;
   --spotlight-bullet: #6e6e6e;
-  --spotlight-hover-shadow: rgba(0, 0, 0, 0.12);
 }
 
 .project-spotlight--fluency .project-spotlight-top .project-spotlight-divider,
@@ -817,23 +1262,23 @@ a.project-spotlight:hover {
     box-shadow: 0 0.75rem 2.5rem var(--spotlight-hover-shadow);
   }
 
-  .project-card--spotlight:hover > .project-spotlight--vivo,
-  .project-card--spotlight:hover > .project-spotlight--vivo *,
-  .project-card--spotlight > .project-spotlight--vivo:focus-within,
-  .project-card--spotlight > .project-spotlight--vivo:focus-within *,
-  .project-card--spotlight > .project-spotlight--vivo.project-spotlight--lock-cursor,
-  .project-card--spotlight > .project-spotlight--vivo.project-spotlight--lock-cursor * {
-    cursor: url('../../images/cursors/cursor-lock.png') 24 24, pointer;
+  .project-card--spotlight:hover > a.project-spotlight--itforum,
+  .project-card--spotlight:hover > .project-spotlight--orla,
+  .project-card--spotlight:hover > a.project-spotlight--fluency,
+  .project-card--spotlight:hover > a.project-spotlight--bbee,
+  .project-card--spotlight > a.project-spotlight--itforum:focus-within,
+  .project-card--spotlight > .project-spotlight--orla:focus-within,
+  .project-card--spotlight > a.project-spotlight--fluency:focus-within,
+  .project-card--spotlight > a.project-spotlight--bbee:focus-within {
+    box-shadow: none;
   }
 
-  .project-card--spotlight:hover > a.project-spotlight--bbee,
-  .project-card--spotlight:hover > a.project-spotlight--bbee *,
-  .project-card--spotlight:hover > a.project-spotlight--fluency,
-  .project-card--spotlight:hover > a.project-spotlight--fluency *,
-  .project-card--spotlight > a.project-spotlight--bbee.project-spotlight--external-cursor,
-  .project-card--spotlight > a.project-spotlight--bbee.project-spotlight--external-cursor *,
-  .project-card--spotlight > a.project-spotlight--fluency.project-spotlight--external-cursor,
-  .project-card--spotlight > a.project-spotlight--fluency.project-spotlight--external-cursor * {
+  .project-card--spotlight:hover > .project-spotlight,
+  .project-card--spotlight:hover > .project-spotlight *,
+  .project-card--spotlight > .project-spotlight:focus-within,
+  .project-card--spotlight > .project-spotlight:focus-within *,
+  .project-card--spotlight > .project-spotlight.project-spotlight--external-cursor,
+  .project-card--spotlight > .project-spotlight.project-spotlight--external-cursor * {
     cursor: url('../../images/cursors/cursor-external.png') 12 36, pointer;
   }
 
@@ -851,8 +1296,10 @@ a.project-spotlight:hover {
     transform: scale(1.12);
   }
 
-  .project-card--spotlight:hover > .project-spotlight--vivo .project-spotlight-logo,
-  .project-card--spotlight > .project-spotlight--vivo:focus-within .project-spotlight-logo {
+  .project-card--spotlight:hover > .project-spotlight--orla .project-spotlight-logo,
+  .project-card--spotlight > .project-spotlight--orla:focus-within .project-spotlight-logo,
+  .project-card--spotlight:hover > a.project-spotlight--itforum .project-spotlight-logo,
+  .project-card--spotlight > a.project-spotlight--itforum:focus-within .project-spotlight-logo {
     transform: scale(1.08);
   }
 }
@@ -879,7 +1326,7 @@ a.project-spotlight:hover {
 .project-spotlight-header {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem 1.5rem;
@@ -888,6 +1335,7 @@ a.project-spotlight:hover {
 
 .project-spotlight-brand {
   display: flex;
+  flex: 1 1 0;
   flex-direction: row;
   align-items: center;
   gap: 0.875rem;
@@ -1201,6 +1649,12 @@ a.project-spotlight:hover {
   }
 }
 
+@media (min-width: 36.0625rem) and (max-width: 48rem) {
+  .projects-scroll.projects-scroll--spotlight.projects-scroll--spotlight {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 48rem) {
   .projects-scroll.projects-scroll--spotlight {
     grid-template-columns: 1fr;
@@ -1250,14 +1704,96 @@ a.project-spotlight:hover {
     transform: scale(1.02);
   }
 
-  .project-spotlight--vivo .project-spotlight-visual {
+  .project-spotlight--orla .project-spotlight-visual,
+  .project-spotlight--itforum:not(.project-spotlight--itforum-hero) .project-spotlight-visual {
     padding: 2rem 1.25rem;
     min-height: 12rem;
   }
 
-  .project-spotlight--vivo .project-spotlight-logo {
+  .project-spotlight--orla .project-spotlight-logo {
     max-width: min(6.5rem, 40%);
     max-height: 6.5rem;
+  }
+
+  .project-spotlight--itforum:not(.project-spotlight--itforum-hero) .project-spotlight-logo {
+    max-width: min(12rem, 80%);
+    max-height: 3rem;
+  }
+
+  .project-spotlight--itforum-hero,
+  .project-spotlight--orla-hero {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .project-spotlight-nda {
+    top: 0.875rem;
+    right: 0.875rem;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .project-spotlight-nda-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .project-spotlight-itforum-copy {
+    flex: 0 0 auto;
+    max-width: none;
+    width: 100%;
+    padding: 1.75rem 1.5rem 1.25rem;
+    gap: 1.125rem;
+  }
+
+  .project-spotlight--itforum-hero .project-spotlight-itforum-copy,
+  .project-spotlight--orla-hero .project-spotlight-itforum-copy {
+    max-width: none;
+    width: 100%;
+    height: auto;
+    padding: 1.75rem 1.5rem 1.25rem;
+  }
+
+  .project-spotlight--orla-hero .project-spotlight-itforum-copy {
+    padding-bottom: 2.5rem;
+  }
+
+  .project-spotlight-itforum-desc {
+    max-width: none;
+  }
+
+  .project-spotlight-itforum-cta {
+    margin-top: 0;
+  }
+
+  .project-spotlight-itforum-preview {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1rem 1.25rem 0;
+  }
+
+  .project-spotlight-itforum-preview::before {
+    inset: 0 0 0 10%;
+  }
+
+  .project-spotlight--itforum-hero .project-spotlight-itforum-mockup {
+    width: min(100%, 26rem);
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+    margin-left: 0;
+    object-fit: contain;
+    object-position: top left;
+    border-radius: 0.75rem;
+    box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.22);
+    transform: translateY(0.5rem);
   }
 
   .project-spotlight-header {

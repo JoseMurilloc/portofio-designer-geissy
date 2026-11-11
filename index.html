@@ -10,54 +10,82 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon-180.png" />
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/global.css" />
-  <link rel="stylesheet" href="./css/components/header.css" />
-  <link rel="stylesheet" href="./css/components/projects.css" />
+  <link rel="stylesheet" href="./css/components/header.css?v=bbee1" />
+  <link rel="stylesheet" href="./css/components/projects.css?v=vivo1" />
   <link rel="stylesheet" href="./css/components/main.css" />
 
   <link rel="stylesheet" href="./css/components/about-me.css" />
   <link rel="stylesheet" href="./css/components/experience.css" />
   <link rel="stylesheet" href="./css/components/footer.css" />
+  <link rel="stylesheet" href="./css/components/itforum-case.css?v=tasks-bg-dark" />
+  <link rel="stylesheet" href="./css/components/orla-case.css?v=vivo1" />
+  <link rel="stylesheet" href="./css/components/orla-prototype.css?v=vivo1" />
+  <link rel="stylesheet" href="./css/components/bbee-case.css?v=2" />
+  <link rel="stylesheet" href="./css/components/bbee-prototype.css?v=1" />
+  <link rel="stylesheet" href="./css/components/orla-lanes.css?v=2" />
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/components/hero-intro.css" />
+  <link rel="stylesheet" href="./css/components/home-hero.css?v=skills-front" />
+  <link rel="stylesheet" href="./css/components/selected-projects.css?v=vivo1" />
+  <link rel="stylesheet" href="./css/components/about-refresh.css?v=fig" />
+  <link rel="stylesheet" href="./css/components/about-fig.css?v=grid" />
+  <link rel="stylesheet" href="./css/components/experience-refresh.css?v=badge2" />
+  <link rel="stylesheet" href="./css/components/footer-refresh.css?v=dark3" />
 
   <title>Geissy | Product Designer</title>
+
+  <script>
+    /* Arma o gate da entrada antes do primeiro paint. O timeout é a rede de
+       segurança caso hero-intro.js não chegue a rodar. */
+    document.documentElement.classList.add('hero-intro-armed');
+    window.setTimeout(function () {
+      document.documentElement.classList.remove('hero-intro-armed');
+    }, 3000);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
 </head>
 <body>
-  <div class="app">
+  <div class="app" id="home">
     <header class="header">
       <div class="header-inner">
         <div>
-          <svg width="83" height="28" viewBox="0 0 83 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10.7824 22.6247C4.76495 22.6247 1.08913 18.5404 1.08913 12.4685C1.08913 6.15157 5.03724 2.31238 10.8913 2.31238C15.9286 2.31238 19.4138 5.00798 19.9311 9.11946H16.8815C16.3642 6.39663 13.9681 4.89907 10.8913 4.89907C6.80708 4.89907 4.11147 7.6219 4.11147 12.4413C4.11147 17.2879 6.72539 20.0925 10.8369 20.0925C14.6216 20.0925 17.1538 17.9142 17.3444 14.2384H11.0275V12.0329H20.3668V13.476C20.3668 19.085 16.5548 22.6247 10.7824 22.6247ZM29.6216 22.6247C25.2923 22.6247 22.6512 19.684 22.6512 15.2458C22.6512 10.6987 25.2923 7.75804 29.5127 7.75804C34.2504 7.75804 36.5376 11.216 36.102 15.7359H25.4285C25.4829 18.7038 27.1166 20.392 29.6216 20.392C31.5548 20.392 32.9979 19.439 33.3519 17.9414H36.0203C35.6391 20.7732 33.0252 22.6247 29.6216 22.6247ZM29.4855 9.96353C27.2255 9.96353 25.7008 11.4066 25.4829 13.7483H33.3519C33.2702 11.0799 31.6093 9.96353 29.4855 9.96353ZM39.1334 5.77037V2.53021H41.938V5.77037H39.1334ZM39.1334 22.3796V7.97587H41.938V22.3796H39.1334Z" fill="black"/>
-          <rect x="46.3144" y="8.10274" width="29.7525" height="10.9434" rx="5.47172" fill="url(#paint0_linear_326_744)" stroke="#7573DC" stroke-width="2.39388"/>
-          <path d="M72.9522 26.4325L75.6675 21.0018C75.7278 20.8813 75.8416 20.7964 75.9743 20.773L81.8932 19.7285C82.2791 19.6604 82.3757 19.1512 82.0417 18.9464L70.5911 11.9284C70.2815 11.7386 69.8916 11.9989 69.9483 12.3577L72.151 26.3086C72.2156 26.7176 72.767 26.8029 72.9522 26.4325Z" fill="#C8C8C8"/>
-          <defs>
-          <linearGradient id="paint0_linear_326_744" x1="37.4559" y1="5.91298" x2="75.338" y2="20.8104" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6866DF"/>
-          <stop offset="0.615092" stop-color="#423FC3"/>
-          <stop offset="1" stop-color="#CE66DF"/>
-          </linearGradient>
-          </defs>
+          <a
+            class="header-logo"
+            href="#home"
+            data-home-link
+            data-i18n-aria="header_home"
+            aria-label="Home"
+          >
+          <svg width="94" height="31" viewBox="0 0 94 31" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12.2115 25.2775C5.39651 25.2775 1.23349 20.652 1.23349 13.7753C1.23349 6.62104 5.70488 2.273 12.3349 2.273C18.0397 2.273 21.9869 5.32588 22.5728 9.98229H19.1191C18.5331 6.89858 15.8195 5.20253 12.3349 5.20253C7.70929 5.20253 4.65641 8.28625 4.65641 13.7444C4.65641 19.2334 7.61678 22.4097 12.2732 22.4097C16.5596 22.4097 19.4274 19.9427 19.6433 15.7797H12.4891V13.2819H23.0662V14.9162C23.0662 21.2687 18.749 25.2775 12.2115 25.2775ZM33.5477 25.2775C28.6446 25.2775 25.6534 21.9471 25.6534 16.9207C25.6534 11.7709 28.6446 8.44044 33.4244 8.44044C38.79 8.44044 41.3804 12.3568 40.887 17.4757H28.7988C28.8605 20.837 30.7107 22.7489 33.5477 22.7489C35.7372 22.7489 37.3715 21.6696 37.7724 19.9735H40.7945C40.3627 23.1806 37.4024 25.2775 33.5477 25.2775ZM33.3935 10.9382C30.834 10.9382 29.1072 12.5726 28.8605 15.2246H37.7724C37.6799 12.2026 35.7988 10.9382 33.3935 10.9382ZM44.3203 6.18932V2.5197H47.4965V6.18932H44.3203ZM44.3203 25V8.68713H47.4965V25H44.3203Z" fill="black"/>
+            <rect x="51.0977" y="7.39062" width="36.407" height="15.105" rx="7.55252" fill="url(#header-logo-pill)"/>
+            <rect x="52.4532" y="8.74621" width="33.6959" height="12.3939" rx="6.19694" stroke-width="2.71116" stroke="black" stroke-opacity="0.13"/>
+            <path d="M82.6217 29.5059L85.6969 23.3554C85.7652 23.2189 85.894 23.1228 86.0443 23.0963L92.7478 21.9133C93.1848 21.8362 93.2943 21.2595 92.9159 21.0276L79.9477 13.0793C79.597 12.8644 79.1555 13.1592 79.2196 13.5655L81.7144 29.3655C81.7875 29.8287 82.412 29.9254 82.6217 29.5059Z" fill="#C8C8C8"/>
+            <defs>
+              <linearGradient id="header-logo-pill" x1="42.4206" y1="6.26622" x2="85.3236" y2="23.1382" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#010101"/>
+                <stop offset="0.615092" stop-color="#A3A2D5"/>
+                <stop offset="1" stop-color="#121212"/>
+              </linearGradient>
+            </defs>
           </svg>
+          </a>
         </div>
 
-        <div class="header-content"> 
-          <div class="social">
-            <a target="_blank" href="https://www.linkedin.com/in/geissy-nunes-683109196/?isSelfProfile=true" style="color: #1F35BF;">LinkedIn</a>
-            <a target="_blank" href="https://www.behance.net/geissynunes" href="#behance" style="color: #462CA3;">Behance</a>
-            <a target="_blank" href="https://dribbble.com/Mayslassy" href="#dribbble" style="color: #A643B6;">Dribbble</a>
-            <a target="_blank" href="https://medium.com/@Geissy" href="#medium" style="color: #000000;">Medium</a>
-          </div>
-          
-          <div class="divider"></div>
+        <nav class="header-nav" aria-label="Sections" data-header-nav>
+          <a class="header-nav__link is-active" href="#home" data-nav-target="home" aria-current="true" data-i18n="nav_home">Home</a>
+          <a class="header-nav__link" href="#projects-page" data-nav-target="projects-page" data-i18n="nav_projects">Projects</a>
+          <a class="header-nav__link" href="#about-me-page" data-nav-target="about-me-page" data-i18n="nav_about">About</a>
+          <a class="header-nav__link" href="#experience-page" data-nav-target="experience-page" data-i18n="nav_experience">Experience</a>
+        </nav>
 
+        <div class="header-content">
           <div class="header-actions">
-            <a class="talk-to-me" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">
-              Talk to me
-            </a>
-            <a class="resumes" data-i18n="resume">
-              Resume
-            </a>
-            <button class="lang-button">
+            <a class="resumes" href="#" data-i18n="resume">Resume</a>
+            <a class="talk-to-me" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">Talk to me</a>
+            <button class="lang-button" type="button" aria-label="Switch language">
               <div class="switch">
                 <div class="toggle-thumb"></div>
               </div>
@@ -119,340 +147,159 @@
 
     <div class="scroll-slides">
 
-      <section class="slide slide-green">
-        <div class="hero">
-          <div class="hero-inner">
-            <header class="hero-header">
-              <p class="hero-role" data-i18n="hero_tagline">Product Designer</p>
-              <h1 class="hero-headline">
-                <span class="hero-headline-start" data-i18n="main_title_1">Transforming complexity into simplicity and </span>
-                <span class="hero-gradient-box">
-                  <span class="hero-gradient-text" data-i18n="main_title_2">intuitiveness.</span>
-                  <span class="hero-gradient-line" aria-hidden="true"></span>
-                </span>
-              </h1>
-              <div class="hero-mobile-actions">
-                <a class="hero-mobile-btn hero-mobile-btn--contact talk-to-me" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">Talk to me</a>
-                <a class="hero-mobile-btn hero-mobile-btn--resume resumes" href="#" data-i18n="resume">Resume</a>
+      <section class="slide slide-green" data-hero-intro>
+        <div class="home-hero home-projects-intro">
+          <header class="home-hero__copy">
+            <p class="home-hero__eyebrow" data-i18n="home_eyebrow">Product Designer &amp; Builder</p>
+            <h1 class="home-hero__title" data-i18n="home_hero_title">Simple solutions for complex problems through design</h1>
+          </header>
+
+          <div class="home-hero__stage">
+            <div class="home-hero__orbit" aria-hidden="true"></div>
+
+            <ul class="home-hero__skills" aria-label="Skills">
+              <li class="home-hero__skills-row">
+                <span data-i18n="home_skill_prototypes">Design Prototypes</span>
+                <span data-i18n="home_skill_ai">AI as a tool</span>
+              </li>
+              <li class="home-hero__skills-row">
+                <span data-i18n="home_skill_field">Field discovery</span>
+                <span data-i18n="home_skill_strategy">Strategy Design</span>
+              </li>
+            </ul>
+
+            <img
+              class="home-hero__portrait"
+              src="./images/hero-portrait.webp"
+              alt="Geissy"
+              width="1926"
+              height="2000"
+              loading="eager"
+              fetchpriority="high"
+            />
+
+            <p class="home-hero__summary" data-i18n="home_hero_summary">
+              Analyzing problems, discovering solutions, and designing products from end to end for over 6 years, with collaboration, transparency, and empathy.
+            </p>
+          </div>
+
+          <div class="home-hero__cards">
+            <article class="home-hero__card">
+              <div class="home-hero__card-media">
+                <video
+                  src="./images/process/discovery.mp4"
+                  width="800"
+                  height="600"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label="Interview transcription moving through synthesis, patterns and insights"
+                ></video>
               </div>
-            </header>
-            <div class="hero-bottom">
-              <div class="hero-profile-block">
-                <div class="hero-avatar-wrap">
-                  <img src="./images/profile.png" alt="" class="hero-avatar" width="74" height="74" loading="eager" />
-                </div>
-                <div class="hero-profile-copy">
-                  <p class="hero-since" data-i18n="hero_since">Creating experiences since 2021</p>
-                  <p class="hero-name" data-i18n="hero_intro">Geissy but you can call me Gei</p>
-                  <a href="#about-me-page" class="hero-cta">
-                    <span data-i18n="hero_cta">Get to know me more</span>
-                    <svg class="hero-cta-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
+              <p class="home-hero__card-label" data-i18n="home_card_discovery_label">Discovery</p>
+              <h2 class="home-hero__card-title" data-i18n="home_card_discovery_title">Faster insights. Better decisions.</h2>
+              <p class="home-hero__card-text" data-i18n="home_card_discovery_text">Interview transcription &amp; summarization • Automated research synthesis • Pain point and pattern identification • Faster documentation and insights.</p>
+            </article>
+            <article class="home-hero__card">
+              <div class="home-hero__card-media">
+                <video
+                  src="./images/process/ideation-testing.mp4"
+                  width="800"
+                  height="600"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label="Onboarding sprint moving through ideation, prototyping, testing and iteration"
+                ></video>
               </div>
-              <p class="hero-bio" data-i18n="main_description">
-                For more than 4 years, I’ve been creating purposeful solutions by understanding people and turning insights into meaningful experiences.
-              </p>
-            </div>
+              <p class="home-hero__card-label" data-i18n="home_card_ideation_label">Ideation &amp; testing</p>
+              <h2 class="home-hero__card-title" data-i18n="home_card_ideation_title">Smarter ideas. Faster validation.</h2>
+              <p class="home-hero__card-text" data-i18n="home_card_ideation_text">AI-assisted brainstorming • Solution exploration • Rapid prototyping • Hypothesis generation • Usability test analysis • Feedback synthesis • Design iteration.</p>
+            </article>
+            <article class="home-hero__card">
+              <div class="home-hero__card-media">
+                <video
+                  src="./images/process/delivery.mp4"
+                  width="800"
+                  height="600"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label="Login flow moving through design specs, design-to-code, documentation and handoff"
+                ></video>
+              </div>
+              <p class="home-hero__card-label" data-i18n="home_card_delivery_label">Delivery</p>
+              <h2 class="home-hero__card-title" data-i18n="home_card_delivery_title">From design to implementation. Faster and smarter delivery.</h2>
+              <p class="home-hero__card-text" data-i18n="home_card_delivery_text">AI-assisted front-end implementation • Design-to-code • Business rules documentation • Technical specifications • Design system documentation • Developer handoff • UI refinement.</p>
+            </article>
           </div>
         </div>
-      </section>
-      <section class="slide slide-indigo">
-        <!-- Modo unificado: todos os projetos numa faixa. Para voltar ao toggle Mercado/Estudo: remova data-projects-unified ou use data-projects-unified="false" e recarregue. -->
-        <div class="projects-showcase" id="projects-page" data-projects-unified="true">
-          <div class="projects-showcase-inner">
-            <header class="projects-showcase-heading">
-              <div class="projects-showcase-headings">
-                <p class="projects-showcase-eyebrow" data-i18n="projects_eyebrow">Explore my work</p>
-                <h2 id="projects-section-heading" class="projects-showcase-title" data-i18n="projects_heading_all">All projects</h2>
-              </div>
-              <div
-                class="projects-filter"
-                role="group"
-                aria-label=""
-                data-i18n-aria="projects_filter_aria"
-              >
-                <button
-                  type="button"
-                  class="projects-filter-btn projects-filter-btn--active"
-                  data-projects-filter="all"
-                  aria-pressed="true"
-                >
-                  <span data-i18n="projects_filter_all">All Projects</span>
-                </button>
-                <button
-                  type="button"
-                  class="projects-filter-btn"
-                  data-projects-filter="web"
-                  aria-pressed="false"
-                >
-                  <span data-i18n="projects_filter_web">Web</span>
-                </button>
-                <button
-                  type="button"
-                  class="projects-filter-btn"
-                  data-projects-filter="mobile"
-                  aria-pressed="false"
-                >
-                  <span data-i18n="projects_filter_mobile">Mobile</span>
-                </button>
-              </div>
-            </header>
-            <div
-              class="projects-pools"
-              role="region"
-              aria-labelledby="projects-section-heading"
-              tabindex="0"
-            >
-              <div class="projects-pool projects-pool--active" data-projects-pool="market" aria-hidden="false">
-                <div class="projects-scroll">
-                  <article class="project-card project-card--spotlight" data-project-platform="mobile">
-                    <div class="project-spotlight project-spotlight--vivo" tabindex="0">
-                      <div class="project-spotlight-top">
-                        <header class="project-spotlight-header">
-                          <div class="project-spotlight-brand">
-                            <div class="project-spotlight-titles">
-                              <h3 class="project-spotlight-name" data-i18n="project_card_vivo_name">Vivo+</h3>
-                              <p class="project-spotlight-subtitle">
-                                <span data-i18n="project_card_vivo_subtitle_start">Internal app for </span>
-                                <span data-i18n="project_card_vivo_subtitle_brand">Vivo</span>
-                                <span data-i18n="project_card_vivo_subtitle_end"> sellers</span>
-                              </p>
-                            </div>
-                          </div>
-                          <div class="project-spotlight-meta">
-                            <p class="project-spotlight-date">
-                              <time datetime="2024" data-i18n="project_card_vivo_year">2024</time>
-                              <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                              <span data-i18n="project_card_vivo_period">Current</span>
-                            </p>
-                            <div class="project-spotlight-tags">
-                              <span class="project-spotlight-tag" data-i18n="project_card_vivo_tag_tablet">Tablet</span>
-                              <span class="project-spotlight-tag" data-i18n="project_card_vivo_tag_phone">Cell phone</span>
-                            </div>
-                          </div>
-                        </header>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                      </div>
-                      <div class="project-spotlight-visual">
-                        <img
-                          class="project-spotlight-logo"
-                          src="./images/vivo-plus-logo.png"
-                          alt=""
-                          loading="lazy"
-                          width="172"
-                          height="172"
-                        />
-                      </div>
-                      <div class="project-spotlight-bottom">
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_card_vivo_goal_label">Contribution</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_vivo_goal_text">
-                            I contributed to evolving the sales and customer service experience by designing digital solutions that simplify processes, support consultants' daily routines, and make operations more efficient.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-date-bar project-spotlight-date-bar--mobile">
-                          <p class="project-spotlight-date">
-                            <time datetime="2024" data-i18n="project_card_vivo_year">2024</time>
-                            <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                            <span data-i18n="project_card_vivo_period">Current</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="project-card project-card--spotlight" data-project-platform="mobile">
-                    <a
-                      class="project-spotlight project-spotlight--fluency"
-                      href="https://www.behance.net/gallery/189321095/Fluency-Forge-Projeto-de-estudo-UXUI"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div class="project-spotlight-top">
-                        <header class="project-spotlight-header">
-                          <div class="project-spotlight-brand">
-                            <div class="project-spotlight-titles">
-                              <h3 class="project-spotlight-name" data-i18n="project_card_2_title">FluencyForge</h3>
-                            </div>
-                          </div>
-                          <div class="project-spotlight-meta">
-                            <p class="project-spotlight-date">
-                              <time datetime="2024" data-i18n="project_card_2_year">2024</time>
-                              <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                              <span data-i18n="project_card_fluency_period">Study project</span>
-                            </p>
-                            <div class="project-spotlight-tags">
-                              <span class="project-spotlight-tag" data-i18n="project_tag_mobile">Mobile</span>
-                            </div>
-                          </div>
-                        </header>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                      </div>
-                      <div class="project-spotlight-visual">
-                        <img
-                          class="project-spotlight-mockups"
-                          src="./images/fluencyforge-screens.png"
-                          alt=""
-                          loading="lazy"
-                          width="1024"
-                          height="518"
-                        />
-                      </div>
-                      <div class="project-spotlight-bottom">
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_goal_label">Goal</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_fluency_goal_text">
-                            Make language learning more efficient through personalized study plans, AI-powered practice, and continuous progress tracking.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-date-bar project-spotlight-date-bar--mobile">
-                          <p class="project-spotlight-date">
-                            <time datetime="2024" data-i18n="project_card_2_year">2024</time>
-                            <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                            <span data-i18n="project_card_fluency_period">Study project</span>
-                          </p>
-                        </div>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_user_label">User</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_fluency_user_text">
-                            People who want to learn a new language.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-expand">
-                          <div class="project-spotlight-expand-inner">
-                            <div class="project-spotlight-row project-spotlight-row--features">
-                              <span class="project-spotlight-row-label" data-i18n="project_spotlight_features_label">Main features</span>
-                              <p class="project-spotlight-row-text" data-i18n="project_card_fluency_features_text">
-                                Creation of personalized study paths, speaking and writing practice with AI, exercise and content generation, progress tracking, fluency tests, and study goals and reminder setup.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                  <article class="project-card project-card--spotlight" data-project-platform="web mobile">
-                    <a
-                      class="project-spotlight project-spotlight--bbee"
-                      href="https://www.behance.net/gallery/240120647/BBEE-Smart-Apiculture"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div class="project-spotlight-top">
-                        <header class="project-spotlight-header">
-                          <div class="project-spotlight-brand">
-                            <div class="project-spotlight-titles">
-                              <h3 class="project-spotlight-name" data-i18n="project_card_1_title">BBEE - Smart apiculture</h3>
-                            </div>
-                          </div>
-                          <div class="project-spotlight-meta">
-                            <p class="project-spotlight-date">
-                              <time datetime="2023" data-i18n="project_card_1_year">2023</time>
-                              <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                              <span data-i18n="project_card_1_type">Real project</span>
-                            </p>
-                            <div class="project-spotlight-tags">
-                              <span class="project-spotlight-tag" data-i18n="project_plat_web">Web</span>
-                              <span class="project-spotlight-tag" data-i18n="project_tag_mobile">Mobile</span>
-                            </div>
-                          </div>
-                        </header>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                      </div>
-                      <div class="project-spotlight-visual">
-                        <img
-                          class="project-spotlight-mockups"
-                          src="./images/bbee-cover.png"
-                          alt=""
-                          loading="lazy"
-                          width="1024"
-                          height="648"
-                        />
-                      </div>
-                      <div class="project-spotlight-bottom">
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_goal_label">Goal</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_bbee_goal_text">
-                            Centralize beekeeping management in a single platform, enabling production tracking, goal setting, operations organization, and decision-making support.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-date-bar project-spotlight-date-bar--mobile">
-                          <p class="project-spotlight-date">
-                            <time datetime="2023" data-i18n="project_card_1_year">2023</time>
-                            <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                            <span data-i18n="project_card_1_type">Real project</span>
-                          </p>
-                        </div>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_user_label">User</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_bbee_user_text">
-                            Beginner and experienced beekeepers who want to organize and track the management of their apiaries.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-expand">
-                          <div class="project-spotlight-expand-inner">
-                            <div class="project-spotlight-row project-spotlight-row--features">
-                              <span class="project-spotlight-row-label" data-i18n="project_spotlight_features_label">Main features</span>
-                              <p class="project-spotlight-row-text" data-i18n="project_card_bbee_features_text">
-                                The platform allows users to create and track production goals, manage tasks and collaborators, monitor apiary performance, and control the stock of supplies needed to carry out activities.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-              </div>
-              <div class="projects-pool" data-projects-pool="study" aria-hidden="true" inert>
-                <div class="projects-scroll"></div>
-              </div>
+
+        <section class="selected-projects" id="projects-page" aria-labelledby="selected-projects-title">
+          <header class="selected-projects__intro">
+            <p class="selected-projects__eyebrow" data-i18n="selected_eyebrow">Creating experiences since 2021</p>
+            <h2 class="selected-projects__title" id="selected-projects-title" data-i18n="selected_title">Selected projects</h2>
+            <p class="selected-projects__text" data-i18n-html="selected_text">I have been working at Loomi since 2025 on client projects covered by NDAs. In these case studies, <strong>I have preserved the actual problem context and my role in the process, while adapting the business to a fictional company.</strong> Actual screens and confidential details have been omitted to respect the NDA.</p>
+          </header>
+
+          <a class="selected-project" href="#orla-case" data-orla-case-open>
+            <div class="selected-project__media" data-mockup-parallax>
+              <span class="selected-project__glow" aria-hidden="true"></span>
+              <img class="selected-project__phone selected-project__phone--back" src="./images/orla-case/card-phone-splash.png?v=vivo" alt="" width="705" height="1395" loading="lazy" decoding="async" />
+              <img class="selected-project__phone selected-project__phone--front" src="./images/orla-case/card-phone-client.png?v=vivo" alt="Vivo+ app: customer overview screen" width="705" height="1395" loading="lazy" decoding="async" />
             </div>
-          </div>
-        </div>
+            <div class="selected-project__body">
+              <h3 class="selected-project__title" data-i18n="selected_sales_title">Sales app built to simplify &amp; optimize conversion</h3>
+              <p class="selected-project__nda" data-i18n="project_card_orla_nda">NDA Protected</p>
+              <dl class="selected-project__meta">
+                <div class="selected-project__meta-item">
+                  <dt data-i18n="selected_meta_industry">Industry</dt>
+                  <dd data-i18n="selected_sales_industry">Sales</dd>
+                </div>
+                <div class="selected-project__meta-item">
+                  <dt data-i18n="selected_meta_platforms">Platforms</dt>
+                  <dd data-i18n="selected_sales_platform">App</dd>
+                </div>
+                <div class="selected-project__meta-item">
+                  <dt data-i18n="selected_meta_year">Year</dt>
+                  <dd>2026</dd>
+                </div>
+              </dl>
+            </div>
+          </a>
+          <a class="selected-project selected-project--bbee" href="#bbee-case" data-bbee-case-open>
+            <div class="selected-project__media selected-project__media--bbee" data-mockup-parallax>
+              <span class="selected-project__glow selected-project__glow--honey" aria-hidden="true"></span>
+              <img class="selected-project__screen" src="./images/bbee-case/web-dashboard.jpg" alt="" width="1152" height="820" loading="lazy" decoding="async" />
+            </div>
+            <div class="selected-project__body">
+              <h3 class="selected-project__title" data-i18n="bbee_card_title">Smart beekeeping platform to monitor hives and organize fieldwork</h3>
+              <p class="selected-project__nda" data-i18n="bbee_card_sub">BBEE – Smart Apiculture</p>
+              <dl class="selected-project__meta">
+                <div class="selected-project__meta-item"><dt data-i18n="selected_meta_industry">Industry</dt><dd data-i18n="bbee_meta_industry_value">Agribusiness</dd></div>
+                <div class="selected-project__meta-item"><dt data-i18n="selected_meta_platforms">Platforms</dt><dd data-i18n="bbee_meta_platforms_value">Web &amp; mobile</dd></div>
+                <div class="selected-project__meta-item"><dt data-i18n="selected_meta_year">Year</dt><dd>2024</dd></div>
+              </dl>
+            </div>
+          </a>
+        </section>
       </section>
       <section class="slide slide-purple">
         <div class="about-me" id="about-me-page">
           <main class="about-layout">
             <section class="about-copy">
+              <p class="about-eyebrow" data-i18n="about_eyebrow">About me</p>
               <h1 data-i18n="about_me_title">You can call me Gei</h1>
               <div class="about-copy-main">
                 <p data-i18n="about_me_paragraph_1">
                   With 4 years of experience in UX/UI Design, I work on end-to-end solutions for B2B and B2C products — from research to high-fidelity prototyping. I use Figma daily to create and iterate on intuitive interfaces, always aligned with business goals.
                 </p>
-                <aside
-                  class="about-photo-card about-photo-card--mobile-only"
-                  tabindex="0"
-                  data-i18n-aria="about_me_photo_flip_hint"
-                  aria-label="Portrait of Geissy — hover, tap, or press Enter to see the other side."
-                >
-                  <div class="about-photo-flip">
-                    <div class="about-photo-flip-inner">
-                      <div class="about-photo-face about-photo-face--front">
-                        <img
-                          data-i18n-img="about_photo_front_mobile"
-                          src="./images/about-photo-front-mobile-en.png"
-                          alt="Geissy portrait"
-                          width="351"
-                          height="312"
-                        />
-                      </div>
-                      <div class="about-photo-face about-photo-face--back" aria-hidden="true">
-                        <img
-                          data-i18n-img="about_photo_back_mobile"
-                          src="./images/about-mobile-back.png"
-                          alt=""
-                          width="350"
-                          height="525"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </aside>
                 <div class="about-copy-tail">
                   <div id="about-copy-expanded" class="about-copy-expanded" aria-hidden="true">
                     <div class="about-copy-expanded-inner">
@@ -460,6 +307,20 @@
                       <p data-i18n="about_me_paragraph_3"></p>
                     </div>
                   </div>
+                  <dl class="about-facts">
+                    <div class="about-facts__item">
+                      <dt data-i18n="about_fact_background_label">Background</dt>
+                      <dd data-i18n="about_fact_background">Psychology</dd>
+                    </div>
+                    <div class="about-facts__item">
+                      <dt data-i18n="about_fact_focus_label">Focus</dt>
+                      <dd data-i18n="about_fact_focus">B2B &amp; B2C</dd>
+                    </div>
+                    <div class="about-facts__item">
+                      <dt data-i18n="about_fact_approach_label">Approach</dt>
+                      <dd data-i18n="about_fact_approach">Human-first</dd>
+                    </div>
+                  </dl>
                   <div class="about-actions">
                     <button type="button" class="about-button" id="about-learn-more" aria-expanded="false" aria-controls="about-copy-expanded">
                       <span class="about-button-label">Learn more</span>
@@ -486,40 +347,45 @@
 
             </section>
 
-            <aside
-              class="about-photo-card"
-              tabindex="0"
-              data-i18n-aria="about_me_photo_flip_hint"
-              aria-label="Portrait of Geissy — hover, tap, or press Enter to see the other side."
-            >
-              <div class="about-photo-flip">
-                <div class="about-photo-flip-inner">
-                  <div class="about-photo-face about-photo-face--front">
-                    <img
-                      data-i18n-img="about_photo_front"
-                      src="./images/about-photo-front-en.png"
-                      alt="Geissy portrait"
-                      width="350"
-                      height="525"
-                    />
-                  </div>
-                  <div class="about-photo-face about-photo-face--back" aria-hidden="true">
-                    <img
-                      data-i18n-img="about_photo_back_desktop"
-                      src="./images/photo-about-back.png"
-                      alt=""
-                      width="350"
-                      height="525"
-                    />
-                  </div>
+            <div class="about-photo-stage">
+              <figure class="about-fig" data-i18n-aria="about_fig_aria" aria-label="Portrait of Geissy smiling, annotated like a Figma frame">
+                <span class="about-fig__layer" aria-hidden="true">&#9634; gei_portrait</span>
+                <div class="about-fig__img">
+                  <img src="./images/about-portrait.jpg" alt="" width="900" height="1350" loading="lazy" />
                 </div>
-              </div>
-            </aside>
+                <span class="about-fig__sel" aria-hidden="true"></span>
+                <i class="about-fig__handle about-fig__handle--tl" aria-hidden="true"></i>
+                <i class="about-fig__handle about-fig__handle--tr" aria-hidden="true"></i>
+                <i class="about-fig__handle about-fig__handle--bl" aria-hidden="true"></i>
+                <i class="about-fig__handle about-fig__handle--br" aria-hidden="true"></i>
+                <span class="about-fig__dim" aria-hidden="true">340 &times; 440 &middot; Hug</span>
+
+                <figcaption class="about-fig__notes">
+                  <p class="about-fig__note about-fig__note--1">
+                    <span class="about-fig__line" aria-hidden="true"></span>
+                    <span class="about-fig__label"><small data-i18n="about_fig_note_tag_1">NOTE · 01</small><span data-i18n="about_fig_note_1">Understand first, build later</span></span>
+                  </p>
+                  <p class="about-fig__note about-fig__note--2">
+                    <span class="about-fig__line" aria-hidden="true"></span>
+                    <span class="about-fig__label"><small data-i18n="about_fig_note_tag_2">NOTE · 02</small><span data-i18n="about_fig_note_2">My favorite tools: Claude, ChatGPT &amp; Figma</span></span>
+                  </p>
+                  <p class="about-fig__note about-fig__note--3">
+                    <span class="about-fig__line" aria-hidden="true"></span>
+                    <span class="about-fig__label"><small data-i18n="about_fig_note_tag_3">NOTE · 03</small><span data-i18n="about_fig_note_3">In my free time, planning the next trip</span></span>
+                  </p>
+                </figcaption>
+
+                <span class="about-fig__cursor" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#6f55d6" stroke="#fff" stroke-width="1.5"><path d="M4 3l7 18 2.5-7.5L21 11z"/></svg>
+                  <span>Gei</span>
+                </span>
+              </figure>
+            </div>
           </main>
 
           <section class="about-companies-strip">
             <div class="about-companies-copy">
-              <span data-i18n="about_me_companies_label">Building solutions for</span>
+              <span class="about-eyebrow" data-i18n="about_me_companies_label">Building solutions for</span>
               <h2 data-i18n="about_me_companies_title">Great companies</h2>
             </div>
             <div class="about-companies-logos">
@@ -537,6 +403,7 @@
 
           <section class="about-tools">
             <div class="about-tools-header">
+              <p class="about-eyebrow" data-i18n="about_tools_eyebrow">My daily stack</p>
               <h2 id="about-tools-heading" data-i18n="about_me_tools_title">Main work tools</h2>
             </div>
             <div class="about-tools-marquee" role="region" aria-labelledby="about-tools-heading">
@@ -610,7 +477,10 @@
         <div class="experience" id="experience-page">
           <div class="experience-inner">
             <header class="experience-header">
-              <h2 id="experience-section-heading" data-i18n="experience_title">Experiência profissional</h2>
+              <p class="experience-header-eyebrow" data-i18n="experience_intro_eyebrow">Um breve resumo</p>
+              <h2 id="experience-section-heading" data-i18n="experience_intro_title">Carreira profissional</h2>
+              <p class="experience-header-description" data-i18n="experience_intro_description">Para saber mais detalhes explore em meu currículo.</p>
+              <a class="resumes about-button experience-resume-button" data-i18n="resume">Currículo</a>
             </header>
 
             <div class="experience-layout">
@@ -625,6 +495,7 @@
                 <article class="experience-card experience-card--loomi">
                   <div class="experience-card-main">
                     <div class="experience-card-lead">
+                      <span class="experience-progress-indicator experience-progress-indicator--status" aria-hidden="true"></span>
                       <a
                         class="experience-logo-wrap experience-logo-wrap--loomi"
                         href="https://loomi.digital/"
@@ -645,19 +516,9 @@
                             rel="noopener noreferrer"
                           >Loomi</a>
                         </h3>
-                        <p class="experience-card-body experience-card-body--on-dark">
-                          <span data-i18n="experience_loomi_paragraph_1_start">Atuo como Product Designer para produtos B2B e B2C, trabalhando em múltiplos projetos para clientes como </span><span class="experience-loomi-highlight" data-i18n="experience_loomi_paragraph_1_highlight">Neoenergia, Vivo, Vibe, Moura Dubeux, IT Forum e Atvos.</span><span data-i18n="experience_loomi_paragraph_1_end"> Conduzo ciclos completos de design, do discovery ao delivery, lidando com problemas pouco definidos, organização de informações e fluxos complexos em produtos desktop e mobile.</span>
+                        <p class="experience-card-body experience-card-body--on-dark" data-i18n="experience_loomi_summary">
+                          Atuo como Product Designer conduzindo ciclos completos de design, do discovery ao delivery, lidando com problemas pouco definidos, organização de informações e fluxos complexos em produtos desktop e mobile.
                         </p>
-                        <p class="experience-card-body experience-card-body--on-dark" data-i18n="experience_loomi_paragraph_2">
-                          Comunicação ativa com clientes, focada em entender desafios e transformar em soluções digitais eficientes.
-                        </p>
-                        <p class="experience-recurring-heading experience-recurring-heading--on-dark" data-i18n="experience_loomi_recurring_title">Atuação recorrente</p>
-                        <ul class="experience-list experience-list--on-dark">
-                          <li data-i18n="experience_loomi_item_1">Condução de Discovery estruturado, alinhando contexto, objetivos e prioridades junto aos clientes.</li>
-                          <li data-i18n="experience_loomi_item_2">Mapeamento de processos, jornadas e fluxos, com foco em eficiência operacional e boas práticas de UX.</li>
-                          <li data-i18n="experience_loomi_item_3">Criação e validação de fluxos, wireframes e protótipos, apoiados por benchmarks, análises de mercado e testes de usabilidade.</li>
-                          <li data-i18n="experience_loomi_item_4">Produção e apresentação de entregáveis estratégicos, apoiando decisões de produto e evolução das soluções.</li>
-                        </ul>
                       </div>
                     </div>
                     <div class="experience-period experience-period--on-dark">
@@ -684,14 +545,6 @@
                           <p class="experience-summary" data-i18n="experience_sysvale_summary">
                             Atuei como UX/UI Designer criando interfaces de ponta a ponta para produtos na área da saúde. Sistemas de gestão com compromisso com a saúde.
                           </p>
-                          <p class="experience-details" data-i18n="experience_sysvale_paragraph_1">
-                            No dia a dia, desenvolvia novas telas, pensava na experiência do usuário e também criava e documentava componentes para o Design System, ajudando a manter tudo mais organizado, consistente e escalável.
-                          </p>
-                          <p class="experience-details" data-i18n="experience_sysvale_paragraph_2">
-                            Participava de validações dos fluxos junto aos clientes e acompanhava a experiência dos usuários com ferramentas como o FullStory, buscando entender melhor a experiência e identificar oportunidades de melhoria.
-                          </p>
-                          <p class="experience-impact experience-impact-number" data-i18n="experience_sysvale_impact_number">+ 2.091.488</p>
-                          <p class="experience-impact experience-impact-label" data-i18n="experience_sysvale_impact_label">PESSOAS IMPACTADAS</p>
                         </div>
                       </div>
                       <div class="experience-period experience-period--on-light">
@@ -716,7 +569,19 @@
 
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--main">
+      <section class="footer-cta" aria-labelledby="footer-cta-title">
+        <span class="footer-cta__orbit" aria-hidden="true"></span>
+        <div class="footer-cta__copy">
+          <p class="footer-cta__eyebrow" data-i18n="footer_cta_eyebrow">Let's talk</p>
+          <h2 class="footer-cta__title" id="footer-cta-title" data-i18n="footer_cta_title">Have a complex problem? Let's make it simple.</h2>
+          <p class="footer-cta__text" data-i18n="footer_cta_text">I'm open to new projects and collaborations. Send me a message and let's talk about what you're building.</p>
+        </div>
+        <div class="footer-cta__actions">
+          <a class="footer-cta__button footer-cta__button--dark" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">Talk to me</a>
+          <a class="resumes footer-cta__button footer-cta__button--light" href="#" data-i18n="resume">Resume</a>
+        </div>
+      </section>
       <div class="site-footer__divider" aria-hidden="true"></div>
       <div class="site-footer__inner">
         <div class="site-footer__profile">
@@ -797,18 +662,1202 @@
     </div>
   </div>
 
-  <script src="./scripts/scroll-handler.js"></script>
+  <section
+    class="itforum-case"
+    id="itforum-case"
+    hidden
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="itforum-case-title"
+  >
+    <div class="itforum-case__scroll">
+      <section class="itforum-case__intro itforum-case__inner">
+        <h1 id="itforum-case-title" class="itforum-case__title" tabindex="-1" data-i18n="itforum_case_intro">
+          Brazil's leading news portal on technology, innovation, and digital transformation, aimed at IT leaders and professionals.
+        </h1>
+
+        <dl class="itforum-case__meta">
+          <div class="itforum-case__meta-item">
+            <dt class="itforum-case__meta-label" data-i18n="orla_case_meta_solution_label">Solution</dt>
+            <dd class="itforum-case__meta-value" data-i18n="itforum_case_title">It Forum</dd>
+          </div>
+          <div class="itforum-case__meta-item">
+            <dt class="itforum-case__meta-label" data-i18n="orla_case_meta_branch_label">Industry</dt>
+            <dd class="itforum-case__meta-value" data-i18n="itforum_case_meta_industry_value">Technology &amp; Media</dd>
+          </div>
+          <div class="itforum-case__meta-item">
+            <dt class="itforum-case__meta-label" data-i18n="itforum_case_meta_platform_label">Platform</dt>
+            <dd class="itforum-case__meta-value" data-i18n="itforum_case_meta_platforms_value">Responsive Website</dd>
+          </div>
+          <div class="itforum-case__meta-item">
+            <dt class="itforum-case__meta-label" data-i18n="orla_case_meta_sector_label">Sector</dt>
+            <dd class="itforum-case__meta-value" data-i18n="itforum_case_meta_sector_value">Digital Media &amp; Communication</dd>
+          </div>
+          <div class="itforum-case__meta-item">
+            <dt class="itforum-case__meta-label" data-i18n="itforum_case_meta_business_label">Business Model</dt>
+            <dd class="itforum-case__meta-value" data-i18n="itforum_case_meta_business_value">B2C</dd>
+          </div>
+          <div class="itforum-case__meta-item">
+            <dt class="itforum-case__meta-label" data-i18n="orla_case_meta_year_label">Year</dt>
+            <dd class="itforum-case__meta-value" data-i18n="itforum_case_meta_year_value">2025</dd>
+          </div>
+        </dl>
+
+        <div class="itforum-case__cover">
+          <div class="itforum-case__cover-screens">
+            <figure class="itforum-case__cover-screen">
+              <img
+                src="./images/itforum-case/cover-screen-left.png"
+                alt=""
+                width="669"
+                height="823"
+              />
+            </figure>
+            <figure class="itforum-case__cover-screen itforum-case__cover-screen--center">
+              <img
+                src="./images/itforum-case/cover-screen-center.png"
+                alt=""
+                width="669"
+                height="823"
+              />
+            </figure>
+            <figure class="itforum-case__cover-screen">
+              <img
+                src="./images/itforum-case/new-portal/columns.png"
+                alt=""
+                width="318"
+                height="1024"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="itforum-case__challenges itforum-case__inner" aria-labelledby="itforum-case-challenges-title">
+        <div class="itforum-case__challenges-copy">
+          <h2 id="itforum-case-challenges-title" class="itforum-case__challenges-title" data-i18n="itforum_case_desafios_title">
+            Challenges
+          </h2>
+
+          <ul class="itforum-case__challenges-list">
+            <li class="itforum-case__challenges-item" data-i18n="itforum_case_desafios_1">
+              Carry out the complete redesign of the news portal.
+            </li>
+            <li class="itforum-case__challenges-item" data-i18n="itforum_case_desafios_2">
+              Apply UX best practices to improve navigation and content consumption.
+            </li>
+            <li class="itforum-case__challenges-item" data-i18n="itforum_case_desafios_3">
+              Diagnose performance, accessibility, and SEO bottlenecks across the portal.
+            </li>
+            <li class="itforum-case__challenges-item" data-i18n="itforum_case_desafios_4">
+              Benchmark major news portals to identify optimization opportunities.
+            </li>
+          </ul>
+
+          <p class="itforum-case__challenges-note" data-i18n="itforum_case_desafios_note">
+            Some information in this case study was omitted or adapted to preserve project confidentiality. The content presented reflects my role in the project.
+          </p>
+        </div>
+
+        <div class="itforum-case__challenges-art">
+          <img
+            class="itforum-case__challenges-img"
+            src="./images/itforum-case/challenges-laptop.png?v=teal-bg"
+            alt=""
+            width="1024"
+            height="899"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="itforum-case__tasks" aria-labelledby="itforum-case-tasks-title">
+        <div class="itforum-case__tasks-inner itforum-case__inner">
+          <div class="itforum-case__tasks-intro">
+            <p class="itforum-case__tasks-eyebrow">
+              <span class="itforum-case__tasks-eyebrow-ring" aria-hidden="true">
+                <span class="itforum-case__tasks-eyebrow-dot"></span>
+              </span>
+              <span data-i18n="itforum_case_tasks_eyebrow">Scope of work</span>
+            </p>
+            <h2 id="itforum-case-tasks-title" class="itforum-case__tasks-title" data-i18n="itforum_case_tasks_title">
+              Key responsibilities
+            </h2>
+
+            <svg class="itforum-case__tasks-ill" viewBox="0 0 520 480" role="img" aria-label="Abstract illustration of concentric orbits that spin on hover" data-i18n-aria="itforum_case_tasks_ill">
+              <defs>
+                <radialGradient id="itforum-tasks-core" cx="35%" cy="30%" r="80%">
+                  <stop offset="0" stop-color="#9CCBC9"></stop>
+                  <stop offset="1" stop-color="#2E5A5C"></stop>
+                </radialGradient>
+              </defs>
+              <line x1="-200" y1="240" x2="760" y2="240" stroke="#2E5A5C" stroke-opacity="0.14"></line>
+              <line x1="280" y1="-60" x2="280" y2="560" stroke="#2E5A5C" stroke-opacity="0.14"></line>
+              <g class="itforum-case__tasks-ill-rings">
+                <circle class="itforum-case__tasks-ill-breathe" cx="280" cy="240" r="92" fill="none" stroke="#2E5A5C" stroke-opacity="0.4"></circle>
+                <circle class="itforum-case__tasks-ill-spin itforum-case__tasks-ill-dash" cx="280" cy="240" r="152" fill="none" stroke="#2E5A5C" stroke-opacity="0.4" stroke-dasharray="2 7" stroke-linecap="round"></circle>
+                <circle class="itforum-case__tasks-ill-breathe" cx="280" cy="240" r="214" fill="none" stroke="#2E5A5C" stroke-opacity="0.26"></circle>
+                <circle cx="280" cy="240" r="284" fill="none" stroke="#2E5A5C" stroke-opacity="0.16"></circle>
+              </g>
+              <g stroke="#2E5A5C" stroke-opacity="0.5" stroke-linecap="round">
+                <line x1="272" y1="240" x2="288" y2="240"></line>
+                <line x1="280" y1="232" x2="280" y2="248"></line>
+                <line x1="124" y1="86" x2="136" y2="86"></line>
+                <line x1="130" y1="80" x2="130" y2="92"></line>
+                <line x1="428" y1="404" x2="440" y2="404"></line>
+                <line x1="434" y1="398" x2="434" y2="410"></line>
+              </g>
+              <g class="itforum-case__tasks-ill-pulse">
+                <circle cx="280" cy="240" r="38" fill="url(#itforum-tasks-core)"></circle>
+                <circle cx="268" cy="228" r="10" fill="#FFFFFF" fill-opacity="0.55"></circle>
+              </g>
+              <g class="itforum-case__tasks-ill-spin itforum-case__tasks-ill-s1">
+                <circle cx="432" cy="240" r="9" fill="#F4F5F4" stroke="#2E5A5C" stroke-opacity="0.7"></circle>
+              </g>
+              <g class="itforum-case__tasks-ill-spin itforum-case__tasks-ill-rev itforum-case__tasks-ill-s2">
+                <circle cx="172" cy="148" r="6" fill="#2E5A5C" fill-opacity="0.8"></circle>
+              </g>
+              <g class="itforum-case__tasks-ill-spin itforum-case__tasks-ill-s3">
+                <circle cx="130" cy="350" r="8" fill="#F4F5F4" stroke="#2E5A5C" stroke-opacity="0.7"></circle>
+              </g>
+              <g class="itforum-case__tasks-ill-spin itforum-case__tasks-ill-rev itforum-case__tasks-ill-s4">
+                <circle cx="360" cy="404" r="5" fill="#2E5A5C" fill-opacity="0.55"></circle>
+              </g>
+              <g class="itforum-case__tasks-ill-spin itforum-case__tasks-ill-s5">
+                <circle cx="66" cy="240" r="4" fill="#2E5A5C" fill-opacity="0.45"></circle>
+              </g>
+            </svg>
+          </div>
+
+          <div class="itforum-case__tasks-list">
+            <article class="itforum-case__task-item">
+              <div class="itforum-case__task-row">
+                <span class="itforum-case__task-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><line x1="20" y1="20" x2="15.8" y2="15.8"></line></svg>
+                </span>
+                <div class="itforum-case__task-copy">
+                  <span class="itforum-case__task-label" data-i18n="itforum_case_task_tag_1">Research</span>
+                  <p data-i18n="itforum_case_task_1">Benchmark of leading news portals.</p>
+                </div>
+              </div>
+              <span class="itforum-case__task-bar" aria-hidden="true"></span>
+            </article>
+            <article class="itforum-case__task-item">
+              <div class="itforum-case__task-row">
+                <span class="itforum-case__task-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 7 12 10 5 14 19 17 12 21 12"></polyline></svg>
+                </span>
+                <div class="itforum-case__task-copy">
+                  <span class="itforum-case__task-label" data-i18n="itforum_case_task_tag_2">Diagnosis</span>
+                  <p data-i18n="itforum_case_task_2">Performance, accessibility, and SEO assessment to identify improvement opportunities.</p>
+                </div>
+              </div>
+              <span class="itforum-case__task-bar" aria-hidden="true"></span>
+            </article>
+            <article class="itforum-case__task-item">
+              <div class="itforum-case__task-row">
+                <span class="itforum-case__task-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="5" rx="1.5"></rect><rect x="3" y="16" width="6" height="5" rx="1.5"></rect><rect x="15" y="16" width="6" height="5" rx="1.5"></rect><path d="M12 8v4M6 16v-2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2"></path></svg>
+                </span>
+                <div class="itforum-case__task-copy">
+                  <span class="itforum-case__task-label" data-i18n="itforum_case_task_tag_3">Architecture</span>
+                  <p data-i18n="itforum_case_task_3">Definition of the information architecture and navigation.</p>
+                </div>
+              </div>
+              <span class="itforum-case__task-bar" aria-hidden="true"></span>
+            </article>
+            <article class="itforum-case__task-item">
+              <div class="itforum-case__task-row">
+                <span class="itforum-case__task-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="2"></rect><rect x="13" y="4" width="7" height="7" rx="2"></rect><rect x="4" y="13" width="7" height="7" rx="2"></rect><rect x="13" y="13" width="7" height="7" rx="2"></rect></svg>
+                </span>
+                <div class="itforum-case__task-copy">
+                  <span class="itforum-case__task-label" data-i18n="itforum_case_task_tag_4">System</span>
+                  <p data-i18n="itforum_case_task_4">Development of the Design System.</p>
+                </div>
+              </div>
+              <span class="itforum-case__task-bar" aria-hidden="true"></span>
+            </article>
+            <article class="itforum-case__task-item">
+              <div class="itforum-case__task-row">
+                <span class="itforum-case__task-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9"></polyline></svg>
+                </span>
+                <div class="itforum-case__task-copy">
+                  <span class="itforum-case__task-label" data-i18n="itforum_case_task_tag_5">Alignment</span>
+                  <p data-i18n="itforum_case_task_5">Alignment and validation of solutions with stakeholders.</p>
+                </div>
+              </div>
+              <span class="itforum-case__task-bar" aria-hidden="true"></span>
+            </article>
+            <article class="itforum-case__task-item">
+              <div class="itforum-case__task-row">
+                <span class="itforum-case__task-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="16" y1="3" x2="16" y2="7"></line></svg>
+                </span>
+                <div class="itforum-case__task-copy">
+                  <span class="itforum-case__task-label" data-i18n="itforum_case_task_tag_6">Management</span>
+                  <p data-i18n="itforum_case_task_6">Monitoring of the project schedule and deliveries.</p>
+                </div>
+              </div>
+              <span class="itforum-case__task-bar" aria-hidden="true"></span>
+            </article>
+            <article class="itforum-case__task-item">
+              <div class="itforum-case__task-row">
+                <span class="itforum-case__task-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 7 3 12 8 17"></polyline><polyline points="16 7 21 12 16 17"></polyline><line x1="14" y1="5" x2="10" y2="19"></line></svg>
+                </span>
+                <div class="itforum-case__task-copy">
+                  <span class="itforum-case__task-label" data-i18n="itforum_case_task_tag_7">Implementation</span>
+                  <p data-i18n="itforum_case_task_7">Monitoring implementation alongside the development team.</p>
+                </div>
+              </div>
+              <span class="itforum-case__task-bar" aria-hidden="true"></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="itforum-case__process" aria-labelledby="itforum-case-process-title">
+        <h2 id="itforum-case-process-title" class="itforum-case__process-sr" data-i18n="orla_case_process_title">
+          The design process
+        </h2>
+
+        <ol class="itforum-case__process-list itforum-case__inner">
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">01</span>
+              <h3 class="itforum-case__process-name" data-i18n="itforum_case_discover_title">Discover</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itforum_case_discover_copy">
+                We interviewed stakeholders, analyzed the market, and reviewed existing materials to understand the problem, map opportunities, and guide the next steps.
+              </p>
+              <ul class="itforum-case__process-tags">
+                <li>
+                  <span class="itforum-case__process-tag">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2.5 13V7.5h2.25V13H2.5zm4.375 0V3.5h2.25V13H6.875zM11.25 13V6h2.25v7h-2.25z"/></svg>
+                    <span data-i18n="itforum_case_discover_tag_benchmark">Benchmark</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="itforum-case__process-tag">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2.2 3.4h7.1c.7 0 1.2.5 1.2 1.2v4.1c0 .7-.5 1.2-1.2 1.2H6.1L3.6 12V9.9H2.2c-.7 0-1.2-.5-1.2-1.2V4.6c0-.7.5-1.2 1.2-1.2zm9.3 2.3h2.3c.7 0 1.2.5 1.2 1.2v3.4c0 .7-.5 1.2-1.2 1.2h-1.1V14l-2.2-2.5H9.2V7c0-.7.5-1.3 1.2-1.3h1.1z"/></svg>
+                    <span data-i18n="itforum_case_discover_tag_interviews">Stakeholder interviews</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">02</span>
+              <h3 class="itforum-case__process-name" data-i18n="itforum_case_define_title">Define</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itforum_case_define_copy">
+                Based on the insights, we structured the main problems and validated hypotheses with the client. We prioritized deliveries according to the screen flow, aligning with the client on which journey stages were most relevant at that time.
+              </p>
+              <ul class="itforum-case__process-tags">
+                <li>
+                  <span class="itforum-case__process-tag itforum-case__process-tag--target">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1.4A6.6 6.6 0 1 0 8 14.6 6.6 6.6 0 0 0 8 1.4zm0 2.1a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2.2a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6zm0 1.4a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z"/></svg>
+                    <span data-i18n="itforum_case_define_tag_hypotheses">Validated hypotheses</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="itforum-case__process-tag">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1.5A6.5 6.5 0 1 0 8 14.5 6.5 6.5 0 0 0 8 1.5zM8 3a5 5 0 1 1 0 10A5 5 0 0 1 8 3zm.6 1.6H7.2v4.2l3.2 1.9.7-1.2-2.5-1.5V4.6z"/></svg>
+                    <span data-i18n="itforum_case_define_tag_prioritization">Flow prioritization</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">03</span>
+              <h3 class="itforum-case__process-name" data-i18n="itforum_case_develop_title">Develop</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itforum_case_develop_copy">
+                We created and tested concepts with stakeholders, validating navigation flows and visual direction. We refined components and content organization based on the feedback collected.
+              </p>
+              <ul class="itforum-case__process-tags">
+                <li>
+                  <span class="itforum-case__process-tag">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M2.2 4.2 8 1.8l5.8 2.4v.9L8 3.1 2.2 5.1v-.9zm0 3.1L8 4.9l5.8 2.4v.9L8 6.2 2.2 8.2V7.3zm0 3.2L8 8.1l5.8 2.4v1.7L8 14.2 2.2 12.2V10.5z"/></svg>
+                    <span data-i18n="itforum_case_develop_tag_prototype">High-fidelity prototype</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">04</span>
+              <h3 class="itforum-case__process-name" data-i18n="itforum_case_deliver_title">Deliver</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itforum_case_deliver_copy">
+                We documented the complete flow, mapped use cases and error scenarios, and refined the final details with the team through to the product's final delivery.
+              </p>
+              <ul class="itforum-case__process-tags">
+                <li>
+                  <span class="itforum-case__process-tag">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M9.2 2.4 14.5 8 9.2 13.6V10H6.4C3.9 10 2.3 11.2 1.5 13.4 1.4 8.8 3.8 6.1 6.4 6.1h2.8V2.4z"/></svg>
+                    <span data-i18n="itforum_case_deliver_tag_handoff">Handoff</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="itforum-case__process-tag itforum-case__process-tag--ok">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.6 2.2h2.8v2.8H6.6V2.2zm4.4 2.2h2.8v2.8H11V4.4zM6.6 6.6h2.8v2.8H6.6V6.6zM2.2 8.8h2.8v2.8H2.2V8.8zm4.4 2.2h2.8v2.8H6.6v-2.8z"/></svg>
+                    <span data-i18n="itforum_case_deliver_tag_design_system">Design System</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="itforum-case__process-tag itforum-case__process-tag--ok">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.4 11.3 3.2 8.1l1.1-1.1 2.1 2.1 5.2-5.3 1.1 1.2-6.3 6.3z"/></svg>
+                    <span data-i18n="itforum_case_deliver_tag_use_cases">Mapped use cases</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="itforum-case__redesign" aria-labelledby="itforum-case-redesign-title">
+        <div class="itforum-case__redesign-inner itforum-case__inner">
+          <h2 id="itforum-case-redesign-title" class="itforum-case__redesign-eyebrow" data-i18n="itforum_case_redesign_eyebrow">
+            The Redesign
+          </h2>
+          <p class="itforum-case__redesign-copy" data-i18n="itforum_case_redesign_title">
+            We redesigned the portal's complete experience, including a new visual identity, navigation structure, components, and content organization. The main challenge was to make reading clearer and more efficient while maintaining usability and performance in a portal with over 80,000 published news stories.
+          </p>
+
+          <div class="itforum-case__redesign-stage">
+            <ul class="itforum-case__redesign-pills itforum-case__redesign-pills--left">
+              <li data-i18n="itforum_case_redesign_tag_sections">New sections</li>
+              <li data-i18n="itforum_case_redesign_tag_seo">Optimized SEO</li>
+              <li data-i18n="itforum_case_redesign_tag_design">Innovative design</li>
+            </ul>
+
+            <div class="itforum-case__redesign-device">
+              <img
+                src="./images/it-forum-mockup.png"
+                alt=""
+                width="1024"
+                height="726"
+                loading="lazy"
+              />
+            </div>
+
+            <ul class="itforum-case__redesign-pills itforum-case__redesign-pills--right">
+              <li data-i18n="itforum_case_redesign_tag_responsiveness">Responsiveness</li>
+              <li data-i18n="itforum_case_redesign_tag_performance">+ Performance</li>
+              <li data-i18n="itforum_case_redesign_tag_flow">Fluid, optimized flow</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="itforum-case__legacy" aria-labelledby="itforum-case-legacy-title">
+        <div class="itforum-case__legacy-inner itforum-case__inner">
+          <p class="itforum-case__legacy-eyebrow" data-i18n="itforum_case_legacy_eyebrow">Before the redesign</p>
+          <h2 id="itforum-case-legacy-title" class="itforum-case__legacy-title" data-i18n="itforum_case_legacy_title">
+            Previous portal
+          </h2>
+
+          <div class="itforum-case__legacy-gallery">
+            <figure class="itforum-case__legacy-frame">
+              <img
+                src="./images/itforum-case/old-portal/news.jpg"
+                alt=""
+                width="760"
+                height="1024"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="itforum-case__legacy-frame">
+              <img
+                src="./images/itforum-case/old-portal/events.jpg"
+                alt=""
+                width="760"
+                height="1024"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="itforum-case__legacy-frame">
+              <img
+                src="./images/itforum-case/old-portal/category.jpg"
+                alt=""
+                width="760"
+                height="1024"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="itforum-case__new-portal" aria-labelledby="itforum-case-new-portal-title">
+        <div class="itforum-case__section-divider" aria-hidden="true"></div>
+        <div class="itforum-case__new-portal-glow itforum-case__new-portal-glow--top" aria-hidden="true"></div>
+        <div class="itforum-case__new-portal-glow itforum-case__new-portal-glow--mid" aria-hidden="true"></div>
+        <div class="itforum-case__new-portal-glow itforum-case__new-portal-glow--bottom" aria-hidden="true"></div>
+        <div class="itforum-case__new-portal-inner itforum-case__inner">
+          <p class="itforum-case__new-portal-eyebrow" data-i18n="itforum_case_new_portal_eyebrow">After the redesign</p>
+          <h2 id="itforum-case-new-portal-title" class="itforum-case__new-portal-title" data-i18n="itforum_case_new_portal_title">
+            New portal
+          </h2>
+
+          <div class="itforum-case__new-portal-gallery">
+            <figure class="itforum-case__new-portal-frame">
+              <img
+                src="./images/itforum-case/redesigned/home.png"
+                alt=""
+                width="669"
+                height="849"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="itforum-case__new-portal-frame">
+              <img
+                src="./images/itforum-case/redesigned/search.png"
+                alt=""
+                width="669"
+                height="849"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="itforum-case__new-portal-frame">
+              <img
+                src="./images/itforum-case/redesigned/videocasts.png"
+                alt=""
+                width="669"
+                height="849"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="itforum-case__new-portal-frame">
+              <img
+                src="./images/itforum-case/redesigned/channel.png"
+                alt=""
+                width="669"
+                height="849"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="itforum-case__impact" aria-labelledby="itforum-case-impact-title">
+        <div class="itforum-case__impact-inner itforum-case__inner">
+          <h2 id="itforum-case-impact-title" class="itforum-case__impact-title" data-i18n="itforum_case_results_title">
+            Results
+          </h2>
+
+          <ul class="itforum-case__impact-metrics">
+            <li class="itforum-case__impact-metric">
+              <p class="itforum-case__impact-metric-value" data-i18n="itforum_case_impact_metric_1_value">88</p>
+              <p class="itforum-case__impact-metric-label" data-i18n="itforum_case_impact_metric_1_label">Average SEO score on the main pages</p>
+            </li>
+            <li class="itforum-case__impact-metric">
+              <p class="itforum-case__impact-metric-value itforum-case__slot-text"></p>
+              <p class="itforum-case__impact-metric-label itforum-case__slot-text"></p>
+            </li>
+          </ul>
+
+          <div class="itforum-case__impact-board">
+            <div class="itforum-case__impact-badges">
+              <div class="itforum-case__slot" aria-hidden="true"></div>
+              <ul class="itforum-case__impact-pills">
+                <li data-i18n="itforum_case_result_2">A more intuitive browsing experience, reducing barriers and improving the platform's usability.</li>
+                <li data-i18n="itforum_case_result_3">Evolution of accessibility resources, increasing inclusion and enabling a more democratic experience.</li>
+              </ul>
+            </div>
+            <div class="itforum-case__impact-visual">
+              <div class="itforum-case__impact-photo itforum-case__slot" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer itforum-case__footer">
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__inner">
+          <div class="site-footer__profile">
+            <img
+              src="./images/footer-profile.png"
+              alt=""
+              class="site-footer__avatar"
+              width="72"
+              height="72"
+              loading="lazy"
+            />
+            <div class="site-footer__profile-copy">
+              <p class="site-footer__name" data-i18n="footer_name">Geissy Maysla</p>
+              <p class="site-footer__role" data-i18n="hero_tagline">Product Designer</p>
+            </div>
+          </div>
+
+          <a href="#itforum-case" class="site-footer__back-to-top" data-itforum-case-top>
+            <span class="site-footer__back-icon" aria-hidden="true">
+              <svg class="site-footer__back-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9V3M6 3L3.5 5.5M6 3L8.5 5.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span data-i18n="footer_back_to_top">Back to top</span>
+          </a>
+
+          <p class="site-footer__copyright" data-i18n="footer_copyright">Copyright © Geissy Maysla, 2026</p>
+
+          <nav class="site-footer__social" aria-label="Social media">
+            <a class="site-footer__social-link site-footer__social-link--linkedin" href="https://www.linkedin.com/in/geissy-nunes-683109196/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/linkedin.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/linkedin-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--dribbble" href="https://dribbble.com/Mayslassy" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/dribbble.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/dribbble-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--medium" href="https://medium.com/@Geissy" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/medium.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/medium-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--behance" href="https://www.behance.net/geissynunes" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/behance.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/behance-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section class="bbee-case" id="bbee-case" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bbee-case-title">
+    <div class="bbee-case__scroll">
+      <section class="bbee-case__intro bbee-case__inner">
+        <p class="bbee-case__eyebrow" data-i18n="bbee_eyebrow">BBEE – Smart Apiculture</p>
+        <h1 id="bbee-case-title" class="bbee-case__title" tabindex="-1" data-i18n="bbee_title">Caring for each hive starts with seeing what was once invisible.</h1>
+        <dl class="bbee-case__meta">
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_solution_label">Solution</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_solution_value">BBEE – Smart Apiculture</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_industry_label">Industry</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_industry_value">Agribusiness</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_platforms_label">Platforms</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_platforms_value">Web &amp; mobile</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_duration_label">Duration</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_duration_value">8 months</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_year_label">Year</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_year_value">2024</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_screens_label">Screens</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_screens_value">+50</dd>
+          </div>
+        </dl>
+        <a class="bbee-case__site" href="https://ibbee.com.br/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          ibbee.com.br
+        </a>
+        <div class="bbee-case__cover">
+          <img class="bbee-case__cover-img" src="./images/bbee-case/cover.jpg" alt="Beekeeper holding a jar of honey next to the BBEE apiary dashboard" width="1920" height="1055" />
+        </div>
+      </section>
+      <section class="bbee-case__about bbee-case__inner" aria-labelledby="bbee-about-title">
+        <h2 class="bbee-case__h2" data-i18n="bbee_about_title" id="bbee-about-title">About the project</h2>
+        <div class="bbee-case__about-grid">
+          <article class="bbee-case__about-col">
+            <h3 data-i18n="bbee_context_title">Context</h3>
+            <p data-i18n="bbee_context_text">Beekeeping still relies on manual and poorly standardized processes. Without reliable data and management tools, beekeepers face low predictability, productivity losses, and difficulty tracking hives, tasks, and teams. This makes management reactive, unsustainable, and vulnerable to unforeseen events.</p>
+          </article>
+          <article class="bbee-case__about-col">
+            <h3 data-i18n="bbee_problem_title">Problem</h3>
+            <p data-i18n="bbee_problem_text">Essential data such as temperature, humidity, production, and hive conditions is hard to record and track. Tasks, teams, and apiary visits don&#x27;t follow a structured workflow, so beekeepers only discover a problem once it has already caused impact. Without indicators, productivity and hive welfare are compromised.</p>
+          </article>
+          <article class="bbee-case__about-col">
+            <h3 data-i18n="bbee_challenge_title">Challenge</h3>
+            <p data-i18n="bbee_challenge_text">Develop a digital solution capable of modernizing beekeeping management by bringing intelligent monitoring, data centralization, and organization to all stages, without adding complexity to the beekeeper&#x27;s daily routine.</p>
+          </article>
+        </div>
+        <div class="bbee-case__statement">
+          <p class="bbee-case__statement-text" data-i18n="bbee_statement">BBEE — Smart Apiculture is a web and mobile platform that brings together apiary management, intelligent monitoring, and operational organization. It centralizes data, tasks, location, and production, so beekeepers can act preventively, strategically, and sustainably.</p>
+          <img class="bbee-case__statement-img" src="./images/bbee-case/field-photos.jpg" alt="" width="884" height="666" loading="lazy" />
+        </div>
+      </section>
+      <section class="bbee-case__field" aria-labelledby="bbee-field-title">
+        <div class="bbee-case__inner">
+          <p class="bbee-case__eyebrow" data-i18n="bbee_field_eyebrow">Mobile app</p>
+          <h2 class="bbee-case__h2" data-i18n="bbee_field_title" id="bbee-field-title">Fieldwork is the heart of beekeeping management.</h2>
+          <p class="bbee-case__lead" data-i18n="bbee_field_text">With clear processes, executing each planned action stops being a challenge and becomes part of an efficient workflow — even without connection.</p>
+          <ul class="bbee-case__highlights">
+            <li><span data-i18n="bbee_hl_1">Track and execute tasks even without connection.</span></li>
+            <li><span data-i18n="bbee_hl_2">Have a complete history of interventions and activities.</span></li>
+            <li><span data-i18n="bbee_hl_3">Teamwork in the apiary, with a clear and organized workflow.</span></li>
+            <li><span data-i18n="bbee_hl_4">Capture field information the moment it happens.</span></li>
+          </ul>
+          <img class="bbee-case__field-img" src="./images/bbee-case/field-flow.jpg" alt="" width="1920" height="1130" loading="lazy" />
+        </div>
+      </section>
+      <section class="orla-proto bbee-proto bbee-case__inner" aria-labelledby="bbee-proto-title" data-bbee-proto>
+        <header class="orla-proto__head">
+          <p class="orla-proto__eyebrow" data-i18n="bbee_proto_eyebrow">Try it yourself</p>
+          <h2 class="orla-proto__title" data-i18n="bbee_proto_title" id="bbee-proto-title">Field flow, step by step</h2>
+          <p class="orla-proto__intro" data-i18n="bbee_proto_intro">Follow a beekeeper from the task list to scanning the hive and completing the work. Tap through it yourself or let the guided tour play it.</p>
+        </header>
+        <div class="orla-proto__stage">
+          <div class="orla-proto__toolbar">
+            <span class="orla-proto__badge" data-i18n="bbee_proto_badge">Interactive prototype</span>
+            <button type="button" class="orla-proto__tool" data-proto-replay>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.6h3.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="orla_proto_replay">Replay</span>
+            </button>
+            <button type="button" class="orla-proto__tool" data-proto-autoplay aria-pressed="true">
+              <svg class="is-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <svg class="is-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5v13l11-6.5Z" fill="currentColor"/></svg>
+              <span data-i18n="orla_proto_tour">Guided tour</span>
+            </button>
+          </div>
+          <div class="orla-proto__layout">
+            <ol class="orla-proto__steps" data-proto-steps aria-label="Prototype steps">
+              <li><button type="button" class="orla-proto__step" data-step="0"><span class="orla-proto__step-num">01</span><span data-i18n="bbee_proto_step_1">My tasks</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="1"><span class="orla-proto__step-num">02</span><span data-i18n="bbee_proto_step_2">Task details</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="2"><span class="orla-proto__step-num">03</span><span data-i18n="bbee_proto_step_3">Scan the hive</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="3"><span class="orla-proto__step-num">04</span><span data-i18n="bbee_proto_step_4">Hive overview</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="4"><span class="orla-proto__step-num">05</span><span data-i18n="bbee_proto_step_5">Attach activities</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="5"><span class="orla-proto__step-num">06</span><span data-i18n="bbee_proto_step_6">Indicate presence</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="6"><span class="orla-proto__step-num">07</span><span data-i18n="bbee_proto_step_7">Task completed</span></button></li>
+            </ol>
+            <div class="orla-proto__device-col">
+              <div class="orla-proto__device" data-proto-device></div>
+              <p class="orla-proto__hint" data-proto-hint aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bbee-tour bbee-case__inner" aria-labelledby="bbee-tour-title" data-bbee-tour>
+        <p class="bbee-case__eyebrow" data-i18n="bbee_tour_eyebrow">Web platform</p>
+        <h2 class="bbee-case__h2" data-i18n="bbee_tour_title" id="bbee-tour-title">Explore the management platform</h2>
+        <div class="bbee-tour__tabs" role="tablist" aria-labelledby="bbee-tour-title">
+          <button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-dashboard" aria-controls="bbee-panel-dashboard" aria-selected="true" data-tour-tab="dashboard"><span class="bbee-tour__tab-num">01</span><span data-i18n="bbee_mod_dashboard_name">Dashboard</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-apiary" aria-controls="bbee-panel-apiary" aria-selected="false" data-tour-tab="apiary" tabindex="-1"><span class="bbee-tour__tab-num">02</span><span data-i18n="bbee_mod_apiary_name">Apiary details</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-hive" aria-controls="bbee-panel-hive" aria-selected="false" data-tour-tab="hive" tabindex="-1"><span class="bbee-tour__tab-num">03</span><span data-i18n="bbee_mod_hive_name">Hive details</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-operations" aria-controls="bbee-panel-operations" aria-selected="false" data-tour-tab="operations" tabindex="-1"><span class="bbee-tour__tab-num">04</span><span data-i18n="bbee_mod_operations_name">Operations</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-planning" aria-controls="bbee-panel-planning" aria-selected="false" data-tour-tab="planning" tabindex="-1"><span class="bbee-tour__tab-num">05</span><span data-i18n="bbee_mod_planning_name">Planning</span></button>
+        </div>
+          <div class="bbee-tour__panel is-active" role="tabpanel" id="bbee-panel-dashboard" aria-labelledby="bbee-tab-dashboard" data-tour-panel="dashboard">
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_dashboard_desc">Consolidated view of key data.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_dashboard_b1">Total production</li><li data-i18n="bbee_mod_dashboard_b2">Tasks to be completed on the current day</li><li data-i18n="bbee_mod_dashboard_b3">Ranking of top-producing hives</li><li data-i18n="bbee_mod_dashboard_b4">Alerts for items below expected levels</li></ul>
+              
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-dashboard.jpg" alt="Dashboard" width="1152" height="820" loading="lazy" data-shot="0" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-apiary" aria-labelledby="bbee-tab-apiary" data-tour-panel="apiary" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_apiary_desc">Track objectives, monitor tasks, and keep complete control over apiary production.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_apiary_b1">Track each apiary&#x27;s objectives</li><li data-i18n="bbee_mod_apiary_b2">Adjust management daily based on weather data</li><li data-i18n="bbee_mod_apiary_b3">Monitor the overall production of the apiaries</li><li data-i18n="bbee_mod_apiary_b4">Access all hives grouped by apiary, with details on each one</li></ul>
+              <div class="bbee-tour__thumbs" role="group"><button type="button" class="bbee-tour__thumb" data-shot="0" aria-pressed="true"><img src="./images/bbee-case/web-apiary.jpg" alt="" width="1152" height="820" loading="lazy" /><span data-i18n="bbee_shot_web_apiary">Goals &amp; monitoring</span></button><button type="button" class="bbee-tour__thumb" data-shot="1" aria-pressed="false"><img src="./images/bbee-case/web-hives.jpg" alt="" width="1285" height="916" loading="lazy" /><span data-i18n="bbee_shot_web_hives">Production &amp; hives</span></button></div>
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-apiary.jpg" alt="Goals &amp; monitoring" width="1152" height="820" loading="lazy" data-shot="0" /><img class="bbee-tour__shot" src="./images/bbee-case/web-hives.jpg" alt="Production &amp; hives" width="1285" height="916" loading="lazy" data-shot="1" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-hive" aria-labelledby="bbee-tab-hive" data-tour-panel="hive" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_hive_desc">Individual hive view to monitor welfare.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_hive_b1">View key hive information while tracking operation progress</li><li data-i18n="bbee_mod_hive_b2">Alerts, last inspection, queen and colony strength at a glance</li><li data-i18n="bbee_mod_hive_b3">Generate a QR code to identify the hive in the field</li></ul>
+              
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-hive.jpg" alt="Hive sul" width="1286" height="922" loading="lazy" data-shot="0" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-operations" aria-labelledby="bbee-tab-operations" data-tour-panel="operations" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_operations_desc">Management of the activities to be performed, divided by type: analysis, operations, and harvest.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_operations_b1">Analysis: assessment of hive health and diagnosis of management needs</li><li data-i18n="bbee_mod_operations_b2">Operations: daily management activities and hive maintenance</li><li data-i18n="bbee_mod_operations_b3">Harvest: harvesting, extraction, and processing of honey</li><li data-i18n="bbee_mod_operations_b4">Each operation is assigned to a team, an apiary, a hive, and a date</li></ul>
+              <div class="bbee-tour__thumbs" role="group"><button type="button" class="bbee-tour__thumb" data-shot="0" aria-pressed="true"><img src="./images/bbee-case/web-operations.jpg" alt="" width="1336" height="950" loading="lazy" /><span data-i18n="bbee_shot_web_operations">Operations list</span></button><button type="button" class="bbee-tour__thumb" data-shot="1" aria-pressed="false"><img src="./images/bbee-case/web-create-operation.jpg" alt="" width="1338" height="960" loading="lazy" /><span data-i18n="bbee_shot_web_create_operation">Create operation</span></button></div>
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-operations.jpg" alt="Operations list" width="1336" height="950" loading="lazy" data-shot="0" /><img class="bbee-tour__shot" src="./images/bbee-case/web-create-operation.jpg" alt="Create operation" width="1338" height="960" loading="lazy" data-shot="1" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-planning" aria-labelledby="bbee-tab-planning" data-tour-panel="planning" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_planning_desc">Planning and task tracking: clarity and easy management.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_planning_b1">Turn operations into specific tasks</li><li data-i18n="bbee_mod_planning_b2">Assign responsible people and teams</li><li data-i18n="bbee_mod_planning_b3">Set dates for each field activity, by day, week, or month</li></ul>
+              <div class="bbee-tour__thumbs" role="group"><button type="button" class="bbee-tour__thumb" data-shot="0" aria-pressed="true"><img src="./images/bbee-case/web-schedule.jpg" alt="" width="1114" height="800" loading="lazy" /><span data-i18n="bbee_shot_web_schedule">Task schedule</span></button><button type="button" class="bbee-tour__thumb" data-shot="1" aria-pressed="false"><img src="./images/bbee-case/web-agenda.jpg" alt="" width="1920" height="892" loading="lazy" /><span data-i18n="bbee_shot_web_agenda">Calendar &amp; new task</span></button><button type="button" class="bbee-tour__thumb" data-shot="2" aria-pressed="false"><img src="./images/bbee-case/web-agenda-detail.jpg" alt="" width="1920" height="895" loading="lazy" /><span data-i18n="bbee_shot_web_agenda_detail">Task details</span></button></div>
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-schedule.jpg" alt="Task schedule" width="1114" height="800" loading="lazy" data-shot="0" /><img class="bbee-tour__shot" src="./images/bbee-case/web-agenda.jpg" alt="Calendar &amp; new task" width="1920" height="892" loading="lazy" data-shot="1" /><img class="bbee-tour__shot" src="./images/bbee-case/web-agenda-detail.jpg" alt="Task details" width="1920" height="895" loading="lazy" data-shot="2" /></div>
+          </div>
+      </section>
+      <section class="bbee-ds bbee-case__inner" aria-labelledby="bbee-ds-title">
+        <p class="bbee-case__eyebrow" data-i18n="bbee_ds_eyebrow">Visual identity</p>
+        <h2 class="bbee-case__h2" data-i18n="bbee_ds_title" id="bbee-ds-title">A warm, honey-toned system</h2>
+        <div class="bbee-ds__grid">
+          <div class="bbee-ds__type">
+            <p class="bbee-ds__label" data-i18n="bbee_ds_type">Typography</p>
+            <p class="bbee-ds__aa" aria-hidden="true">Aa</p>
+            <p class="bbee-ds__font">Poppins</p>
+            <ul class="bbee-ds__weights"><li>Regular</li><li>Medium</li><li>Semibold</li><li>Bold</li></ul>
+            <p class="bbee-ds__glyphs" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789</p>
+          </div>
+          <div class="bbee-ds__colors">
+            <p class="bbee-ds__label" data-i18n="bbee_ds_colors">Primary palette</p>
+            <ul class="bbee-ds__swatches"><li class="bbee-ds__swatch"><span style="background:#FFA41B"></span><b>#FFA41B</b></li><li class="bbee-ds__swatch"><span style="background:#FFC100"></span><b>#FFC100</b></li><li class="bbee-ds__swatch"><span style="background:#FFEBCD"></span><b>#FFEBCD</b></li><li class="bbee-ds__swatch"><span style="background:#F9F6EF"></span><b>#F9F6EF</b></li></ul>
+          </div>
+        </div>
+        <div class="bbee-ds__illus">
+          <p class="bbee-ds__label"><span data-i18n="bbee_ds_illus">Illustrations</span> <span class="bbee-ds__by" data-i18n="bbee_ds_by">— created by me</span></p>
+          <img src="./images/bbee-case/illustrations.jpg?v=2" alt="" width="1920" height="540" loading="lazy" />
+        </div>
+      </section>
+      <section class="bbee-case__closing bbee-case__inner">
+        <p class="bbee-case__closing-title" data-i18n="bbee_closing_title">Thank you for making it this far!</p>
+        <a class="bbee-case__site bbee-case__site--lg" href="https://ibbee.com.br/" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="bbee_closing_cta">Visit ibbee.com.br</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5 11.5 4.5M11.5 4.5H5.5M11.5 4.5v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </section>
+      <footer class="site-footer bbee-case__footer">
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__inner">
+          <div class="site-footer__profile">
+            <img src="./images/footer-profile.png" alt="" class="site-footer__avatar" width="72" height="72" loading="lazy" />
+            <div class="site-footer__profile-copy">
+              <p class="site-footer__name" data-i18n="footer_name">Geissy Maysla</p>
+              <p class="site-footer__role" data-i18n="hero_tagline">Product Designer</p>
+            </div>
+          </div>
+          <a href="#bbee-case" class="site-footer__back-to-top" data-bbee-case-top>
+            <span class="site-footer__back-icon" aria-hidden="true"><svg class="site-footer__back-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 9V3M6 3L3.5 5.5M6 3L8.5 5.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span data-i18n="footer_back_to_top">Back to top</span>
+          </a>
+          <p class="site-footer__copyright" data-i18n="footer_copyright">Copyright © Geissy Maysla, 2026</p>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section
+    class="orla-case"
+    id="orla-case"
+    hidden
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="orla-case-title"
+  >
+    <div class="orla-case__scroll">
+      <section class="orla-case__intro orla-case__inner">
+        <h1 id="orla-case-title" class="orla-case__title" tabindex="-1" data-i18n="orla_case_title">
+          A smart sales space connecting door-to-door sellers to offers tailored to each customer profile.
+        </h1>
+
+        <dl class="orla-case__meta">
+          <div class="orla-case__meta-item">
+            <dt class="orla-case__meta-label" data-i18n="orla_case_meta_solution_label">Solution</dt>
+            <dd class="orla-case__meta-value" data-i18n="orla_case_meta_solution_value">Pap - Vivo+</dd>
+          </div>
+          <div class="orla-case__meta-item">
+            <dt class="orla-case__meta-label" data-i18n="orla_case_meta_branch_label">Industry</dt>
+            <dd class="orla-case__meta-value" data-i18n="orla_case_meta_branch_value">Sales</dd>
+          </div>
+          <div class="orla-case__meta-item">
+            <dt class="orla-case__meta-label" data-i18n="orla_case_meta_platforms_label">Platforms</dt>
+            <dd class="orla-case__meta-value" data-i18n="orla_case_meta_platforms_value">Mobile &amp; web</dd>
+          </div>
+          <div class="orla-case__meta-item">
+            <dt class="orla-case__meta-label" data-i18n="orla_case_meta_profiles_label">Profiles</dt>
+            <dd class="orla-case__meta-value" data-i18n="orla_case_meta_profiles_value">Seller &amp; Manager</dd>
+          </div>
+          <div class="orla-case__meta-item">
+            <dt class="orla-case__meta-label" data-i18n="orla_case_meta_sector_label">Sector</dt>
+            <dd class="orla-case__meta-value" data-i18n="orla_case_meta_sector_value">B2B</dd>
+          </div>
+          <div class="orla-case__meta-item">
+            <dt class="orla-case__meta-label" data-i18n="orla_case_meta_year_label">Year</dt>
+            <dd class="orla-case__meta-value" data-i18n="orla_case_meta_year_value">2026</dd>
+          </div>
+        </dl>
+
+        <div class="orla-case__cover">
+          <img
+            class="orla-case__cover-img"
+            src="./images/orla-case/cover.jpg?v=vivo"
+            alt="Vivo+ app screens next to a door-to-door seller talking to a customer"
+            width="5680"
+            height="2040"
+          />
+        </div>
+      </section>
+
+      <section class="orla-case__challenges orla-case__inner" aria-labelledby="orla-case-challenges-title">
+        <div class="orla-case__challenges-copy">
+          <h2 id="orla-case-challenges-title" class="orla-case__challenges-title" data-i18n="orla_case_challenges_title">
+            Challenges
+          </h2>
+
+          <ul class="orla-case__challenges-list">
+            <li class="orla-case__challenges-item" data-i18n="orla_case_challenges_1">
+              Create a direct, objective sales flow for door-to-door sellers
+            </li>
+            <li class="orla-case__challenges-item" data-i18n="orla_case_challenges_2">
+              Create an experience that accounts for systemic limitations and legacy systems.
+            </li>
+            <li class="orla-case__challenges-item" data-i18n="orla_case_challenges_3">
+              Comply with internal rules and policies
+            </li>
+          </ul>
+
+          <p class="orla-case__challenges-note" data-i18n="orla_case_challenges_note">
+            Some information in this case study was omitted or adapted to preserve the project's confidentiality. The content shown reflects my work on the project.
+          </p>
+        </div>
+
+        <div class="orla-case__challenges-art">
+          <img
+            class="orla-case__challenges-img"
+            src="./images/orla-case/challenges.png?v=vivo"
+            alt=""
+            width="770"
+            height="776"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="orla-case__tasks orla-case__inner" aria-labelledby="orla-case-tasks-title">
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="orla-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/><path fill="currentColor" d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol></svg>
+        <div class="orla-case__tasks-head">
+          <h2 id="orla-case-tasks-title" class="orla-case__tasks-title" data-i18n="orla_case_tasks_title">Main tasks</h2>
+          <p class="orla-case__tasks-intro" data-i18n="orla_case_tasks_intro">What I lead, and where AI comes in to gain speed without losing depth.</p>
+        </div>
+        <div class="orla-lanes">
+          <div class="orla-lanes__label orla-lanes__label--phase" data-i18n="orla_lanes_row_phase">Tasks</div>
+          <div class="orla-lanes__label orla-lanes__label--role" data-i18n="orla_lanes_row_role">Role</div>
+          <div class="orla-lanes__label orla-lanes__label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></div>
+          <div class="orla-lanes__label orla-lanes__label--out" data-i18n="orla_lanes_row_out">Result</div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:11"><span class="orla-lanes__num">01</span><h3 data-i18n="orla_case_tasks_1_title">Map needs</h3></div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:21"><span class="orla-lanes__num">02</span><h3 data-i18n="orla_case_tasks_2_title">Design screens</h3></div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:31"><span class="orla-lanes__num">03</span><h3 data-i18n="orla_case_tasks_3_title">Run validations</h3></div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:41"><span class="orla-lanes__num">04</span><h3 data-i18n="orla_case_tasks_4_title">Deliver handoff</h3></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:12"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_1_role">Discovery with users and stakeholders to understand the problem in depth.</p></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:22"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_2_role">Flows and screens in Figma with the Vivo+ Design System.</p></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:32"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_3_role">Usability tests and alignment sessions to iterate on the solution.</p></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:42"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_4_role">Interfaces delivered to the development team.</p></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:13"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_1_ai">Fast, thorough reading of documents, asking questions across every source.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>NotebookLM</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:23"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_2_ai">Quick prototypes to validate and adjust before high fidelity.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>Claude</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:33"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_3_ai">Test structure: hypotheses, script, tasks and success criteria.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>Claude</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:43"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_4_ai">Handoff doc with business rules, flows and error scenarios.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>NotebookLM</span><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>Claude</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:14"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_1_out">Clear problem and opportunities</p></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:24"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_2_out">Testable ideas, earlier</p></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:34"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_3_out">Evidence-based decisions</p></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:44"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_4_out">Developers with full context</p></div>
+        </div>
+      </section>
+
+      <section class="orla-case__process" aria-labelledby="orla-case-process-title">
+        <div class="orla-case__process-head orla-case__inner">
+          <h2 id="orla-case-process-title" class="orla-case__process-title" data-i18n="orla_case_process_title">
+            O processo de design
+          </h2>
+        </div>
+
+        <div class="orla-case__process-stage">
+          <div class="orla-case__process-viewport">
+            <div class="orla-case__process-track" role="tablist" aria-labelledby="orla-case-process-title">
+              <article class="orla-case__process-item is-active" data-process-step="0">
+                <button type="button" class="orla-case__process-marker" id="orla-process-tab-1" role="tab" aria-controls="orla-process-panel-1" aria-selected="true" aria-labelledby="orla-process-num-1 orla-process-title-1" data-process-tab="0">
+                  <span id="orla-process-num-1" class="orla-case__process-marker-label">01</span>
+                  <span class="orla-case__process-marker-dot" aria-hidden="true"></span>
+                </button>
+                <div class="orla-case__process-card" id="orla-process-panel-1" role="tabpanel" aria-labelledby="orla-process-tab-1" data-process-panel="0">
+                  <h3 id="orla-process-title-1" class="orla-case__process-card-title" data-i18n="orla_case_step_1_title">Discover</h3>
+                  <ul class="orla-case__process-card-list">
+                    <li data-i18n="orla_case_step_1_item_1">Stakeholder interviews and user sessions.</li>
+                    <li data-i18n="orla_case_step_1_item_2">Review of existing documentation.</li>
+                    <li data-i18n="orla_case_step_1_item_3">Alignment of the next project steps.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="orla-case__process-item" data-process-step="1">
+                <button type="button" class="orla-case__process-marker" id="orla-process-tab-2" role="tab" aria-controls="orla-process-panel-2" aria-selected="false" aria-labelledby="orla-process-num-2 orla-process-title-2" data-process-tab="1">
+                  <span id="orla-process-num-2" class="orla-case__process-marker-label">02</span>
+                  <span class="orla-case__process-marker-dot" aria-hidden="true"></span>
+                </button>
+                <div class="orla-case__process-card" id="orla-process-panel-2" role="tabpanel" aria-labelledby="orla-process-tab-2" data-process-panel="1" aria-hidden="true">
+                  <h3 id="orla-process-title-2" class="orla-case__process-card-title" data-i18n="orla_case_step_2_title">Define &amp; Ideate</h3>
+                  <ul class="orla-case__process-card-list">
+                    <li data-i18n="orla_case_step_2_item_1">Defined the solution scope with stakeholders.</li>
+                    <li data-i18n="orla_case_step_2_item_2">Prioritized the essential features.</li>
+                    <li data-i18n="orla_case_step_2_item_3">Built mid-fidelity flows to structure the experience.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="orla-case__process-item" data-process-step="2">
+                <button type="button" class="orla-case__process-marker" id="orla-process-tab-3" role="tab" aria-controls="orla-process-panel-3" aria-selected="false" aria-labelledby="orla-process-num-3 orla-process-title-3" data-process-tab="2">
+                  <span id="orla-process-num-3" class="orla-case__process-marker-label">03</span>
+                  <span class="orla-case__process-marker-dot" aria-hidden="true"></span>
+                </button>
+                <div class="orla-case__process-card" id="orla-process-panel-3" role="tabpanel" aria-labelledby="orla-process-tab-3" data-process-panel="2" aria-hidden="true">
+                  <h3 id="orla-process-title-3" class="orla-case__process-card-title" data-i18n="orla_case_step_3_title">Validate &amp; refine</h3>
+                  <ul class="orla-case__process-card-list">
+                    <li data-i18n="orla_case_step_3_item_1">Presented the first version to users.</li>
+                    <li data-i18n="orla_case_step_3_item_2">Collected feedback on the proposal.</li>
+                    <li data-i18n="orla_case_step_3_item_3">Identified friction points before visual refinement.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="orla-case__process-item" data-process-step="3">
+                <button type="button" class="orla-case__process-marker" id="orla-process-tab-4" role="tab" aria-controls="orla-process-panel-4" aria-selected="false" aria-labelledby="orla-process-num-4 orla-process-title-4" data-process-tab="3">
+                  <span id="orla-process-num-4" class="orla-case__process-marker-label">04</span>
+                  <span class="orla-case__process-marker-dot" aria-hidden="true"></span>
+                </button>
+                <div class="orla-case__process-card" id="orla-process-panel-4" role="tabpanel" aria-labelledby="orla-process-tab-4" data-process-panel="3" aria-hidden="true">
+                  <h3 id="orla-process-title-4" class="orla-case__process-card-title" data-i18n="orla_case_step_4_title">Technical validation</h3>
+                  <ul class="orla-case__process-card-list">
+                    <li data-i18n="orla_case_step_4_item_1">Meetings with the development team.</li>
+                    <li data-i18n="orla_case_step_4_item_2">Assessed technical feasibility.</li>
+                    <li data-i18n="orla_case_step_4_item_3">Revised flows and components based on constraints.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="orla-case__process-item" data-process-step="4">
+                <button type="button" class="orla-case__process-marker" id="orla-process-tab-5" role="tab" aria-controls="orla-process-panel-5" aria-selected="false" aria-labelledby="orla-process-num-5 orla-process-title-5" data-process-tab="4">
+                  <span id="orla-process-num-5" class="orla-case__process-marker-label">05</span>
+                  <span class="orla-case__process-marker-dot" aria-hidden="true"></span>
+                </button>
+                <div class="orla-case__process-card" id="orla-process-panel-5" role="tabpanel" aria-labelledby="orla-process-tab-5" data-process-panel="4" aria-hidden="true">
+                  <h3 id="orla-process-title-5" class="orla-case__process-card-title" data-i18n="orla_case_step_5_title">Delivery</h3>
+                  <ul class="orla-case__process-card-list">
+                    <li data-i18n="orla_case_step_5_item_1">Documented the complete flow.</li>
+                    <li data-i18n="orla_case_step_5_item_2">Mapped use cases and error scenarios.</li>
+                    <li data-i18n="orla_case_step_5_item_3">Collaborated through final delivery with design, product, and engineering.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="orla-case__flow" aria-labelledby="orla-case-flow-title" style="--orla-case-flow-steps: 5">
+        <div class="orla-case__flow-track">
+          <div class="orla-case__flow-sticky orla-case__inner">
+            <h2 id="orla-case-flow-title" class="orla-case__flow-title" data-i18n="orla_case_flow_title">Solution flow</h2>
+
+            <div class="orla-case__flow-layout">
+              <div class="orla-case__flow-steps" role="tablist" aria-labelledby="orla-case-flow-title">
+                <button type="button" class="orla-case__flow-step is-active" role="tab" id="orla-flow-tab-1" aria-controls="orla-flow-panel-1" aria-selected="true" data-flow-step="0" data-i18n="orla_case_flow_step_1">1. Identify customer</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-2" aria-controls="orla-flow-panel-2" aria-selected="false" data-flow-step="1" data-i18n="orla_case_flow_step_2">2. Choose offer</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-3" aria-controls="orla-flow-panel-3" aria-selected="false" data-flow-step="2" data-i18n="orla_case_flow_step_3">3. Configure offer</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-4" aria-controls="orla-flow-panel-4" aria-selected="false" data-flow-step="3" data-i18n="orla_case_flow_step_4">4. Scheduling &amp; Summary</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-5" aria-controls="orla-flow-panel-5" aria-selected="false" data-flow-step="4" data-i18n="orla_case_flow_step_5">5. Finish</button>
+              </div>
+
+              <div class="orla-case__flow-panels">
+                <div class="orla-case__flow-panel is-active" id="orla-flow-panel-1" role="tabpanel" aria-labelledby="orla-flow-tab-1" data-flow-panel="0">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-1.png?v=vivo" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_1_text">The customer's CPF is entered to access their profile and consult essential information, such as address and contracted plans. This data helps the salesperson understand the customer profile and make a more assertive offer.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-2" role="tabpanel" aria-labelledby="orla-flow-tab-2" data-flow-panel="1" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-2.png?v=vivo" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_2_text">Offers available according to the customer's credit score. On the contracting data screen, the customer provides the address that will be linked to the offer to check coverage availability.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-3" role="tabpanel" aria-labelledby="orla-flow-tab-3" data-flow-panel="2" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-3.png?v=vivo" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_3_text">After the address is provided, we analyze the available coverage and start configuring the offer. In this step, the lines that will be linked to the chosen plan are defined, including the mobile and landline voice lines the customer wants to use.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-4" role="tabpanel" aria-labelledby="orla-flow-tab-4" data-flow-panel="3" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-4.png?v=vivo" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_4_text">If the plan includes fiber, installation must be scheduled, with two date options for the technician's visit to the customer's home. Next, a summary screen is presented, where all information defined with the customer is reviewed before the sale is completed.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-5" role="tabpanel" aria-labelledby="orla-flow-tab-5" data-flow-panel="4" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-5.png?v=vivo" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_5_text">As a security step, the customer's identity is verified through biometrics before the sale is finalized. After identity validation, the sale is completed successfully.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="orla-proto orla-case__inner" aria-labelledby="orla-proto-title" data-orla-proto>
+        <header class="orla-proto__head">
+          <p class="orla-proto__eyebrow" data-i18n="orla_proto_eyebrow">Try it yourself</p>
+          <h2 id="orla-proto-title" class="orla-proto__title" data-i18n="orla_proto_title">Interactive prototype</h2>
+          <p class="orla-proto__intro" data-i18n="orla_proto_intro">Tap through the whole sales flow, from identifying the customer to closing the sale, or let the guided tour play it for you.</p>
+        </header>
+        <div class="orla-proto__stage">
+          <div class="orla-proto__toolbar">
+            <span class="orla-proto__badge" data-i18n="orla_proto_badge">Illustrative · NDA</span>
+            <button type="button" class="orla-proto__tool" data-proto-replay>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.6h3.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="orla_proto_replay">Replay</span>
+            </button>
+            <button type="button" class="orla-proto__tool" data-proto-autoplay aria-pressed="true">
+              <svg class="is-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <svg class="is-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5v13l11-6.5Z" fill="currentColor"/></svg>
+              <span data-i18n="orla_proto_tour">Guided tour</span>
+            </button>
+          </div>
+          <div class="orla-proto__layout">
+            <ol class="orla-proto__steps" data-proto-steps aria-label="Prototype steps">
+              <li><button type="button" class="orla-proto__step" data-step="0"><span class="orla-proto__step-num">01</span><span data-i18n="orla_proto_step_1">Identify the customer</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="1"><span class="orla-proto__step-num">02</span><span data-i18n="orla_proto_step_2">Customer overview</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="2"><span class="orla-proto__step-num">03</span><span data-i18n="orla_proto_step_3">Browse offers</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="3"><span class="orla-proto__step-num">04</span><span data-i18n="orla_proto_step_4">Contract details</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="4"><span class="orla-proto__step-num">05</span><span data-i18n="orla_proto_step_5">Coverage check</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="5"><span class="orla-proto__step-num">06</span><span data-i18n="orla_proto_step_6">Configure lines</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="6"><span class="orla-proto__step-num">07</span><span data-i18n="orla_proto_step_7">Schedule installation</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="7"><span class="orla-proto__step-num">08</span><span data-i18n="orla_proto_step_8">Order summary</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="8"><span class="orla-proto__step-num">09</span><span data-i18n="orla_proto_step_9">Identity check</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="9"><span class="orla-proto__step-num">10</span><span data-i18n="orla_proto_step_10">Sale completed</span></button></li>
+            </ol>
+            <div class="orla-proto__device-col">
+              <div class="orla-proto__device" data-proto-device></div>
+              <p class="orla-proto__hint" data-proto-hint aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="orla-case__impact" aria-labelledby="orla-case-impact-title">
+        <div class="orla-case__impact-inner orla-case__inner">
+          <h2 id="orla-case-impact-title" class="orla-case__impact-title" data-i18n="orla_case_impact_title">
+            Impact
+          </h2>
+
+          <ul class="orla-case__impact-metrics">
+            <li class="orla-case__impact-metric">
+              <p class="orla-case__impact-metric-value" data-i18n="orla_case_impact_metric_1_value">+2%</p>
+              <p class="orla-case__impact-metric-label" data-i18n="orla_case_impact_metric_1_label">Increase in sales conversion</p>
+            </li>
+            <li class="orla-case__impact-metric">
+              <p class="orla-case__impact-metric-value" data-i18n="orla_case_impact_metric_2_value">-30 min</p>
+              <p class="orla-case__impact-metric-label" data-i18n="orla_case_impact_metric_2_label">Reduction in sales time</p>
+            </li>
+          </ul>
+
+          <div class="orla-case__impact-board">
+            <div class="orla-case__impact-badges">
+              <ul class="orla-case__impact-pills">
+                <li data-i18n="orla_case_impact_pill_3">+ Conversion potential</li>
+                <li data-i18n="orla_case_impact_pill_1">+ Assertiveness when offering a plan</li>
+                <li data-i18n="orla_case_impact_pill_2">+ Trust between Seller x Customer</li>
+              </ul>
+            </div>
+            <div class="orla-case__impact-visual">
+              <img
+                class="orla-case__impact-photo"
+                src="./images/orla-case/impact-seller.jpg?v=vivo"
+                alt=""
+                width="1024"
+                height="961"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer orla-case__footer">
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__inner">
+          <div class="site-footer__profile">
+            <img
+              src="./images/footer-profile.png"
+              alt=""
+              class="site-footer__avatar"
+              width="72"
+              height="72"
+              loading="lazy"
+            />
+            <div class="site-footer__profile-copy">
+              <p class="site-footer__name" data-i18n="footer_name">Geissy Maysla</p>
+              <p class="site-footer__role" data-i18n="hero_tagline">Product Designer</p>
+            </div>
+          </div>
+
+          <a href="#orla-case" class="site-footer__back-to-top" data-orla-case-top>
+            <span class="site-footer__back-icon" aria-hidden="true">
+              <svg class="site-footer__back-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9V3M6 3L3.5 5.5M6 3L8.5 5.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span data-i18n="footer_back_to_top">Back to top</span>
+          </a>
+
+          <p class="site-footer__copyright" data-i18n="footer_copyright">Copyright © Geissy Maysla, 2026</p>
+
+          <nav class="site-footer__social" aria-label="Social media">
+            <a class="site-footer__social-link site-footer__social-link--linkedin" href="https://www.linkedin.com/in/geissy-nunes-683109196/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/linkedin.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/linkedin-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--dribbble" href="https://dribbble.com/Mayslassy" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/dribbble.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/dribbble-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--medium" href="https://medium.com/@Geissy" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/medium.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/medium-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--behance" href="https://www.behance.net/geissynunes" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/behance.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/behance-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <script src="./scripts/scroll-handler.js?v=bbee1"></script>
   <script src="./scripts/main.js"></script>
   <script src="./scripts/about-tools-drag.js"></script>
   <script src="./scripts/projects-view-toggle.js"></script>
   <script src="./scripts/projects-scroll-drag.js"></script>
   <script src="./scripts/experience-scroll.js"></script>
-  <script src="./langs/strings.js"></script>
+  <script src="./langs/strings.js?v=vivo1"></script>
   <script src="./scripts/translations.js"></script>
   <script src="./scripts/projects-filter.js"></script>
   <script src="./scripts/projects-card-reveal.js"></script>
-  <script src="./scripts/projects-spotlight-cursor.js"></script>
+  <script src="./scripts/projects-spotlight-cursor.js?v=orla1"></script>
+  <script src="./scripts/projects-spotlight-heights.js?v=orla1"></script>
+  <script src="./scripts/projects-scroll-stack.js?v=orla1"></script>
   <script src="./scripts/resume.js"></script>
   <script src="./scripts/about-video-modal.js"></script>
+  <script src="./scripts/itforum-case.js?v=tasks-solto"></script>
+  <script src="./scripts/itforum-magnify.js?v=magnify"></script>
+  <script src="./scripts/orla-case.js?v=lanes2"></script>
+  <script src="./scripts/orla-prototype.js?v=vivo1"></script>
+  <script src="./scripts/bbee-case.js?v=2"></script>
+  <script src="./scripts/bbee-prototype.js?v=1"></script>
+  <script src="./scripts/mockup-parallax.js?v=1"></script>
+  <script src="./scripts/itforum-portal-carousel.js"></script>
+  <script src="./scripts/header-nav.js?v=bbee1"></script>
+  <script src="./scripts/hero-intro.js"></script>
 </body>
 </html>

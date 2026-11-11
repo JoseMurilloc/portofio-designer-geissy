@@ -9,7 +9,17 @@
   let filterRevealTimeouts = [];
 
   function getVisibleCards() {
-    return [...showcase.querySelectorAll('.project-card')].filter((card) => !card.hidden);
+    return [...showcase.querySelectorAll('.project-card')].filter((card) => {
+      if (card.hidden) return false;
+      /* Cards do scroll-stack têm estado inicial no CSS — reveal com transform causava jump. */
+      if (
+        card.classList.contains('project-card--spotlight-full') &&
+        card.closest('[data-scroll-stack]')
+      ) {
+        return false;
+      }
+      return true;
+    });
   }
 
   function disconnectObservers() {

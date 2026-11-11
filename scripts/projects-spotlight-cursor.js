@@ -2,7 +2,8 @@
   const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   const spotlights = [
-    { el: document.querySelector('.project-spotlight--vivo'), activeClass: 'project-spotlight--lock-cursor' },
+    { el: document.querySelector('.project-spotlight--orla'), activeClass: 'project-spotlight--external-cursor' },
+    { el: document.querySelector('.project-spotlight--itforum'), activeClass: 'project-spotlight--external-cursor' },
     { el: document.querySelector('.project-spotlight--bbee'), activeClass: 'project-spotlight--external-cursor' },
     { el: document.querySelector('.project-spotlight--fluency'), activeClass: 'project-spotlight--external-cursor' },
   ].filter((item) => item.el);

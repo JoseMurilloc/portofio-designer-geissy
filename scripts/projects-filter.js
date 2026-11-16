@@ -42,6 +42,11 @@
     updateHeading(filter);
 
     getCards().forEach((card) => {
+      if (card.classList.contains('project-card--suppressed')) {
+        card.hidden = true;
+        return;
+      }
+
       const platforms = (card.getAttribute('data-project-platform') || '').split(/\s+/);
 
       if (filter === 'all') {

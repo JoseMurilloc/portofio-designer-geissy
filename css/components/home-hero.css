@@ -1,0 +1,364 @@
+/*
+ * Primeira seção (hero): título, retrato com órbita, skills que passam por
+ * trás da foto, resumo à direita e os três cards de processo.
+ *
+ * Medidas tiradas do layout de referência num frame de 1440px.
+ */
+
+.home-hero {
+  --hero-photo-width: 30rem;
+  /* O anel tem o mesmo diâmetro da foto e começa logo acima do cabelo. */
+  --hero-orbit-size: var(--hero-photo-width);
+  --hero-orbit-top: calc(var(--hero-photo-width) * -0.02);
+  --hero-stage-height: 26rem;
+  --hero-card-bg: #d8e9ef;
+  --hero-ink: #1c1c1c;
+  --hero-muted: #7b878c;
+
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 10.5rem 1.5rem 6rem;
+  background: #ffffff;
+  color: var(--hero-ink);
+  font-family: "Satoshi", sans-serif;
+}
+
+/* Título */
+
+.home-hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.home-hero__eyebrow {
+  margin: 0;
+  color: #3d5459;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.home-hero__title {
+  max-width: 42rem; /* two lines in EN and PT */
+  margin: 0;
+  color: var(--hero-ink);
+  font-size: 2.75rem; /* 44px */
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Palco: órbita + foto + skills + resumo */
+
+.home-hero__stage {
+  position: relative;
+  height: var(--hero-stage-height);
+  margin-top: 3rem;
+}
+
+/*
+ * Anel aberto no topo (abre ±38° em volta do título). Os textos ficam por
+ * cima com fundo branco, então eles mesmos "cortam" o traço do anel.
+ */
+.home-hero__orbit {
+  position: absolute;
+  top: var(--hero-orbit-top);
+  left: 50%;
+  z-index: 0;
+  width: var(--hero-orbit-size);
+  height: var(--hero-orbit-size);
+  border: 0.09375rem solid #2a2a2a;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  /* open at the top (±38°) and fading out at the bottom with the photo */
+  -webkit-mask-image:
+    conic-gradient(from -38deg, transparent 0deg 76deg, #000 76deg),
+    linear-gradient(to bottom, #000 45%, transparent 82%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    conic-gradient(from -38deg, transparent 0deg 76deg, #000 76deg),
+    linear-gradient(to bottom, #000 45%, transparent 82%);
+  mask-composite: intersect;
+  pointer-events: none;
+}
+
+.home-hero__portrait {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  width: var(--hero-photo-width);
+  height: auto;
+  transform: translateX(-50%);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/*
+ * As linhas de skills passam por cima da foto. A lista não cria contexto de
+ * empilhamento: a faixa branca (::after) fica sob a foto e só abre o anel,
+ * enquanto o texto (z-index 3) fica por cima da foto.
+ */
+.home-hero__skills {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 5.75rem;
+  width: min(30rem, calc(50% - 1.5rem));
+  margin: 0;
+  padding: 3.875rem 0 0;
+  list-style: none;
+}
+
+.home-hero__skills-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  /* right-aligned: each row ends at the same spot before the photo in every
+     language, so longer translations grow to the left, never over the face */
+  padding: 0.75rem 12.9375rem 0.75rem 0;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.home-hero__skills-row::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #ffffff;
+}
+
+.home-hero__skills-row span {
+  position: relative;
+  z-index: 3;
+}
+
+.home-hero__skills-row:first-child {
+  padding-right: 8.25rem;
+}
+
+.home-hero__skills-row span + span::before {
+  content: "";
+  display: inline-block;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  margin-right: 0.625rem;
+  border-radius: 50%;
+  background: #b9b9b9;
+  vertical-align: middle;
+}
+
+/* Resumo à direita da foto (sem fundo). */
+.home-hero__summary {
+  position: absolute;
+  z-index: 3;
+  top: 5.25rem;
+  left: calc(50% + 12.375rem);
+  width: min(24.75rem, calc(50% - 13.875rem));
+  margin: 0;
+  padding: 0.5rem 0 1rem 0.75rem;
+  color: var(--hero-ink);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Cards */
+
+.home-hero__cards {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.875rem;
+  max-width: 73.75rem;
+  margin: 0 auto;
+}
+
+.home-hero__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 34.625rem;
+  padding: 1.25rem 1.5rem 2.25rem;
+  border-radius: 2.5rem;
+  background: var(--hero-card-bg);
+  text-align: center;
+}
+
+/* Espaço reservado para a ilustração de cada etapa. */
+.home-hero__card-media {
+  align-self: stretch;
+  height: 16rem;
+  margin: 0 -0.25rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.55);
+  overflow: hidden;
+}
+
+/* As animações têm o mesmo azul do card ao fundo: preenche a área inteira. */
+.home-hero__card-media img,
+.home-hero__card-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-hero__card-label {
+  margin: 1.5rem 0 0;
+  color: var(--hero-ink);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.home-hero .home-hero__card-title {
+  max-width: 19rem;
+  margin: 0.625rem 0 0;
+  color: var(--hero-ink);
+  font-size: 1.3125rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.home-hero__card-text {
+  max-width: 20rem;
+  margin: 0.75rem 0 0;
+  color: var(--hero-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Telas médias: o palco encolhe para caber o resumo ao lado da foto. */
+@media (max-width: 80rem) {
+  .home-hero {
+    --hero-photo-width: 25.5rem;
+    --hero-stage-height: 20.5rem;
+  }
+
+  .home-hero__skills {
+    gap: 4.875rem;
+    padding-top: 3.25rem;
+  }
+
+  /* A foto encolhe mas o texto não: desloca as linhas para o disco continuar cortando. */
+  .home-hero__skills-row {
+    padding-right: 10.5625rem;
+  }
+
+  .home-hero__skills-row:first-child {
+    padding-right: 6.375rem;
+  }
+
+  .home-hero__summary {
+    top: 4.5rem;
+    left: calc(50% + 10.5rem);
+    width: min(20.75rem, calc(50% - 12rem));
+    font-size: 1.0625rem;
+  }
+
+  .home-hero__card {
+    min-height: 0;
+  }
+
+  .home-hero__card-media {
+    height: 13rem;
+  }
+}
+
+/* Tablet e mobile: tudo empilhado e centralizado. */
+@media (max-width: 60rem) {
+  .home-hero {
+    --hero-photo-width: min(22rem, 80vw);
+    --hero-orbit-size: calc(var(--hero-photo-width) * 0.95);
+
+    padding: 7.5rem 1rem 4rem;
+  }
+
+  .home-hero__title {
+    font-size: 1.875rem;
+  }
+
+  .home-hero__stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 1.5rem;
+  }
+
+  .home-hero__portrait {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+
+  .home-hero__orbit {
+    top: calc(var(--hero-photo-width) * 0.04);
+  }
+
+  .home-hero__skills {
+    position: static;
+    order: 2;
+    align-items: center;
+    gap: 0.5rem;
+    width: auto;
+    margin-top: 1.5rem;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .home-hero__skills-row,
+  .home-hero__skills-row:first-child {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    font-size: 1rem;
+    white-space: normal;
+  }
+
+  .home-hero__summary {
+    position: static;
+    order: 3;
+    width: auto;
+    max-width: 30rem;
+    margin-top: 1.25rem;
+    padding: 0;
+    font-size: 1.0625rem;
+    text-align: center;
+  }
+
+  .home-hero__cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    max-width: 28rem;
+    margin-top: 2.5rem;
+  }
+
+  .home-hero__card {
+    border-radius: 2rem;
+  }
+
+  .home-hero__card-media {
+    height: 12rem;
+    border-radius: 1.5rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .home-hero__title {
+    font-size: 1.625rem;
+  }
+}

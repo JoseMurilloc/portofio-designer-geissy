@@ -1,0 +1,527 @@
+/*
+ * "Selected projects": every card uses the portfolio secondary (soft teal), no per-project colors.
+ * Medidas tiradas do layout de referência num frame de 1440px.
+ */
+
+.selected-projects {
+  --selected-ink: #141414;
+  --selected-muted: #6c7a7e;
+  --selected-card-bg: #e1edf0;
+  --selected-line: #c9e3ea;
+
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 2rem 1.5rem 6rem;
+  background: #ffffff;
+  color: var(--selected-ink);
+  font-family: "Satoshi", sans-serif;
+}
+
+.selected-projects__intro,
+.selected-project {
+  max-width: 73.75rem;
+  margin: 0 auto;
+}
+
+/* Intro */
+
+.selected-projects__eyebrow {
+  margin: 0;
+  color: #3d5459;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.selected-projects__title {
+  margin: 1.125rem 0 0;
+  color: var(--selected-ink);
+  font-size: 2.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.selected-projects__text {
+  max-width: 36rem;
+  margin: 1.5rem 0 0;
+  color: var(--selected-ink);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.selected-projects__text strong {
+  font-weight: 700;
+}
+
+/* Card do projeto */
+
+.selected-project[hidden] { display: none; }
+
+.selected-project {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-top: 3.25rem;
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  background:
+    radial-gradient(28rem 20rem at 92% 100%, rgba(166, 210, 223, 0.85), transparent 70%),
+    var(--selected-card-bg);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.selected-project:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1.25rem 2.5rem rgba(36, 86, 99, 0.12);
+}
+
+.selected-project:focus-visible {
+  outline: 0.125rem solid #2a2a2a;
+  outline-offset: 0.25rem;
+}
+
+/* Espaço reservado para a imagem do projeto. */
+.selected-project__media {
+  /* pointer position in -1…1 (set by scripts/mockup-parallax.js) and hover offsets */
+  --mx: 0;
+  --my: 0;
+  --lift-back: 0px;
+  --lift-front: 0px;
+  --tilt-back: 0deg;
+  --tilt-front: 0deg;
+
+  position: relative;
+  flex: 0 0 20.875rem;
+  aspect-ratio: 334 / 245;
+  border-radius: 1.5rem;
+  background: #ffffff;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* soft teal light (portfolio secondary) behind the mockups */
+.selected-project__glow {
+  position: absolute;
+  left: 50%;
+  bottom: -35%;
+  z-index: 0;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(102, 168, 186, 0.22), rgba(102, 168, 186, 0) 72%);
+  transform: translateX(-50%) scale(0.9);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.selected-project__phone {
+  position: absolute;
+  width: 42%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* splash, behind and to the left */
+.selected-project__phone--back {
+  left: 8%;
+  top: 8%;
+  z-index: 1;
+  transform:
+    translate3d(calc(var(--mx) * -5px), calc(var(--my) * -4px + var(--lift-back)), 0)
+    rotate(var(--tilt-back));
+}
+
+/* customer view, in front, lower right (cropped by the card like the reference) */
+.selected-project__phone--front {
+  left: 48%;
+  top: 23%;
+  z-index: 2;
+  transform:
+    translate3d(calc(var(--mx) * 9px), calc(var(--my) * 7px + var(--lift-front)), 0)
+    rotate(var(--tilt-front));
+}
+
+/* hover: both phones rise and fan out slightly, the front one more */
+.selected-project:hover .selected-project__media,
+.selected-project:focus-visible .selected-project__media {
+  --lift-back: -6px;
+  --lift-front: -14px;
+  --tilt-back: -2.5deg;
+  --tilt-front: 2.5deg;
+}
+
+.selected-project:hover .selected-project__glow,
+.selected-project:focus-visible .selected-project__glow {
+  transform: translateX(-50%) scale(1.08);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selected-project__phone,
+  .selected-project__glow { transition: none; }
+
+  .selected-project:hover .selected-project__media,
+  .selected-project:focus-visible .selected-project__media {
+    --lift-back: 0px;
+    --lift-front: 0px;
+    --tilt-back: 0deg;
+    --tilt-front: 0deg;
+  }
+}
+
+.selected-project__body {
+  flex: 0 1 40rem;
+  min-width: 0;
+  padding-top: 0.125rem;
+}
+
+.selected-project__title {
+  margin: 0;
+  color: var(--selected-ink);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.selected-project__nda {
+  margin: 0.875rem 0 0;
+  color: var(--selected-muted);
+  font-size: 1.0625rem;
+  line-height: 1.4;
+}
+
+/* hug contents: the box is only as wide as its three items */
+.selected-project__meta {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.25rem 0 0;
+  border: 0.0625rem solid var(--selected-line);
+  border-radius: 1.5rem;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.selected-project__meta-item {
+  padding: 1.25rem 1.875rem 1.25rem 1.875rem;
+}
+
+.selected-project__meta-item + .selected-project__meta-item {
+  border-left: 0.0625rem solid var(--selected-line);
+}
+
+.selected-project__meta dt {
+  color: var(--selected-muted);
+  font-size: 1.0625rem;
+  line-height: 1.4;
+}
+
+.selected-project__meta dd {
+  white-space: nowrap;
+  margin: 0.5rem 0 0;
+  color: var(--selected-ink);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (max-width: 60rem) {
+  .selected-projects {
+    padding: 1rem 1rem 4rem;
+  }
+
+  .selected-projects__title {
+    font-size: 2rem;
+  }
+
+  .selected-project {
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 28rem;
+    padding: 1.25rem;
+    border-radius: 2rem;
+  }
+
+  .selected-project__media {
+    flex: none;
+    width: 100%;
+  }
+
+  .selected-project__body {
+    flex: none;
+    width: 100%;
+  }
+
+  .selected-project__title {
+    font-size: 1.375rem;
+  }
+
+  .selected-project__meta-item {
+    padding: 1rem 1.125rem;
+  }
+
+  .selected-project__meta dd {
+    font-size: 1.125rem;
+  }
+
+  /* longer values (e.g. "Responsive Website"): three equal columns that wrap */
+  .selected-project__meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .selected-project__meta-item {
+    padding: 0.875rem;
+  }
+
+  .selected-project__meta dt {
+    font-size: 0.9375rem;
+  }
+
+  .selected-project__meta dd {
+    font-size: 1rem;
+    white-space: normal;
+  }
+}
+
+/* =====================================================================
+   Layout v2: a light gray sheet rises from below over the hero portrait;
+   title centred; project cards in two columns, image on top.
+   ===================================================================== */
+.selected-projects {
+  z-index: 3;
+  margin-top: -7.5rem;
+  padding: 3.5rem 1.5rem 6rem;
+  border-radius: 3rem 3rem 0 0;
+  background: #f7f7f7;
+  box-shadow: 0 -0.75rem 2.5rem -1.5rem rgba(20, 20, 20, 0.12);
+}
+
+/* same content width as the About section below (1180px) */
+.selected-projects__intro,
+.selected-projects__grid {
+  max-width: 73.75rem;
+  margin: 0 auto;
+}
+
+.selected-projects__intro { text-align: center; }
+
+.selected-projects__title {
+  margin: 0;
+  font-size: 2.75rem; /* 44px */
+}
+
+.selected-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.selected-projects__grid .selected-project {
+  flex-direction: column;
+  gap: 0;
+  max-width: none;
+  margin: 0;
+  padding: 1.375rem;
+  border-radius: 2rem;
+  background:
+    radial-gradient(22rem 16rem at 100% 0%, rgba(166, 210, 223, 0.9), transparent 70%),
+    var(--selected-card-bg);
+}
+
+.selected-projects__grid .selected-project__media {
+  flex: none;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 1.25rem;
+}
+
+.selected-projects__grid .selected-project__body {
+  flex: none;
+  width: 100%;
+  padding: 1.75rem 0.25rem 0.25rem;
+}
+
+.selected-projects__grid .selected-project__title {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.selected-projects__grid .selected-project__meta {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.selected-projects__grid .selected-project__meta-item { min-width: 0; padding: 0.875rem 1rem; }
+/* long values ("Responsive Website", "2024 — 2025") wrap instead of overflowing the box */
+.selected-projects__grid .selected-project__meta dd { white-space: normal; }
+.selected-projects__grid .selected-project__meta dt { font-size: 0.875rem; }
+.selected-projects__grid .selected-project__meta dd { margin-top: 0.375rem; font-size: 1.0625rem; }
+
+@media (max-width: 60rem) {
+  .selected-projects {
+    margin-top: -4rem;
+    padding: 2.5rem 1rem 4rem;
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  .selected-projects__title { font-size: 1.75rem; }
+
+  .selected-projects__grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 30rem;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+
+  .selected-projects__grid .selected-project { padding: 1rem; border-radius: 1.75rem; }
+  .selected-projects__grid .selected-project__body { padding-top: 1.25rem; }
+  .selected-projects__grid .selected-project__title { font-size: 1.25rem; }
+}
+
+/* heading row: small left-aligned title + year range, with a divider,
+   so it doesn't compete with the hero title */
+.selected-projects__intro {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.125rem;
+  border-bottom: 0.0625rem solid #dcdcdc;
+  text-align: left;
+}
+
+/* doubled class: beats the generic ".slide h2" (3rem) in main.css */
+.selected-projects .selected-projects__title {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.selected-projects__years {
+  margin: 0;
+  color: #6b6f70;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 60rem) {
+  .selected-projects__intro { max-width: 30rem; }
+  .selected-projects .selected-projects__title { font-size: 1.5rem; }
+  .selected-projects__years { font-size: 0.875rem; }
+}
+
+/* =====================================================================
+   No white panel: the mockups sit straight on the card's soft teal and
+   are cropped by the image area's rounded edge.
+   ===================================================================== */
+.selected-projects__grid .selected-project__media {
+  background: transparent;
+}
+
+.selected-projects__grid .selected-project__glow {
+  bottom: -20%;
+  width: 70%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 100%);
+}
+
+/* ---------- Orla card: tilted phones that fan out on hover ---------- */
+.selected-project--orla .selected-project__media {
+  --spread-back: 0px;
+  --spread-front: 0px;
+  --tilt-back: -4deg;
+  --tilt-front: 3deg;
+}
+
+.selected-project--orla .selected-project__phone--back {
+  transform:
+    translate3d(calc(var(--mx) * -5px + var(--spread-back)), calc(var(--my) * -4px + var(--lift-back)), 0)
+    rotate(var(--tilt-back));
+}
+
+.selected-project--orla .selected-project__phone--front {
+  transform:
+    translate3d(calc(var(--mx) * 9px + var(--spread-front)), calc(var(--my) * 7px + var(--lift-front)), 0)
+    rotate(var(--tilt-front));
+}
+
+.selected-project--orla:hover .selected-project__media,
+.selected-project--orla:focus-visible .selected-project__media {
+  --spread-back: -1rem;
+  --spread-front: 0.875rem;
+  --lift-back: -0.875rem;
+  --lift-front: -1.875rem;
+  --tilt-back: -9deg;
+  --tilt-front: 6deg;
+}
+
+.selected-project--orla:hover .selected-project__glow,
+.selected-project--orla:focus-visible .selected-project__glow {
+  transform: translateX(-50%) scale(1.1);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selected-project--orla:hover .selected-project__media,
+  .selected-project--orla:focus-visible .selected-project__media {
+    --spread-back: 0px;
+    --spread-front: 0px;
+    --lift-back: 0px;
+    --lift-front: 0px;
+    --tilt-back: -4deg;
+    --tilt-front: 3deg;
+  }
+}
+
+/* soft shadow that follows the phone outline (not baked into the PNG) */
+.selected-project--orla .selected-project__phone {
+  filter: drop-shadow(0 1.25rem 1.5rem rgba(20, 50, 58, 0.22));
+}
+
+/* ---------- IT Forum card: same motion for the single screenshot ---------- */
+.selected-project--itforum .selected-project__media {
+  --spread-front: 0px;
+  --lift-front: 0px;
+  --tilt-back: 0deg;
+}
+
+.selected-project--itforum .selected-project__screen {
+  box-shadow: none;
+  filter: drop-shadow(0 1.25rem 1.5rem rgba(20, 50, 58, 0.22));
+  transform:
+    translate3d(calc(var(--mx) * 8px + var(--spread-front)), calc(var(--my) * 6px + var(--lift-front)), 0)
+    rotate(var(--tilt-back));
+}
+
+.selected-project--itforum:hover .selected-project__media,
+.selected-project--itforum:focus-visible .selected-project__media {
+  --spread-front: -0.75rem;
+  --lift-front: -1.5rem;
+  --tilt-back: -4.5deg;
+}
+
+.selected-project--itforum:hover .selected-project__glow,
+.selected-project--itforum:focus-visible .selected-project__glow {
+  transform: translateX(-50%) scale(1.1);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selected-project--itforum:hover .selected-project__media,
+  .selected-project--itforum:focus-visible .selected-project__media {
+    --spread-front: 0px;
+    --lift-front: 0px;
+    --tilt-back: 0deg;
+  }
+}

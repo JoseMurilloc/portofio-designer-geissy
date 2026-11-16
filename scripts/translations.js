@@ -71,6 +71,12 @@ function changeLanguage(lang, callbackUpdateDownloadResumes) {
     element.textContent = translations[lang][key] ?? key;
   });
 
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const key = element.getAttribute("data-i18n-html");
+    const value = translations[lang][key];
+    if (value) element.innerHTML = value;
+  });
+
   document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
     const key = element.getAttribute("data-i18n-aria");
     const value = translations[lang][key];

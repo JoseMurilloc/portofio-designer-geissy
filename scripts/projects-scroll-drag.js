@@ -1,7 +1,9 @@
 (function initProjectsScrollDrag() {
   if (window.matchMedia('(max-width: 48rem)').matches) return;
 
-  const strips = document.querySelectorAll('.projects-pools .projects-scroll');
+  const strips = document.querySelectorAll(
+    '.projects-pools .projects-scroll:not([data-scroll-stack])'
+  );
   if (!strips.length) return;
 
   strips.forEach((el) => {

@@ -4,60 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="./images/favicon-48.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png?v=2" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16.png?v=2" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./images/favicon-48.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon-180.png?v=2" />
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/global.css" />
-  <link rel="stylesheet" href="./css/components/header.css" />
-  <link rel="stylesheet" href="./css/components/projects.css" />
-  <link rel="stylesheet" href="./css/components/main.css" />
+  <link rel="stylesheet" href="./css/components/header.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/projects.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/main.css?v=nodiv1" />
 
-  <link rel="stylesheet" href="./css/components/about-me.css" />
+  <link rel="stylesheet" href="./css/components/about-me.css?v=cur2" />
   <link rel="stylesheet" href="./css/components/experience.css" />
   <link rel="stylesheet" href="./css/components/footer.css" />
+  <link rel="stylesheet" href="./css/components/itforum-case.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/orla-case.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/orla-prototype.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/bbee-case.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/bbee-prototype.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/orla-lanes.css?v=4" />
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/components/hero-intro.css" />
+  <link rel="stylesheet" href="./css/components/home-hero.css?v=sk1" />
+  <link rel="stylesheet" href="./css/components/selected-projects.css?v=meta2" />
+  <link rel="stylesheet" href="./css/components/about-refresh.css?v=soon3" />
+  <link rel="stylesheet" href="./css/components/about-fig.css?v=grid" />
+  <link rel="stylesheet" href="./css/components/experience-refresh.css?v=cur2" />
+  <link rel="stylesheet" href="./css/components/footer-refresh.css?v=cta2" />
 
   <title>Geissy | Product Designer</title>
+
+  <script>
+    /* Arma o gate da entrada antes do primeiro paint. O timeout é a rede de
+       segurança caso hero-intro.js não chegue a rodar. */
+    document.documentElement.classList.add('hero-intro-armed');
+    window.setTimeout(function () {
+      document.documentElement.classList.remove('hero-intro-armed');
+    }, 3000);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Nunito:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" />
 </head>
 <body>
-  <div class="app">
+  <div class="app" id="home">
     <header class="header">
       <div class="header-inner">
         <div>
-          <svg width="83" height="28" viewBox="0 0 83 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10.7824 22.6247C4.76495 22.6247 1.08913 18.5404 1.08913 12.4685C1.08913 6.15157 5.03724 2.31238 10.8913 2.31238C15.9286 2.31238 19.4138 5.00798 19.9311 9.11946H16.8815C16.3642 6.39663 13.9681 4.89907 10.8913 4.89907C6.80708 4.89907 4.11147 7.6219 4.11147 12.4413C4.11147 17.2879 6.72539 20.0925 10.8369 20.0925C14.6216 20.0925 17.1538 17.9142 17.3444 14.2384H11.0275V12.0329H20.3668V13.476C20.3668 19.085 16.5548 22.6247 10.7824 22.6247ZM29.6216 22.6247C25.2923 22.6247 22.6512 19.684 22.6512 15.2458C22.6512 10.6987 25.2923 7.75804 29.5127 7.75804C34.2504 7.75804 36.5376 11.216 36.102 15.7359H25.4285C25.4829 18.7038 27.1166 20.392 29.6216 20.392C31.5548 20.392 32.9979 19.439 33.3519 17.9414H36.0203C35.6391 20.7732 33.0252 22.6247 29.6216 22.6247ZM29.4855 9.96353C27.2255 9.96353 25.7008 11.4066 25.4829 13.7483H33.3519C33.2702 11.0799 31.6093 9.96353 29.4855 9.96353ZM39.1334 5.77037V2.53021H41.938V5.77037H39.1334ZM39.1334 22.3796V7.97587H41.938V22.3796H39.1334Z" fill="black"/>
-          <rect x="46.3144" y="8.10274" width="29.7525" height="10.9434" rx="5.47172" fill="url(#paint0_linear_326_744)" stroke="#7573DC" stroke-width="2.39388"/>
-          <path d="M72.9522 26.4325L75.6675 21.0018C75.7278 20.8813 75.8416 20.7964 75.9743 20.773L81.8932 19.7285C82.2791 19.6604 82.3757 19.1512 82.0417 18.9464L70.5911 11.9284C70.2815 11.7386 69.8916 11.9989 69.9483 12.3577L72.151 26.3086C72.2156 26.7176 72.767 26.8029 72.9522 26.4325Z" fill="#C8C8C8"/>
-          <defs>
-          <linearGradient id="paint0_linear_326_744" x1="37.4559" y1="5.91298" x2="75.338" y2="20.8104" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6866DF"/>
-          <stop offset="0.615092" stop-color="#423FC3"/>
-          <stop offset="1" stop-color="#CE66DF"/>
-          </linearGradient>
-          </defs>
+          <a
+            class="header-logo"
+            href="#home"
+            data-home-link
+            data-i18n-aria="header_home"
+            aria-label="Home"
+          >
+          <svg width="94" height="31" viewBox="0 0 94 31" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12.2115 25.2775C5.39651 25.2775 1.23349 20.652 1.23349 13.7753C1.23349 6.62104 5.70488 2.273 12.3349 2.273C18.0397 2.273 21.9869 5.32588 22.5728 9.98229H19.1191C18.5331 6.89858 15.8195 5.20253 12.3349 5.20253C7.70929 5.20253 4.65641 8.28625 4.65641 13.7444C4.65641 19.2334 7.61678 22.4097 12.2732 22.4097C16.5596 22.4097 19.4274 19.9427 19.6433 15.7797H12.4891V13.2819H23.0662V14.9162C23.0662 21.2687 18.749 25.2775 12.2115 25.2775ZM33.5477 25.2775C28.6446 25.2775 25.6534 21.9471 25.6534 16.9207C25.6534 11.7709 28.6446 8.44044 33.4244 8.44044C38.79 8.44044 41.3804 12.3568 40.887 17.4757H28.7988C28.8605 20.837 30.7107 22.7489 33.5477 22.7489C35.7372 22.7489 37.3715 21.6696 37.7724 19.9735H40.7945C40.3627 23.1806 37.4024 25.2775 33.5477 25.2775ZM33.3935 10.9382C30.834 10.9382 29.1072 12.5726 28.8605 15.2246H37.7724C37.6799 12.2026 35.7988 10.9382 33.3935 10.9382ZM44.3203 6.18932V2.5197H47.4965V6.18932H44.3203ZM44.3203 25V8.68713H47.4965V25H44.3203Z" fill="black"/>
+            <rect x="51.0977" y="7.39062" width="36.407" height="15.105" rx="7.55252" fill="url(#header-logo-pill)"/>
+            <rect x="52.4532" y="8.74621" width="33.6959" height="12.3939" rx="6.19694" stroke-width="2.71116" stroke="black" stroke-opacity="0.13"/>
+            <path d="M82.6217 29.5059L85.6969 23.3554C85.7652 23.2189 85.894 23.1228 86.0443 23.0963L92.7478 21.9133C93.1848 21.8362 93.2943 21.2595 92.9159 21.0276L79.9477 13.0793C79.597 12.8644 79.1555 13.1592 79.2196 13.5655L81.7144 29.3655C81.7875 29.8287 82.412 29.9254 82.6217 29.5059Z" fill="#C8C8C8"/>
+            <defs>
+              <linearGradient id="header-logo-pill" x1="42.4206" y1="6.26622" x2="85.3236" y2="23.1382" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#010101"/>
+                <stop offset="0.615092" stop-color="#A3A2D5"/>
+                <stop offset="1" stop-color="#121212"/>
+              </linearGradient>
+            </defs>
           </svg>
+          </a>
         </div>
 
-        <div class="header-content"> 
-          <div class="social">
-            <a target="_blank" href="https://www.linkedin.com/in/geissy-nunes-683109196/?isSelfProfile=true" style="color: #1F35BF;">LinkedIn</a>
-            <a target="_blank" href="https://www.behance.net/geissynunes" href="#behance" style="color: #462CA3;">Behance</a>
-            <a target="_blank" href="https://dribbble.com/Mayslassy" href="#dribbble" style="color: #A643B6;">Dribbble</a>
-            <a target="_blank" href="https://medium.com/@Geissy" href="#medium" style="color: #000000;">Medium</a>
-          </div>
-          
-          <div class="divider"></div>
+        <nav class="header-nav" aria-label="Sections" data-header-nav>
+          <a class="header-nav__link is-active" href="#home" data-nav-target="home" aria-current="true" data-i18n="nav_home">Home</a>
+          <a class="header-nav__link" href="#projects-page" data-nav-target="projects-page" data-i18n="nav_projects">Projects</a>
+          <a class="header-nav__link" href="#about-me-page" data-nav-target="about-me-page" data-i18n="nav_about">About</a>
+          <a class="header-nav__link" href="#experience-page" data-nav-target="experience-page" data-i18n="nav_experience">Experience</a>
+        </nav>
 
+        <div class="header-content">
           <div class="header-actions">
-            <a class="talk-to-me" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">
-              Talk to me
-            </a>
-            <a class="resumes" data-i18n="resume">
-              Resume
-            </a>
-            <button class="lang-button">
+            <a class="resumes" href="#" data-i18n="resume">Resume</a>
+            <a class="talk-to-me" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">Talk to me</a>
+            <button class="lang-button" type="button" aria-label="Switch language">
               <div class="switch">
                 <div class="toggle-thumb"></div>
               </div>
@@ -119,340 +147,116 @@
 
     <div class="scroll-slides">
 
-      <section class="slide slide-green">
-        <div class="hero">
-          <div class="hero-inner">
-            <header class="hero-header">
-              <p class="hero-role" data-i18n="hero_tagline">Product Designer</p>
-              <h1 class="hero-headline">
-                <span class="hero-headline-start" data-i18n="main_title_1">Transforming complexity into simplicity and </span>
-                <span class="hero-gradient-box">
-                  <span class="hero-gradient-text" data-i18n="main_title_2">intuitiveness.</span>
-                  <span class="hero-gradient-line" aria-hidden="true"></span>
-                </span>
-              </h1>
-              <div class="hero-mobile-actions">
-                <a class="hero-mobile-btn hero-mobile-btn--contact talk-to-me" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">Talk to me</a>
-                <a class="hero-mobile-btn hero-mobile-btn--resume resumes" href="#" data-i18n="resume">Resume</a>
-              </div>
-            </header>
-            <div class="hero-bottom">
-              <div class="hero-profile-block">
-                <div class="hero-avatar-wrap">
-                  <img src="./images/profile.png" alt="" class="hero-avatar" width="74" height="74" loading="eager" />
-                </div>
-                <div class="hero-profile-copy">
-                  <p class="hero-since" data-i18n="hero_since">Creating experiences since 2021</p>
-                  <p class="hero-name" data-i18n="hero_intro">Geissy but you can call me Gei</p>
-                  <a href="#about-me-page" class="hero-cta">
-                    <span data-i18n="hero_cta">Get to know me more</span>
-                    <svg class="hero-cta-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <p class="hero-bio" data-i18n="main_description">
-                For more than 4 years, I’ve been creating purposeful solutions by understanding people and turning insights into meaningful experiences.
-              </p>
-            </div>
+      <section class="slide slide-green" data-hero-intro>
+        <div class="home-hero home-projects-intro">
+          <header class="home-hero__copy">
+            <p class="home-hero__eyebrow" data-i18n="home_eyebrow">Product Designer &amp; Builder</p>
+            <h1 class="home-hero__title" data-i18n="home_hero_title">Simple solutions for complex problems through design</h1>
+          </header>
+
+          <div class="home-hero__stage">
+
+            <ul class="home-hero__skills" aria-label="Skills">
+              <li class="home-hero__skills-row">
+                <span data-i18n="home_skill_prototypes">Design Prototypes</span>
+                <span data-i18n="home_skill_ai">AI as a tool</span>
+              </li>
+              <li class="home-hero__skills-row">
+                <span data-i18n="home_skill_field">Field discovery</span>
+                <span data-i18n="home_skill_strategy">Strategy Design</span>
+              </li>
+            </ul>
+
+            <img
+              class="home-hero__portrait"
+              src="./images/hero-portrait.webp"
+              alt="Geissy"
+              width="1926"
+              height="2000"
+              loading="eager"
+              fetchpriority="high"
+            />
+
+            <p class="home-hero__summary" data-i18n="home_hero_summary">
+              Analyzing problems, discovering solutions, and designing products from end to end for over 5 years, with collaboration, transparency, and empathy.
+            </p>
           </div>
+
         </div>
-      </section>
-      <section class="slide slide-indigo">
-        <!-- Modo unificado: todos os projetos numa faixa. Para voltar ao toggle Mercado/Estudo: remova data-projects-unified ou use data-projects-unified="false" e recarregue. -->
-        <div class="projects-showcase" id="projects-page" data-projects-unified="true">
-          <div class="projects-showcase-inner">
-            <header class="projects-showcase-heading">
-              <div class="projects-showcase-headings">
-                <p class="projects-showcase-eyebrow" data-i18n="projects_eyebrow">Explore my work</p>
-                <h2 id="projects-section-heading" class="projects-showcase-title" data-i18n="projects_heading_all">All projects</h2>
+
+        <section class="selected-projects" id="projects-page" aria-labelledby="selected-projects-title">
+          <header class="selected-projects__intro">
+            <h2 class="selected-projects__title" id="selected-projects-title" data-i18n="selected_title">Selected projects</h2>
+            <p class="selected-projects__years">2024 — 2026</p>
+          </header>
+
+          <div class="selected-projects__grid">
+            <a class="selected-project selected-project--orla" href="#orla-case" data-orla-case-open>
+              <div class="selected-project__media" data-mockup-parallax>
+                <span class="selected-project__glow" aria-hidden="true"></span>
+                <img class="selected-project__phone selected-project__phone--back" src="./images/orla-case/card-phone-splash.png?v=o6" alt="" width="705" height="1395" loading="lazy" decoding="async" />
+                <img class="selected-project__phone selected-project__phone--front" src="./images/orla-case/card-phone-client.png?v=o6" alt="Orla Campo app: client profile screen" width="705" height="1395" loading="lazy" decoding="async" />
               </div>
-              <div
-                class="projects-filter"
-                role="group"
-                aria-label=""
-                data-i18n-aria="projects_filter_aria"
-              >
-                <button
-                  type="button"
-                  class="projects-filter-btn projects-filter-btn--active"
-                  data-projects-filter="all"
-                  aria-pressed="true"
-                >
-                  <span data-i18n="projects_filter_all">All Projects</span>
-                </button>
-                <button
-                  type="button"
-                  class="projects-filter-btn"
-                  data-projects-filter="web"
-                  aria-pressed="false"
-                >
-                  <span data-i18n="projects_filter_web">Web</span>
-                </button>
-                <button
-                  type="button"
-                  class="projects-filter-btn"
-                  data-projects-filter="mobile"
-                  aria-pressed="false"
-                >
-                  <span data-i18n="projects_filter_mobile">Mobile</span>
-                </button>
+              <div class="selected-project__body">
+                <h3 class="selected-project__title" data-i18n="selected_sales_title">Sales app that helps consultants offer the best fiber plans</h3>
+                <dl class="selected-project__meta">
+                  <div class="selected-project__meta-item">
+                    <dt data-i18n="selected_meta_industry">Industry</dt>
+                    <dd data-i18n="selected_sales_industry">Telecom &amp; Sales</dd>
+                  </div>
+                  <div class="selected-project__meta-item">
+                    <dt data-i18n="selected_meta_platforms">Platforms</dt>
+                    <dd data-i18n="selected_sales_platform">Mobile app</dd>
+                  </div>
+                  <div class="selected-project__meta-item">
+                    <dt data-i18n="selected_meta_year">Year</dt>
+                    <dd>2026</dd>
+                  </div>
+                </dl>
               </div>
-            </header>
-            <div
-              class="projects-pools"
-              role="region"
-              aria-labelledby="projects-section-heading"
-              tabindex="0"
-            >
-              <div class="projects-pool projects-pool--active" data-projects-pool="market" aria-hidden="false">
-                <div class="projects-scroll">
-                  <article class="project-card project-card--spotlight" data-project-platform="mobile">
-                    <div class="project-spotlight project-spotlight--vivo" tabindex="0">
-                      <div class="project-spotlight-top">
-                        <header class="project-spotlight-header">
-                          <div class="project-spotlight-brand">
-                            <div class="project-spotlight-titles">
-                              <h3 class="project-spotlight-name" data-i18n="project_card_vivo_name">Vivo+</h3>
-                              <p class="project-spotlight-subtitle">
-                                <span data-i18n="project_card_vivo_subtitle_start">Internal app for </span>
-                                <span data-i18n="project_card_vivo_subtitle_brand">Vivo</span>
-                                <span data-i18n="project_card_vivo_subtitle_end"> sellers</span>
-                              </p>
-                            </div>
-                          </div>
-                          <div class="project-spotlight-meta">
-                            <p class="project-spotlight-date">
-                              <time datetime="2024" data-i18n="project_card_vivo_year">2024</time>
-                              <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                              <span data-i18n="project_card_vivo_period">Current</span>
-                            </p>
-                            <div class="project-spotlight-tags">
-                              <span class="project-spotlight-tag" data-i18n="project_card_vivo_tag_tablet">Tablet</span>
-                              <span class="project-spotlight-tag" data-i18n="project_card_vivo_tag_phone">Cell phone</span>
-                            </div>
-                          </div>
-                        </header>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                      </div>
-                      <div class="project-spotlight-visual">
-                        <img
-                          class="project-spotlight-logo"
-                          src="./images/vivo-plus-logo.png"
-                          alt=""
-                          loading="lazy"
-                          width="172"
-                          height="172"
-                        />
-                      </div>
-                      <div class="project-spotlight-bottom">
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_card_vivo_goal_label">Contribution</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_vivo_goal_text">
-                            I contributed to evolving the sales and customer service experience by designing digital solutions that simplify processes, support consultants' daily routines, and make operations more efficient.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-date-bar project-spotlight-date-bar--mobile">
-                          <p class="project-spotlight-date">
-                            <time datetime="2024" data-i18n="project_card_vivo_year">2024</time>
-                            <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                            <span data-i18n="project_card_vivo_period">Current</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="project-card project-card--spotlight" data-project-platform="mobile">
-                    <a
-                      class="project-spotlight project-spotlight--fluency"
-                      href="https://www.behance.net/gallery/189321095/Fluency-Forge-Projeto-de-estudo-UXUI"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div class="project-spotlight-top">
-                        <header class="project-spotlight-header">
-                          <div class="project-spotlight-brand">
-                            <div class="project-spotlight-titles">
-                              <h3 class="project-spotlight-name" data-i18n="project_card_2_title">FluencyForge</h3>
-                            </div>
-                          </div>
-                          <div class="project-spotlight-meta">
-                            <p class="project-spotlight-date">
-                              <time datetime="2024" data-i18n="project_card_2_year">2024</time>
-                              <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                              <span data-i18n="project_card_fluency_period">Study project</span>
-                            </p>
-                            <div class="project-spotlight-tags">
-                              <span class="project-spotlight-tag" data-i18n="project_tag_mobile">Mobile</span>
-                            </div>
-                          </div>
-                        </header>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                      </div>
-                      <div class="project-spotlight-visual">
-                        <img
-                          class="project-spotlight-mockups"
-                          src="./images/fluencyforge-screens.png"
-                          alt=""
-                          loading="lazy"
-                          width="1024"
-                          height="518"
-                        />
-                      </div>
-                      <div class="project-spotlight-bottom">
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_goal_label">Goal</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_fluency_goal_text">
-                            Make language learning more efficient through personalized study plans, AI-powered practice, and continuous progress tracking.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-date-bar project-spotlight-date-bar--mobile">
-                          <p class="project-spotlight-date">
-                            <time datetime="2024" data-i18n="project_card_2_year">2024</time>
-                            <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                            <span data-i18n="project_card_fluency_period">Study project</span>
-                          </p>
-                        </div>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_user_label">User</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_fluency_user_text">
-                            People who want to learn a new language.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-expand">
-                          <div class="project-spotlight-expand-inner">
-                            <div class="project-spotlight-row project-spotlight-row--features">
-                              <span class="project-spotlight-row-label" data-i18n="project_spotlight_features_label">Main features</span>
-                              <p class="project-spotlight-row-text" data-i18n="project_card_fluency_features_text">
-                                Creation of personalized study paths, speaking and writing practice with AI, exercise and content generation, progress tracking, fluency tests, and study goals and reminder setup.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                  <article class="project-card project-card--spotlight" data-project-platform="web mobile">
-                    <a
-                      class="project-spotlight project-spotlight--bbee"
-                      href="https://www.behance.net/gallery/240120647/BBEE-Smart-Apiculture"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div class="project-spotlight-top">
-                        <header class="project-spotlight-header">
-                          <div class="project-spotlight-brand">
-                            <div class="project-spotlight-titles">
-                              <h3 class="project-spotlight-name" data-i18n="project_card_1_title">BBEE - Smart apiculture</h3>
-                            </div>
-                          </div>
-                          <div class="project-spotlight-meta">
-                            <p class="project-spotlight-date">
-                              <time datetime="2023" data-i18n="project_card_1_year">2023</time>
-                              <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                              <span data-i18n="project_card_1_type">Real project</span>
-                            </p>
-                            <div class="project-spotlight-tags">
-                              <span class="project-spotlight-tag" data-i18n="project_plat_web">Web</span>
-                              <span class="project-spotlight-tag" data-i18n="project_tag_mobile">Mobile</span>
-                            </div>
-                          </div>
-                        </header>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                      </div>
-                      <div class="project-spotlight-visual">
-                        <img
-                          class="project-spotlight-mockups"
-                          src="./images/bbee-cover.png"
-                          alt=""
-                          loading="lazy"
-                          width="1024"
-                          height="648"
-                        />
-                      </div>
-                      <div class="project-spotlight-bottom">
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_goal_label">Goal</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_bbee_goal_text">
-                            Centralize beekeeping management in a single platform, enabling production tracking, goal setting, operations organization, and decision-making support.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-date-bar project-spotlight-date-bar--mobile">
-                          <p class="project-spotlight-date">
-                            <time datetime="2023" data-i18n="project_card_1_year">2023</time>
-                            <span class="project-spotlight-date-sep" aria-hidden="true">•</span>
-                            <span data-i18n="project_card_1_type">Real project</span>
-                          </p>
-                        </div>
-                        <hr class="project-spotlight-divider" aria-hidden="true" />
-                        <div class="project-spotlight-row">
-                          <span class="project-spotlight-row-label" data-i18n="project_spotlight_user_label">User</span>
-                          <p class="project-spotlight-row-text" data-i18n="project_card_bbee_user_text">
-                            Beginner and experienced beekeepers who want to organize and track the management of their apiaries.
-                          </p>
-                        </div>
-                        <div class="project-spotlight-expand">
-                          <div class="project-spotlight-expand-inner">
-                            <div class="project-spotlight-row project-spotlight-row--features">
-                              <span class="project-spotlight-row-label" data-i18n="project_spotlight_features_label">Main features</span>
-                              <p class="project-spotlight-row-text" data-i18n="project_card_bbee_features_text">
-                                The platform allows users to create and track production goals, manage tasks and collaborators, monitor apiary performance, and control the stock of supplies needed to carry out activities.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </article>
-                </div>
+            </a>
+            <!-- Hidden for the first production release; remove `hidden` to show it again. -->
+            <a class="selected-project" href="#bbee-case" data-bbee-case-open hidden>
+              <div class="selected-project__media" data-mockup-parallax>
+                <span class="selected-project__glow" aria-hidden="true"></span>
+                <img class="selected-project__screen" src="./images/bbee-case/web-dashboard.jpg" alt="" width="1152" height="820" loading="lazy" decoding="async" />
               </div>
-              <div class="projects-pool" data-projects-pool="study" aria-hidden="true" inert>
-                <div class="projects-scroll"></div>
+              <div class="selected-project__body">
+                <h3 class="selected-project__title" data-i18n="bbee_card_title">Smart beekeeping platform to monitor hives and organize fieldwork</h3>
+                <dl class="selected-project__meta">
+                  <div class="selected-project__meta-item"><dt data-i18n="selected_meta_industry">Industry</dt><dd data-i18n="bbee_meta_industry_value">Agribusiness</dd></div>
+                  <div class="selected-project__meta-item"><dt data-i18n="selected_meta_platforms">Platforms</dt><dd data-i18n="bbee_meta_platforms_value">Web &amp; mobile</dd></div>
+                  <div class="selected-project__meta-item"><dt data-i18n="selected_meta_year">Year</dt><dd>2024</dd></div>
+                </dl>
               </div>
-            </div>
+            </a>
+            <a class="selected-project selected-project--itforum" href="#itforum-case" data-itforum-case-open>
+              <div class="selected-project__media" data-mockup-parallax>
+                <span class="selected-project__glow" aria-hidden="true"></span>
+                <img class="selected-project__screen" src="./images/it-forum-hero-mockup.png" alt="" width="2048" height="1144" loading="lazy" decoding="async" />
+              </div>
+              <div class="selected-project__body">
+                <h3 class="selected-project__title" data-i18n="itforum_card_title">News portal redesign: faster, more accessible and easier to navigate</h3>
+                <dl class="selected-project__meta">
+                  <div class="selected-project__meta-item"><dt data-i18n="selected_meta_industry">Industry</dt><dd data-i18n="itforum_case_meta_industry_value">Technology &amp; Media</dd></div>
+                  <div class="selected-project__meta-item"><dt data-i18n="selected_meta_platforms">Platforms</dt><dd data-i18n="itforum_case_meta_platforms_value">Responsive Website</dd></div>
+                  <div class="selected-project__meta-item"><dt data-i18n="selected_meta_year">Year</dt><dd>2024 — 2025</dd></div>
+                </dl>
+              </div>
+            </a>
           </div>
-        </div>
+        </section>
       </section>
       <section class="slide slide-purple">
         <div class="about-me" id="about-me-page">
           <main class="about-layout">
             <section class="about-copy">
+              <p class="about-eyebrow" data-i18n="about_eyebrow">About me</p>
               <h1 data-i18n="about_me_title">You can call me Gei</h1>
               <div class="about-copy-main">
                 <p data-i18n="about_me_paragraph_1">
                   With 5 years of experience in UX/UI Design, I work on end-to-end solutions for B2B and B2C products — from research to high-fidelity prototyping. I use Figma daily to create and iterate on intuitive interfaces, always aligned with business goals.
                 </p>
-                <aside
-                  class="about-photo-card about-photo-card--mobile-only"
-                  tabindex="0"
-                  data-i18n-aria="about_me_photo_flip_hint"
-                  aria-label="Portrait of Geissy — hover, tap, or press Enter to see the other side."
-                >
-                  <div class="about-photo-flip">
-                    <div class="about-photo-flip-inner">
-                      <div class="about-photo-face about-photo-face--front">
-                        <img
-                          data-i18n-img="about_photo_front_mobile"
-                          src="./images/about-photo-front-mobile-en.png"
-                          alt="Geissy portrait"
-                          width="351"
-                          height="312"
-                        />
-                      </div>
-                      <div class="about-photo-face about-photo-face--back" aria-hidden="true">
-                        <img
-                          data-i18n-img="about_photo_back_mobile"
-                          src="./images/about-mobile-back.png"
-                          alt=""
-                          width="350"
-                          height="525"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </aside>
                 <div class="about-copy-tail">
                   <div id="about-copy-expanded" class="about-copy-expanded" aria-hidden="true">
                     <div class="about-copy-expanded-inner">
@@ -460,6 +264,20 @@
                       <p data-i18n="about_me_paragraph_3"></p>
                     </div>
                   </div>
+                  <dl class="about-facts">
+                    <div class="about-facts__item">
+                      <dt data-i18n="about_fact_background_label">Background</dt>
+                      <dd data-i18n="about_fact_background">Psychology</dd>
+                    </div>
+                    <div class="about-facts__item">
+                      <dt data-i18n="about_fact_focus_label">Focus</dt>
+                      <dd data-i18n="about_fact_focus">B2B &amp; B2C</dd>
+                    </div>
+                    <div class="about-facts__item">
+                      <dt data-i18n="about_fact_approach_label">Approach</dt>
+                      <dd data-i18n="about_fact_approach">Human-first</dd>
+                    </div>
+                  </dl>
                   <div class="about-actions">
                     <button type="button" class="about-button" id="about-learn-more" aria-expanded="false" aria-controls="about-copy-expanded">
                       <span class="about-button-label">Learn more</span>
@@ -467,18 +285,22 @@
                         <path d="M5.83337 10.5L13.0889 16.7191C13.6132 17.1684 14.3869 17.1684 14.9111 16.7191L22.1667 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                       </svg>
                     </button>
+                    <!-- Video placeholder: no video yet, shows a "Coming soon" comment on hover/focus -->
                     <button
                       type="button"
-                      class="about-video-button"
-                      id="about-video-open"
+                      class="about-video-button about-video-button--soon"
+                      aria-disabled="true"
+                      aria-describedby="about-video-soon"
                       data-i18n-aria="about_me_video_aria"
-                      aria-label="Watch introduction video"
-                      aria-haspopup="dialog"
+                      aria-label="Introduction video"
                     >
                       <svg class="about-video-button__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M10 10.0554C10 9.1768 10.9792 8.65277 11.7102 9.14011L14.6271 11.0847C15.2802 11.5201 15.2802 12.4799 14.6271 12.9153L11.7102 14.8599C10.9792 15.3472 10 14.8232 10 13.9446V10.0554Z" stroke="currentColor" stroke-width="1.5"/>
                       </svg>
+                      <span class="about-soon" id="about-video-soon" role="tooltip">
+                        <span data-i18n="about_video_soon">Coming soon</span>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -486,57 +308,61 @@
 
             </section>
 
-            <aside
-              class="about-photo-card"
-              tabindex="0"
-              data-i18n-aria="about_me_photo_flip_hint"
-              aria-label="Portrait of Geissy — hover, tap, or press Enter to see the other side."
-            >
-              <div class="about-photo-flip">
-                <div class="about-photo-flip-inner">
-                  <div class="about-photo-face about-photo-face--front">
-                    <img
-                      data-i18n-img="about_photo_front"
-                      src="./images/about-photo-front-en.png"
-                      alt="Geissy portrait"
-                      width="350"
-                      height="525"
-                    />
-                  </div>
-                  <div class="about-photo-face about-photo-face--back" aria-hidden="true">
-                    <img
-                      data-i18n-img="about_photo_back_desktop"
-                      src="./images/photo-about-back.png"
-                      alt=""
-                      width="350"
-                      height="525"
-                    />
-                  </div>
+            <div class="about-photo-stage">
+              <figure class="about-fig" data-i18n-aria="about_fig_aria" aria-label="Portrait of Geissy smiling, annotated like a Figma frame">
+                <span class="about-fig__layer" aria-hidden="true">&#9634; gei_portrait</span>
+                <div class="about-fig__img">
+                  <img src="./images/about-portrait.jpg" alt="" width="900" height="1350" loading="lazy" />
                 </div>
-              </div>
-            </aside>
+                <span class="about-fig__sel" aria-hidden="true"></span>
+                <i class="about-fig__handle about-fig__handle--tl" aria-hidden="true"></i>
+                <i class="about-fig__handle about-fig__handle--tr" aria-hidden="true"></i>
+                <i class="about-fig__handle about-fig__handle--bl" aria-hidden="true"></i>
+                <i class="about-fig__handle about-fig__handle--br" aria-hidden="true"></i>
+                <span class="about-fig__dim" aria-hidden="true">340 &times; 440 &middot; Hug</span>
+
+                <figcaption class="about-fig__notes">
+                  <p class="about-fig__note about-fig__note--1">
+                    <span class="about-fig__line" aria-hidden="true"></span>
+                    <span class="about-fig__label"><small data-i18n="about_fig_note_tag_1">NOTE · 01</small><span data-i18n="about_fig_note_1">Understand first, build later</span></span>
+                  </p>
+                  <p class="about-fig__note about-fig__note--2">
+                    <span class="about-fig__line" aria-hidden="true"></span>
+                    <span class="about-fig__label"><small data-i18n="about_fig_note_tag_2">NOTE · 02</small><span data-i18n="about_fig_note_2">My favorite tools: Claude, ChatGPT &amp; Figma</span></span>
+                  </p>
+                  <p class="about-fig__note about-fig__note--3">
+                    <span class="about-fig__line" aria-hidden="true"></span>
+                    <span class="about-fig__label"><small data-i18n="about_fig_note_tag_3">NOTE · 03</small><span data-i18n="about_fig_note_3">In my free time, planning the next trip</span></span>
+                  </p>
+                </figcaption>
+
+                <span class="about-fig__cursor" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#6f55d6" stroke="#fff" stroke-width="1.5"><path d="M4 3l7 18 2.5-7.5L21 11z"/></svg>
+                  <span>Gei</span>
+                </span>
+              </figure>
+            </div>
           </main>
 
           <section class="about-companies-strip">
             <div class="about-companies-copy">
-              <span data-i18n="about_me_companies_label">Building solutions for</span>
+              <span class="about-eyebrow" data-i18n="about_me_companies_label">Building solutions for</span>
               <h2 data-i18n="about_me_companies_title">Great companies</h2>
             </div>
             <div class="about-companies-logos">
-              <img class="about-company-logo--compact" src="./images/logos/vivo-logo.png" alt="Vivo logo" />
-              <div class="divider-company-logo"></div>
               <img class="about-company-logo--compact" src="./images/logos/itforum-logo.png" alt="IT Forum logo" />
               <div class="divider-company-logo"></div>
               <img src="./images/logos/neoenergia-logo.png" alt="Neoenergia logo" />
               <div class="divider-company-logo"></div>
-              <img src="./images/logos/vale-logo.png" alt="Vale logo" />
-              <div class="divider-company-logo"></div>
               <img src="./images/logos/MouraDB.png" alt="Moura Dubeux logo" />
+              <div class="divider-company-logo"></div>
+              <img class="about-company-logo--compact" src="./images/logos/softplan-logo.png" alt="Softplan logo" />
             </div>
           </section>
 
           <section class="about-tools">
             <div class="about-tools-header">
+              <p class="about-eyebrow" data-i18n="about_tools_eyebrow">My daily stack</p>
               <h2 id="about-tools-heading" data-i18n="about_me_tools_title">Main work tools</h2>
             </div>
             <div class="about-tools-marquee" role="region" aria-labelledby="about-tools-heading">
@@ -610,7 +436,10 @@
         <div class="experience" id="experience-page">
           <div class="experience-inner">
             <header class="experience-header">
-              <h2 id="experience-section-heading" data-i18n="experience_title">Experiência profissional</h2>
+              <p class="experience-header-eyebrow" data-i18n="experience_intro_eyebrow">Um breve resumo</p>
+              <h2 id="experience-section-heading" data-i18n="experience_intro_title">Carreira profissional</h2>
+              <p class="experience-header-description" data-i18n="experience_intro_description">Para saber mais detalhes explore em meu currículo.</p>
+              <a class="resumes about-button experience-resume-button" data-i18n="resume">Currículo</a>
             </header>
 
             <div class="experience-layout">
@@ -625,6 +454,7 @@
                 <article class="experience-card experience-card--loomi">
                   <div class="experience-card-main">
                     <div class="experience-card-lead">
+                      <span class="experience-progress-indicator experience-progress-indicator--status" aria-hidden="true"></span>
                       <a
                         class="experience-logo-wrap experience-logo-wrap--loomi"
                         href="https://loomi.digital/"
@@ -645,19 +475,9 @@
                             rel="noopener noreferrer"
                           >Loomi</a>
                         </h3>
-                        <p class="experience-card-body experience-card-body--on-dark">
-                          <span data-i18n="experience_loomi_paragraph_1_start">Atuo como Product Designer para produtos B2B e B2C, trabalhando em múltiplos projetos para clientes como </span><span class="experience-loomi-highlight" data-i18n="experience_loomi_paragraph_1_highlight">Neoenergia, Vivo, Vibe, Moura Dubeux, IT Forum e Atvos.</span><span data-i18n="experience_loomi_paragraph_1_end"> Conduzo ciclos completos de design, do discovery ao delivery, lidando com problemas pouco definidos, organização de informações e fluxos complexos em produtos desktop e mobile.</span>
+                        <p class="experience-card-body experience-card-body--on-dark" data-i18n="experience_loomi_summary">
+                          Atuo como Product Designer conduzindo ciclos completos de design, do discovery ao delivery, lidando com problemas pouco definidos, organização de informações e fluxos complexos em produtos desktop e mobile.
                         </p>
-                        <p class="experience-card-body experience-card-body--on-dark" data-i18n="experience_loomi_paragraph_2">
-                          Comunicação ativa com clientes, focada em entender desafios e transformar em soluções digitais eficientes.
-                        </p>
-                        <p class="experience-recurring-heading experience-recurring-heading--on-dark" data-i18n="experience_loomi_recurring_title">Atuação recorrente</p>
-                        <ul class="experience-list experience-list--on-dark">
-                          <li data-i18n="experience_loomi_item_1">Condução de Discovery estruturado, alinhando contexto, objetivos e prioridades junto aos clientes.</li>
-                          <li data-i18n="experience_loomi_item_2">Mapeamento de processos, jornadas e fluxos, com foco em eficiência operacional e boas práticas de UX.</li>
-                          <li data-i18n="experience_loomi_item_3">Criação e validação de fluxos, wireframes e protótipos, apoiados por benchmarks, análises de mercado e testes de usabilidade.</li>
-                          <li data-i18n="experience_loomi_item_4">Produção e apresentação de entregáveis estratégicos, apoiando decisões de produto e evolução das soluções.</li>
-                        </ul>
                       </div>
                     </div>
                     <div class="experience-period experience-period--on-dark">
@@ -684,14 +504,6 @@
                           <p class="experience-summary" data-i18n="experience_sysvale_summary">
                             Atuei como UX/UI Designer criando interfaces de ponta a ponta para produtos na área da saúde. Sistemas de gestão com compromisso com a saúde.
                           </p>
-                          <p class="experience-details" data-i18n="experience_sysvale_paragraph_1">
-                            No dia a dia, desenvolvia novas telas, pensava na experiência do usuário e também criava e documentava componentes para o Design System, ajudando a manter tudo mais organizado, consistente e escalável.
-                          </p>
-                          <p class="experience-details" data-i18n="experience_sysvale_paragraph_2">
-                            Participava de validações dos fluxos junto aos clientes e acompanhava a experiência dos usuários com ferramentas como o FullStory, buscando entender melhor a experiência e identificar oportunidades de melhoria.
-                          </p>
-                          <p class="experience-impact experience-impact-number" data-i18n="experience_sysvale_impact_number">+ 2.091.488</p>
-                          <p class="experience-impact experience-impact-label" data-i18n="experience_sysvale_impact_label">PESSOAS IMPACTADAS</p>
                         </div>
                       </div>
                       <div class="experience-period experience-period--on-light">
@@ -716,12 +528,24 @@
 
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--main">
+      <section class="footer-cta" aria-labelledby="footer-cta-title">
+        <span class="footer-cta__orbit" aria-hidden="true"></span>
+        <div class="footer-cta__copy">
+          <p class="footer-cta__eyebrow" data-i18n="footer_cta_eyebrow">Let's talk</p>
+          <h2 class="footer-cta__title" id="footer-cta-title" data-i18n="footer_cta_title">Have a complex problem? Let's make it simple.</h2>
+          <p class="footer-cta__text" data-i18n="footer_cta_text">Send me a message and let's talk about what you're building.</p>
+        </div>
+        <div class="footer-cta__actions">
+          <a class="footer-cta__button footer-cta__button--dark" href="mailto:geissy.designlab@gmail.com" data-i18n="talk_to_me">Talk to me</a>
+          <a class="resumes footer-cta__button footer-cta__button--light" href="#" data-i18n="resume">Resume</a>
+        </div>
+      </section>
       <div class="site-footer__divider" aria-hidden="true"></div>
       <div class="site-footer__inner">
         <div class="site-footer__profile">
           <img
-            src="./images/footer-profile.png"
+            src="./images/footer-profile.png?v=2"
             alt=""
             class="site-footer__avatar"
             width="72"
@@ -767,48 +591,963 @@
     </footer>
   </div>
 
-  <div class="about-video-modal" id="about-video-modal" hidden>
-    <div class="about-video-modal__backdrop" data-about-video-close></div>
-    <div
-      class="about-video-modal__dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="about-video-modal-title"
-    >
-      <h2 id="about-video-modal-title" class="about-video-modal__title" data-i18n="about_video_modal_title">
-        Introduction video
-      </h2>
-      <button
-        type="button"
-        class="about-video-modal__close"
-        data-about-video-close
-        data-i18n-aria="about_video_modal_close"
-        aria-label="Close video"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="about-video-modal__player">
-        <video id="about-intro-video" controls playsinline preload="metadata">
-          <source src="./assets/Videomeapresentando.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-  </div>
+  <section
+    class="itforum-case"
+    id="itforum-case"
+    hidden
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="itforum-case-title"
+  >
+    <div class="itforum-case__scroll">
+      <section class="itforum-case__intro itforum-case__inner">
+        <p class="itf-eyebrow"><span data-i18n="itf2_eyebrow">News portal redesign · Responsive web</span></p>
+        <h1 id="itforum-case-title" class="itforum-case__title" tabindex="-1" data-i18n-html="itf2_title">I redesigned the It Forum portal to be <b>faster, more accessible and easier to navigate</b>, with sections built for discovery and SEO.</h1>
 
-  <script src="./scripts/scroll-handler.js"></script>
+        <div class="itforum-case__meta itf-info">
+          <div class="itf-info__cols">
+            <div class="itf-info__col">
+              <h2 class="itf-info__title" data-i18n="itf2_info_context">Context</h2>
+              <dl>
+                <div><dt data-i18n="itf2_meta_client">Client</dt><dd>It Forum</dd></div>
+                <div><dt data-i18n="itf2_meta_company">Company</dt><dd>Loomi</dd></div>
+                <div><dt data-i18n="itf2_meta_year">Year</dt><dd>2024 – 2025</dd></div>
+              </dl>
+            </div>
+            <div class="itf-info__col">
+              <h2 class="itf-info__title" data-i18n="itf2_info_work">My work</h2>
+              <dl>
+                <div><dt data-i18n="itf2_meta_role">My role</dt><dd>Product Designer</dd></div>
+                <div><dt data-i18n="itf2_meta_scope">Scope</dt><dd><ul class="itf-chips"><li data-i18n="itf2_scope_1">Benchmark</li><li data-i18n="itf2_scope_2">Information architecture</li><li data-i18n="itf2_scope_3">UX/UI</li><li data-i18n="itf2_scope_4">Design System</li><li data-i18n="itf2_scope_5">Accessibility</li><li data-i18n="itf2_scope_6">Dev handoff</li></ul></dd></div>
+              </dl>
+            </div>
+            <div class="itf-info__col">
+              <h2 class="itf-info__title" data-i18n="itf2_info_delivery">Platform and tools</h2>
+              <dl>
+                <div><dt data-i18n="itf2_meta_platform">Platform</dt><dd data-i18n="itf2_meta_platform_value">Responsive website</dd></div>
+                <div><dt data-i18n="itf2_meta_tools">Tools</dt><dd><ul class="itf-chips"><li data-i18n="itf2_tool_1">Figma</li><li data-i18n="itf2_tool_2">FigJam</li><li data-i18n="itf2_tool_3">Lighthouse</li></ul></dd></div>
+              </dl>
+            </div>
+          </div>
+          <aside class="orla-nda-card" aria-labelledby="itf-nda-title">
+            <p class="orla-nda-card__title" id="itf-nda-title"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span data-i18n="orla_nda_title">NDA project</span></p>
+            <p class="orla-nda-card__text" data-i18n-html="itf2_nda_text"><strong>NDA</strong> (Non-Disclosure Agreement): I can't share every detail for confidentiality reasons, but I can give a general overview of my work on the project. The interfaces shown don't reproduce the original content; I changed the information to preserve confidentiality.</p>
+          </aside>
+        </div>
+
+        <div class="itforum-case__cover itf-stage">
+          <img src="./images/itforum-case/v2/hero-home.jpg" alt="New It Forum home on desktop, with sponsor banner, main highlight, trending and news cards" width="2000" height="1563" />
+        </div>
+
+        <div class="itf-rows">
+          <div class="itf-row">
+            <div class="itf-row__head"><span class="itf-row__num">01</span><h2 class="itf-row__title" data-i18n="itf2_sum_challenge">The challenge</h2></div>
+            <div class="itf-row__body">
+              <p class="itf-row__lead" data-i18n-html="itf2_sum_challenge_text">With over <strong>80,000 published articles</strong>, the challenge was to completely redesign the portal while improving performance, accessibility, and SEO. This involved reorganizing the information hierarchy and navigation flow to make discovering and accessing articles easier.</p>
+            </div>
+          </div>
+          <div class="itf-row">
+            <div class="itf-row__head"><span class="itf-row__num">02</span><h2 class="itf-row__title" data-i18n="itf2_sum_did">What I did</h2></div>
+            <div class="itf-row__body">
+              <p class="itf-row__lead" data-i18n="itf2_sum_did_lead">I worked from diagnosis to design delivery.</p>
+              <ol class="itf-steps">
+                <li><span>1</span><span data-i18n="itf2_did_1">Benchmark</span></li>
+                <li><span>2</span><span data-i18n="itf2_did_2">Information architecture</span></li>
+                <li><span>3</span><span data-i18n="itf2_did_3">Visual redesign & flows</span></li>
+                <li><span>4</span><span data-i18n="itf2_did_4">Design System</span></li>
+              </ol>
+              <p class="itf-row__note" data-i18n="itf2_sum_did_note">During development, I answered questions and clarified interactions with the developers.</p>
+            </div>
+          </div>
+          <div class="itf-row">
+            <div class="itf-row__head"><span class="itf-row__num">03</span><h2 class="itf-row__title" data-i18n="itf2_sum_result">The result</h2></div>
+            <div class="itf-row__body">
+              <div class="itf-rp">
+                <div class="itf-rp__main">
+                  <p class="itf-row__lead" data-i18n="itf2_sum_result_text">With the new visual design, the portal outperformed the average benchmark of leading news websites in performance, accessibility, and SEO, while making navigation and content discovery faster and easier.</p>
+                  <a class="itf-rp__cta" href="#itf-s6" data-itf-goto="itf-s6"><span data-i18n="itf2_rp_cta">See all the details</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                  <p class="itf-rp__eyebrow" data-i18n="itf2_rp_scores_label">Lighthouse scores, from 0 to 100</p>
+                  <div class="itf-scores" data-itf-scores>
+                <div class="itf-score" data-score="87" data-market="79" style="--d:0s"><div class="itf-score__top"><strong>87</strong><span class="itf-score__up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 9.5 10.5l4 4L21 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>+8</span></div><b data-i18n="itf2_rp_s1_t">T</b><small data-i18n="itf2_rp_s1_n">N</small><div class="itf-bar" style="--v:87;--m:79" aria-hidden="true"><span class="itf-bar__fill"></span><span class="itf-bar__market"></span><span class="itf-bar__dot"></span></div><div class="itf-bar__scale" aria-hidden="true"><span>0</span><span>100</span></div></div>
+                <div class="itf-score" data-score="94" data-market="87" style="--d:0.15s"><div class="itf-score__top"><strong>94</strong><span class="itf-score__up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 9.5 10.5l4 4L21 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>+7</span></div><b data-i18n="itf2_rp_s2_t">T</b><small data-i18n="itf2_rp_s2_n">N</small><div class="itf-bar" style="--v:94;--m:87" aria-hidden="true"><span class="itf-bar__fill"></span><span class="itf-bar__market"></span><span class="itf-bar__dot"></span></div><div class="itf-bar__scale" aria-hidden="true"><span>0</span><span>100</span></div></div>
+                <div class="itf-score" data-score="98" data-market="79" style="--d:0.3s"><div class="itf-score__top"><strong>98</strong><span class="itf-score__up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 9.5 10.5l4 4L21 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>+19</span></div><b data-i18n="itf2_rp_s3_t">T</b><small data-i18n="itf2_rp_s3_n">N</small><div class="itf-bar" style="--v:98;--m:79" aria-hidden="true"><span class="itf-bar__fill"></span><span class="itf-bar__market"></span><span class="itf-bar__dot"></span></div><div class="itf-bar__scale" aria-hidden="true"><span>0</span><span>100</span></div></div>
+              </div>
+                </div>
+                <div class="itf-rp__net">
+                  <p class="itf-rp__eyebrow" data-i18n="itf2_rp_net_label">Network performance analysis</p>
+                  <div class="itf-rp__metrics" data-itf-count><div class="itf-rp__metric"><strong data-i18n="itf2_rp_m1_v">1.1 s</strong><b data-i18n="itf2_rp_m1_t">First Contentful Paint on mobile</b><small data-i18n="itf2_rp_m1_s">The best in the group</small></div><div class="itf-rp__metric"><strong data-i18n="itf2_rp_m2_v">1.5 MB</strong><b data-i18n="itf2_rp_m2_t">JavaScript</b><small data-i18n="itf2_rp_m2_s">The lightest in the group</small></div><div class="itf-rp__metric"><strong data-i18n="itf2_rp_m3_v">2.7 MB</strong><b data-i18n="itf2_rp_m3_t">Page weight</b><small data-i18n="itf2_rp_m3_s">Tied with BBC as the lightest</small></div></div>
+                  <p class="itf-rp__source" data-i18n="itf2_rp_source">Compared with G1, CNN Brasil, UOL, Estadão, BBC News Brasil and Poder360.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="itf-sec itforum-case__inner" aria-labelledby="itf-s1">
+        <div class="itf-sec__head">
+          <h2 id="itf-s1" class="itf-sec__title" data-i18n-html="itf2_s1_title">Before designing any screen,<br>I listed what needed to change.</h2>
+        </div>
+
+        <div class="itf-problems">
+          <article class="itf-problem"><span class="itf-problem__num">1</span><h3 data-i18n="itf2_s1_p1_title">Long loading times</h3><p data-i18n="itf2_s1_p1_text">Long loading times and slow navigation between pages reduced the flow of reading the news, hurting how long people stayed on the portal.</p></article>
+          <article class="itf-problem"><span class="itf-problem__num">2</span><h3 data-i18n="itf2_s1_p2_title">Undervalued content</h3><p data-i18n="itf2_s1_p2_text">Events and podcasts were easy to find, but the presentation was simple and didn't highlight the key information or how the content was organized.</p></article>
+          <article class="itf-problem"><span class="itf-problem__num">3</span><h3 data-i18n="itf2_s1_p3_title">No clear information hierarchy</h3><p data-i18n="itf2_s1_p3_text">Many elements with similar proportions and no clear visual division, plus few accessibility features.</p></article>
+        </div>
+
+        <div class="itf-before">
+          <figure class="itf-shot"><div class="itf-shot__frame"><img src="./images/itforum-case/v2/antes-eventos.jpg" alt="Events page of the old portal" width="1100" height="1482" loading="lazy" /></div><figcaption data-i18n="itf2_s1_cap1">Events, on the old portal</figcaption></figure>
+          <figure class="itf-shot"><div class="itf-shot__frame"><img src="./images/itforum-case/v2/antes-todas.jpg" alt="All news list of the old portal" width="1100" height="1482" loading="lazy" /></div><figcaption data-i18n="itf2_s1_cap2">All news, on the old portal</figcaption></figure>
+          <figure class="itf-shot"><div class="itf-shot__frame"><img src="./images/itforum-case/v2/antes-negocios.jpg" alt="Business category of the old portal" width="1100" height="1482" loading="lazy" /></div><figcaption data-i18n="itf2_s1_cap3">Business category, on the old portal</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="itforum-case__process itf-process">
+
+        <ol class="itforum-case__process-list itforum-case__inner">
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">01</span>
+              <h3 class="itforum-case__process-name" data-i18n="itf2_s2_p1_title">Understand the request</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itf2_s2_p1_text">The project started with alignment meetings with the client, who introduced the challenge of refreshing the portal's visual design and creating a Web Stories section. Throughout the process, I stayed in close contact with the client to clarify questions and validate the points raised.</p>
+              <ul class="itforum-case__process-tags">
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p1_chip_1">Alignment meetings</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p1_chip_2">Needs assessment</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p1_chip_3">Continuous validation</span></span></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">02</span>
+              <h3 class="itforum-case__process-name" data-i18n="itf2_s2_p2_title">Research</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itf2_s2_p2_text">Based on this request, I analyzed the existing portal to understand its navigation, how it worked, and the information it contained. I then conducted market research on leading news websites, comparing performance (using Lighthouse on desktop and mobile), accessibility, SEO, structure, features, and visual patterns to identify improvement opportunities and differences between the solutions offered.</p>
+              <ul class="itforum-case__process-tags">
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p2_chip_1">Existing portal analysis</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p2_chip_2">Market research</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p2_chip_3">Lighthouse benchmarking</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p2_chip_4">Visual patterns</span></span></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">03</span>
+              <h3 class="itforum-case__process-name" data-i18n="itf2_s2_p3_title">Define</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itf2_s2_p3_text">Based on the research results, I aligned the next steps with the client and built a map of the portal's sections and features, recording questions, needs and expectations. I also deepened the research on SEO and best practices for news portals, to define the information hierarchy and the navigation flow before the first sketches.</p>
+              <ul class="itforum-case__process-tags">
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p3_chip_1">Sections & features map</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p3_chip_2">Client questions & expectations</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p3_chip_3">SEO research</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p3_chip_4">Information architecture</span></span></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">04</span>
+              <h3 class="itforum-case__process-name" data-i18n="itf2_s2_p4_title">Create and validate</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itf2_s2_p4_text">I started the design phase with visual proposals, presenting different versions to the client. After several rounds of validation, we agreed on the portal's visual direction. Once approved, I applied the new visual design across all remaining screens and flows, including the mobile version. In parallel, I built the Design System component library.</p>
+              <ul class="itforum-case__process-tags">
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p4_chip_1">Visual proposals</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p4_chip_2">Validation rounds</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p4_chip_3">Visual redesign</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p4_chip_4">Design System</span></span></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="itforum-case__process-row">
+            <div class="itforum-case__process-label">
+              <span class="itforum-case__process-num">05</span>
+              <h3 class="itforum-case__process-name" data-i18n="itf2_s2_p5_title">Deliver</h3>
+            </div>
+            <div class="itforum-case__process-body">
+              <p class="itforum-case__process-copy" data-i18n="itf2_s2_p5_text">I documented the whole project in Figma, organizing screens, interactions, use cases and error scenarios for the development team to consult. During development, I was available to clear up questions and align the behavior of interactions with the developers.</p>
+              <ul class="itforum-case__process-tags">
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p5_chip_1">Figma documentation</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p5_chip_2">Use cases & error scenarios</span></span></li>
+                <li><span class="itforum-case__process-tag"><span data-i18n="itf2_s2_p5_chip_3">Developer handoff</span></span></li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="itf-sec itf-decisions itforum-case__inner" aria-labelledby="itf-s3">
+        <div class="itf-sec__head">
+          <h2 id="itf-s3" class="itf-sec__title" data-i18n="itf2_s3_title">Three decisions that transformed the portal</h2>
+          <p class="itf-sec__lead" data-i18n="itf2_s3_lead">The main design decisions, the challenges behind them and the results achieved.</p>
+        </div>
+
+        <article class="itf-decision">
+          <div class="itf-decision__text">
+            <span class="itf-decision__tag" data-i18n="itf2_s3_d1_tag">Decision 1 · Content sections</span>
+            <h3 data-i18n="itf2_s3_d1_title">Each content format with the presentation it deserves</h3>
+            <dl class="itf-pde">
+              <div><dt data-i18n="itf2_s3_problem">Problem</dt><dd data-i18n="itf2_s3_d1_problem">Formats beyond news had little prominence: events and podcasts were presented simply, and there was no webstories area.</dd></div>
+              <div><dt data-i18n="itf2_s3_decision">Decision</dt><dd data-i18n="itf2_s3_d1_decision">I created the Webstories section from scratch and reorganized Events and Podcasts, giving each format its own structure and direct access from the menu.</dd></div>
+              <div><dt data-i18n="itf2_s3_effect">Effect</dt><dd data-i18n="itf2_s3_d1_effect">The different content formats gained space and prominence within the portal navigation. Their own pages also helped organize the content and get it indexed by search engines.</dd></div>
+            </dl>
+          </div>
+          <figure class="itf-decision__media">
+            <div class="itf-decision__frame"><img src="./images/itforum-case/v2/dec1-secoes.jpg" alt="Webstories and Upcoming events sections on the new home" width="1600" height="1176" loading="lazy" /></div>
+            <figcaption data-i18n="itf2_s3_d1_cap">Webstories and Upcoming events, inside the portal home itself.</figcaption>
+          </figure>
+        </article>
+
+        <article class="itf-decision itf-decision--flip">
+          <div class="itf-decision__text">
+            <span class="itf-decision__tag" data-i18n="itf2_s3_d2_tag">Decision 2 · Podcast</span>
+            <h3 data-i18n="itf2_s3_d2_title">From channel to episode, with simpler navigation</h3>
+            <dl class="itf-pde">
+              <div><dt data-i18n="itf2_s3_problem">Problem</dt><dd data-i18n="itf2_s3_d2_problem">Podcasts existed on the portal, but there was no clear separation by channel. That made it hard to browse the content, watch episodes and keep up with the latest ones.</dd></div>
+              <div><dt data-i18n="itf2_s3_decision">Decision</dt><dd data-i18n="itf2_s3_d2_decision">I separated the podcasts by channel and designed a page for each one, where users watch episodes and see the latest ones, organized by season.</dd></div>
+              <div><dt data-i18n="itf2_s3_effect">Effect</dt><dd data-i18n="itf2_s3_d2_effect">A more direct journey from discovering channels to choosing episodes and keeping up with the latest releases, all integrated into the portal's visual standards.</dd></div>
+            </dl>
+          </div>
+          <figure class="itf-decision__media">
+            <div class="itf-decision__frame"><img src="./images/itforum-case/v2/dec2-videocasts.jpg" alt="Videocasts page and the Brain Cast channel page" width="1600" height="1000" loading="lazy" /></div>
+            <figcaption data-i18n="itf2_s3_d2_cap">Podcasts page featuring the latest episodes, and an individual channel page with episodes organized by season.</figcaption>
+          </figure>
+        </article>
+
+        <article class="itf-decision">
+          <div class="itf-decision__text">
+            <span class="itf-decision__tag" data-i18n="itf2_s3_d3_tag">Decision 3 · Accessibility</span>
+            <h3 data-i18n="itf2_s3_d3_title">Accessibility built into the experience and the Design System</h3>
+            <dl class="itf-pde">
+              <div><dt data-i18n="itf2_s3_problem">Problem</dt><dd data-i18n="itf2_s3_d3_problem">The previous portal offered few accessibility features, limiting how the experience could adapt to different users.</dd></div>
+              <div><dt data-i18n="itf2_s3_decision">Decision</dt><dd data-i18n="itf2_s3_d3_decision">I integrated an accessibility menu into the portal, available on every page, and incorporated accessibility criteria into the Design System components.</dd></div>
+              <div><dt data-i18n="itf2_s3_effect">Effect</dt><dd data-i18n="itf2_s3_d3_effect">The evaluated pages achieved an average accessibility score of 94 on desktop, above the benchmark of 87 set by the six major news portals analyzed.</dd></div>
+            </dl>
+          </div>
+          <figure class="itf-decision__media">
+            <div class="itf-decision__frame"><img src="./images/itforum-case/v2/dec3-menu.jpg" alt="Accessibility menu open, with font size, link highlight and dyslexia-friendly font options" width="1600" height="880" loading="lazy" /></div>
+            <figcaption data-i18n="itf2_s3_d3_cap">Accessibility menu open, on the published version of the portal.</figcaption>
+          </figure>
+        </article>
+      </section>
+
+      <section class="itf-sec itf-ba-sec itforum-case__inner" aria-labelledby="itf-s4">
+        <div class="itf-sec__head">
+          <h2 id="itf-s4" class="itf-sec__title itf-ba-title" data-i18n-html="itf2_s4_title"><span class="itf-ba-title__a">Before</span> <em>and</em> <strong>after</strong></h2>
+          <p class="itf-sec__lead" data-i18n="itf2_s4_lead">The same pages, side by side, with the decision behind each change.</p>
+        </div>
+
+        <article class="itf-ba">
+          <div class="itf-ba__pair">
+            <figure class="itf-ba__shot itf-ba__shot--before">
+              <span class="itf-ba__label" data-i18n="itf2_s4_before">Before</span>
+              <div class="itf-ba__frame"><img src="./images/itforum-case/v2/antes-negocios.jpg" alt="Business category, old portal" width="1100" height="1482" loading="lazy" /></div>
+            </figure>
+            <figure class="itf-ba__shot itf-ba__shot--after">
+              <span class="itf-ba__label" data-i18n="itf2_s4_after">After</span>
+              <div class="itf-ba__frame"><img src="./images/itforum-case/v2/depois-categoria.jpg" alt="Business category, new portal" width="1100" height="1485" loading="lazy" /></div>
+            </figure>
+          </div>
+          <dl class="itf-ba__notes">
+            <div><dt data-i18n="itf2_s4_before">Before</dt><dd data-i18n="itf2_s4_c1_before">Many elements with similar proportions competed for attention, with no clear visual division.</dd></div>
+            <div><dt data-i18n="itf2_s4_decision">Decision</dt><dd data-i18n="itf2_s4_c1_decision">I defined highlights of different sizes, visually separated blocks and a “Most read” column.</dd></div>
+            <div><dt data-i18n="itf2_s4_after">After</dt><dd data-i18n="itf2_s4_c1_after">More direct reading, with the main content in focus.</dd></div>
+          </dl>
+        </article>
+
+        <article class="itf-ba">
+          <div class="itf-ba__pair">
+            <figure class="itf-ba__shot itf-ba__shot--before">
+              <span class="itf-ba__label" data-i18n="itf2_s4_before">Before</span>
+              <div class="itf-ba__frame"><img src="./images/itforum-case/v2/antes-todas.jpg" alt="News list, old portal" width="1100" height="1482" loading="lazy" /></div>
+            </figure>
+            <figure class="itf-ba__shot itf-ba__shot--after">
+              <span class="itf-ba__label" data-i18n="itf2_s4_after">After</span>
+              <div class="itf-ba__frame"><img src="./images/itforum-case/v2/depois-lista.jpg" alt="News list, new portal" width="1100" height="1485" loading="lazy" /></div>
+            </figure>
+          </div>
+          <dl class="itf-ba__notes">
+            <div><dt data-i18n="itf2_s4_before">Before</dt><dd data-i18n="itf2_s4_c2_before">A list with images in varying sizes and an unclear hierarchy, making it difficult to scan.</dd></div>
+            <div><dt data-i18n="itf2_s4_decision">Decision</dt><dd data-i18n="itf2_s4_c2_decision">I standardized the news card (category, title, summary, author, and date), using consistent thumbnail sizes, and organized the sidebar with Most Read articles and advertisements.</dd></div>
+            <div><dt data-i18n="itf2_s4_after">After</dt><dd data-i18n="itf2_s4_c2_after">A standardized list that makes news easier to scan, with Most Read articles always visible alongside it.</dd></div>
+          </dl>
+        </article>
+
+        <article class="itf-ba">
+          <div class="itf-ba__pair">
+            <figure class="itf-ba__shot itf-ba__shot--before">
+              <span class="itf-ba__label" data-i18n="itf2_s4_before">Before</span>
+              <div class="itf-ba__frame"><img src="./images/itforum-case/v2/antes-eventos.jpg" alt="Events, old portal" width="1100" height="1482" loading="lazy" /></div>
+            </figure>
+            <figure class="itf-ba__shot itf-ba__shot--after">
+              <span class="itf-ba__label" data-i18n="itf2_s4_after">After</span>
+              <div class="itf-ba__frame"><img src="./images/itforum-case/v2/depois-eventos.jpg" alt="Events, new portal" width="1100" height="1491" loading="lazy" /></div>
+            </figure>
+          </div>
+          <dl class="itf-ba__notes">
+            <div><dt data-i18n="itf2_s4_before">Before</dt><dd data-i18n="itf2_s4_c3_before">The institutional message occupied the main highlight, while the upcoming event appeared further down the page.</dd></div>
+            <div><dt data-i18n="itf2_s4_decision">Decision</dt><dd data-i18n="itf2_s4_c3_decision">I redesigned the Events page to feature the next upcoming event, a countdown, and a complete list of all events in one place.</dd></div>
+            <div><dt data-i18n="itf2_s4_after">After</dt><dd data-i18n="itf2_s4_c3_after">Readers can see the next event right away and access all events in one place.</dd></div>
+          </dl>
+        </article>
+      </section>
+
+      <section class="itf-sec itf-mobile-sec itforum-case__inner" aria-labelledby="itf-s5" data-itf-mobile>
+        <div class="itf-mobile__head">
+          <div class="itf-sec__head">
+            <h2 id="itf-s5" class="itf-sec__title" data-i18n="itf2_s5_title">Mobile version</h2>
+            <p class="itf-sec__lead" data-i18n="itf2_s5_lead">I adapted the desktop experience for mobile, with navigation and components designed specifically for mobile devices. The Design System components maintain the same information hierarchy across both formats, ensuring a clear and consistent reading experience on any device.</p>
+          </div>
+          <div class="itf-mobile__controls">
+            <button type="button" class="itf-mobile__btn" data-itf-mobile-prev aria-label="Previous screens"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m14.5 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="itf-mobile__btn" data-itf-mobile-next aria-label="Next screens"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m9.5 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+        <div class="itf-mobile">
+          <div class="itf-phones" data-itf-mobile-track>
+            <figure class="itf-phone"><div class="itf-phone__screen"><img src="./images/itforum-case/v2/mob-home.jpg" alt="Mobile screen: Home" width="780" height="1688" loading="lazy" /></div><figcaption><span>01</span><span data-i18n="itf2_s5_m1">Home</span></figcaption></figure>
+            <figure class="itf-phone"><div class="itf-phone__screen"><img src="./images/itforum-case/v2/mob-busca.jpg" alt="Mobile screen: Search" width="780" height="1688" loading="lazy" /></div><figcaption><span>02</span><span data-i18n="itf2_s5_m2">Search</span></figcaption></figure>
+            <figure class="itf-phone"><div class="itf-phone__screen"><img src="./images/itforum-case/v2/mob-artigo.jpg" alt="Mobile screen: News" width="780" height="1688" loading="lazy" /></div><figcaption><span>03</span><span data-i18n="itf2_s5_m3">News</span></figcaption></figure>
+            <figure class="itf-phone"><div class="itf-phone__screen"><img src="./images/itforum-case/v2/mob-canal.jpg" alt="Mobile screen: Podcasts" width="780" height="1688" loading="lazy" /></div><figcaption><span>04</span><span data-i18n="itf2_s5_m4">Podcasts</span></figcaption></figure>
+            <figure class="itf-phone"><div class="itf-phone__screen"><img src="./images/itforum-case/v2/mob-categoria.jpg" alt="Mobile screen: Category" width="780" height="1688" loading="lazy" /></div><figcaption><span>05</span><span data-i18n="itf2_s5_m5">Category</span></figcaption></figure>
+            <figure class="itf-phone"><div class="itf-phone__screen"><img src="./images/itforum-case/v2/mob-webstories.jpg" alt="Mobile screen: Webstories" width="780" height="1688" loading="lazy" /></div><figcaption><span>06</span><span data-i18n="itf2_s5_m6">Webstories</span></figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="itf-sec itf-results-sec itforum-case__inner" aria-labelledby="itf-s6">
+        <div class="itf-sec__head">
+          <h2 id="itf-s6" class="itf-sec__title" data-i18n="itf2_s6_title">Results</h2>
+          <p class="itf-sec__lead" data-i18n="itf2_s6_lead">With the new visual design, the portal became faster to navigate and easier to explore, with improved loading times. Across the screens measured using Lighthouse, performance, accessibility, and SEO scores exceeded the averages of the five most visited news portals analyzed in the benchmark.</p>
+        </div>
+        <div class="itf-scores itf-scores--results" data-itf-scores><div class="itf-score" data-score="87" data-market="79" style="--d:0s"><div class="itf-score__top"><strong>87</strong><span class="itf-score__up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 9.5 10.5l4 4L21 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>+8</span></div><b data-i18n="itf2_score_perf">Average performance</b><small data-i18n="itf2_s6_m1">Average performance across measured screens. Above the average score of 61 from the most visited news portals.</small><div class="itf-bar" style="--v:87;--m:79" aria-hidden="true"><span class="itf-bar__fill"></span><span class="itf-bar__market"></span><span class="itf-bar__dot"></span></div><div class="itf-bar__scale" aria-hidden="true"><span>0</span><span>100</span></div></div><div class="itf-score" data-score="94" data-market="87" style="--d:0.15s"><div class="itf-score__top"><strong>94</strong><span class="itf-score__up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 9.5 10.5l4 4L21 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>+7</span></div><b data-i18n="itf2_score_a11y">Average accessibility</b><small data-i18n="itf2_s6_m2">Average accessibility across measured screens. Above the average score of 84 from the most visited news portals.</small><div class="itf-bar" style="--v:94;--m:87" aria-hidden="true"><span class="itf-bar__fill"></span><span class="itf-bar__market"></span><span class="itf-bar__dot"></span></div><div class="itf-bar__scale" aria-hidden="true"><span>0</span><span>100</span></div></div><div class="itf-score" data-score="98" data-market="79" style="--d:0.3s"><div class="itf-score__top"><strong>98</strong><span class="itf-score__up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 9.5 10.5l4 4L21 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>+19</span></div><b data-i18n="itf2_rp_s3_t">News Article Page Performance</b><small data-i18n="itf2_s6_m3">Average SEO across measured screens. Above the average score of 79 from the most visited news portals.</small><div class="itf-bar" style="--v:98;--m:79" aria-hidden="true"><span class="itf-bar__fill"></span><span class="itf-bar__market"></span><span class="itf-bar__dot"></span></div><div class="itf-bar__scale" aria-hidden="true"><span>0</span><span>100</span></div></div></div>
+              <div class="itf-bm">
+          <div class="itf-bm__head">
+            <h3 class="itf-bm__title" data-i18n-html="itf2_bm_title">What IT Forum already does as well as the market <span>(or better)</span></h3>
+            <p class="itf-bm__summary" data-i18n-html="itf2_bm_summary"><strong>In short:</strong> IT Forum's technical foundation (server, CDN, compression and page weight) is on par with the country's largest portals, and ahead of them on several points. It is the site that shows content on screen soonest on mobile, with the lightest HTML and JavaScript in the group.</p>
+          </div>
+          <div class="itf-bm__cards"><div class="itf-bm__card"><b data-i18n="itf2_bm_c1_t">First Contentful Paint on mobile</b><small data-i18n="itf2_bm_c1_s">The best in the group</small><strong data-i18n="itf2_bm_c1_v">1.1 s</strong></div><div class="itf-bm__card"><b data-i18n="itf2_bm_c2_t">JavaScript</b><small data-i18n="itf2_bm_c2_s">The lightest in the group</small><strong data-i18n="itf2_bm_c2_v">1.5 MB</strong></div><div class="itf-bm__card"><b data-i18n="itf2_bm_c3_t">Page weight</b><small data-i18n="itf2_bm_c3_s">Tied with BBC as the lightest</small><strong data-i18n="itf2_bm_c3_v">2.7 MB</strong></div><div class="itf-bm__card"><b data-i18n="itf2_bm_c4_t">Requests</b><small data-i18n="itf2_bm_c4_s">2nd fewest in the group</small><strong data-i18n="itf2_bm_c4_v">171</strong></div></div>
+          <h4 class="itf-bm__subtitle" data-i18n="itf2_bm_table_title">Full comparison</h4>
+          <div class="itf-bm__table-wrap">
+            <table class="itf-bm__table">
+              <thead><tr><th scope="col" data-i18n="itf2_bm_th1">Metric</th><th scope="col" data-i18n="itf2_bm_th2">IT Forum</th><th scope="col" data-i18n="itf2_bm_th3">Position</th><th scope="col" data-i18n="itf2_bm_th4">Context</th><th scope="col" class="itf-bm__did" data-i18n="itf2_bm_th5">What I did</th></tr></thead>
+              <tbody><tr><th scope="row" data-i18n="itf2_bm_r1_m">First Contentful Paint on mobile</th><td class="itf-bm__val" data-i18n="itf2_bm_r1_v">1.1 s</td><td><span class="itf-bm__pill itf-bm__pill--dark" data-i18n="itf2_bm_r1_p">The best</span></td><td class="itf-bm__ctx" data-i18n-html="itf2_bm_r1_c"><strong>The best in the group.</strong> Portals range from 1.5 s (CNN) to 2.6 s (UOL)</td><td class="itf-bm__did" data-i18n="itf2_bm_r1_d">Lean home: the headline and text appear before heavy elements, with no carousel at the top.</td></tr><tr><th scope="row" data-i18n="itf2_bm_r2_m">JavaScript</th><td class="itf-bm__val" data-i18n="itf2_bm_r2_v">1.5 MB</td><td><span class="itf-bm__pill itf-bm__pill--dark" data-i18n="itf2_bm_r2_p">The lightest</span></td><td class="itf-bm__ctx" data-i18n-html="itf2_bm_r2_c"><strong>The lightest in the group.</strong> G1 has 7.1 MB; Estadão, 3.2 MB</td><td class="itf-bm__did" data-i18n="itf2_bm_r2_d">A small, reusable component base in the Design System, instead of many similar components.</td></tr><tr><th scope="row" data-i18n="itf2_bm_r3_m">Page weight</th><td class="itf-bm__val" data-i18n="itf2_bm_r3_v">2.7 MB</td><td><span class="itf-bm__pill itf-bm__pill--dark" data-i18n="itf2_bm_r3_p">1st (tied)</span></td><td class="itf-bm__ctx" data-i18n-html="itf2_bm_r3_c">Tied with BBC (2.7 MB) as the lightest. G1 has 9.8 MB; Estadão, 4.7 MB</td><td class="itf-bm__did" data-i18n="itf2_bm_r3_d">Image rules: ratios and maximum sizes per screen, and which images sit above the fold.</td></tr><tr><th scope="row" data-i18n="itf2_bm_r4_m">Requests</th><td class="itf-bm__val" data-i18n="itf2_bm_r4_v">171</td><td><span class="itf-bm__pill itf-bm__pill--soft" data-i18n="itf2_bm_r4_p">2nd fewest</span></td><td class="itf-bm__ctx" data-i18n-html="itf2_bm_r4_c">Only BBC has fewer (147); Estadão makes 860 and CNN, 690</td><td class="itf-bm__did" data-i18n="itf2_bm_r4_d">A home with fewer modules, which reduces what needs to load.</td></tr><tr><th scope="row" data-i18n="itf2_bm_r5_m">Layout stability (CLS)</th><td class="itf-bm__val" data-i18n="itf2_bm_r5_v">0.004–0.019</td><td><span class="itf-bm__pill itf-bm__pill--line" data-i18n="itf2_bm_r5_p">Within the limit</span></td><td class="itf-bm__ctx" data-i18n-html="itf2_bm_r5_c">Within Google's “good” limit (up to 0.1). G1 falls outside, at 0.34</td><td class="itf-bm__did" data-i18n="itf2_bm_r5_d">Fixed heights for banners and ads, so the layout doesn't jump while loading.</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="itf-sec itf-learn-sec itforum-case__inner" aria-labelledby="itf-s7">
+        <div class="itf-learn">
+          <h2 id="itf-s7" class="itf-sec__title" data-i18n="itf2_s7_title">What I take from this project</h2>
+          <div class="itf-learn__body">
+            <p data-i18n="itf2_s7_p1">Redesigning a portal with more than 80,000 news articles was an exercise in understanding how to organize large volumes of information without compromising the navigation experience. Throughout the project, I saw how important it is to think about information architecture, content hierarchy and how easy it is to find what you are looking for before moving on to visual decisions.</p>
+            <p data-i18n="itf2_s7_p2">It was also an important experience to understand how decisions about structure, accessibility and organization can shape the experience of a product as a whole.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer itforum-case__footer">
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__inner">
+          <div class="site-footer__profile">
+            <img
+              src="./images/footer-profile.png?v=2"
+              alt=""
+              class="site-footer__avatar"
+              width="72"
+              height="72"
+              loading="lazy"
+            />
+            <div class="site-footer__profile-copy">
+              <p class="site-footer__name" data-i18n="footer_name">Geissy Maysla</p>
+              <p class="site-footer__role" data-i18n="hero_tagline">Product Designer</p>
+            </div>
+          </div>
+
+          <a href="#itforum-case" class="site-footer__back-to-top" data-itforum-case-top>
+            <span class="site-footer__back-icon" aria-hidden="true">
+              <svg class="site-footer__back-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9V3M6 3L3.5 5.5M6 3L8.5 5.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span data-i18n="footer_back_to_top">Back to top</span>
+          </a>
+
+          <p class="site-footer__copyright" data-i18n="footer_copyright">Copyright © Geissy Maysla, 2026</p>
+
+          <nav class="site-footer__social" aria-label="Social media">
+            <a class="site-footer__social-link site-footer__social-link--linkedin" href="https://www.linkedin.com/in/geissy-nunes-683109196/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/linkedin.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/linkedin-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--dribbble" href="https://dribbble.com/Mayslassy" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/dribbble.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/dribbble-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--medium" href="https://medium.com/@Geissy" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/medium.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/medium-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--behance" href="https://www.behance.net/geissynunes" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/behance.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/behance-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section class="bbee-case" id="bbee-case" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bbee-case-title">
+    <div class="bbee-case__scroll">
+      <section class="bbee-case__intro bbee-case__inner">
+        <p class="bbee-case__eyebrow" data-i18n="bbee_eyebrow">BBEE – Smart Apiculture</p>
+        <h1 id="bbee-case-title" class="bbee-case__title" tabindex="-1" data-i18n="bbee_title">Caring for each hive starts with seeing what was once invisible.</h1>
+        <dl class="bbee-case__meta">
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_solution_label">Solution</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_solution_value">BBEE – Smart Apiculture</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_industry_label">Industry</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_industry_value">Agribusiness</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_platforms_label">Platforms</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_platforms_value">Web &amp; mobile</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_duration_label">Duration</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_duration_value">8 months</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_year_label">Year</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_year_value">2024</dd>
+          </div>
+          <div class="bbee-case__meta-item">
+            <dt class="bbee-case__meta-label" data-i18n="bbee_meta_screens_label">Screens</dt>
+            <dd class="bbee-case__meta-value" data-i18n="bbee_meta_screens_value">+50</dd>
+          </div>
+        </dl>
+        <a class="bbee-case__site" href="https://ibbee.com.br/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          ibbee.com.br
+        </a>
+        <div class="bbee-case__cover">
+          <img class="bbee-case__cover-img" src="./images/bbee-case/cover.jpg" alt="Beekeeper holding a jar of honey next to the BBEE apiary dashboard" width="1920" height="1055" />
+        </div>
+      </section>
+      <section class="bbee-case__about bbee-case__inner" aria-labelledby="bbee-about-title">
+        <h2 class="bbee-case__h2" data-i18n="bbee_about_title" id="bbee-about-title">About the project</h2>
+        <div class="bbee-case__about-grid">
+          <article class="bbee-case__about-col">
+            <h3 data-i18n="bbee_context_title">Context</h3>
+            <p data-i18n="bbee_context_text">Beekeeping still relies on manual and poorly standardized processes. Without reliable data and management tools, beekeepers face low predictability, productivity losses, and difficulty tracking hives, tasks, and teams. This makes management reactive, unsustainable, and vulnerable to unforeseen events.</p>
+          </article>
+          <article class="bbee-case__about-col">
+            <h3 data-i18n="bbee_problem_title">Problem</h3>
+            <p data-i18n="bbee_problem_text">Essential data such as temperature, humidity, production, and hive conditions is hard to record and track. Tasks, teams, and apiary visits don&#x27;t follow a structured workflow, so beekeepers only discover a problem once it has already caused impact. Without indicators, productivity and hive welfare are compromised.</p>
+          </article>
+          <article class="bbee-case__about-col">
+            <h3 data-i18n="bbee_challenge_title">Challenge</h3>
+            <p data-i18n="bbee_challenge_text">Develop a digital solution capable of modernizing beekeeping management by bringing intelligent monitoring, data centralization, and organization to all stages, without adding complexity to the beekeeper&#x27;s daily routine.</p>
+          </article>
+        </div>
+        <div class="bbee-case__statement">
+          <p class="bbee-case__statement-text" data-i18n="bbee_statement">BBEE — Smart Apiculture is a web and mobile platform that brings together apiary management, intelligent monitoring, and operational organization. It centralizes data, tasks, location, and production, so beekeepers can act preventively, strategically, and sustainably.</p>
+          <img class="bbee-case__statement-img" src="./images/bbee-case/field-photos.jpg" alt="" width="884" height="666" loading="lazy" />
+        </div>
+      </section>
+      <section class="bbee-case__field" aria-labelledby="bbee-field-title">
+        <div class="bbee-case__inner">
+          <p class="bbee-case__eyebrow" data-i18n="bbee_field_eyebrow">Mobile app</p>
+          <h2 class="bbee-case__h2" data-i18n="bbee_field_title" id="bbee-field-title">Fieldwork is the heart of beekeeping management.</h2>
+          <p class="bbee-case__lead" data-i18n="bbee_field_text">With clear processes, executing each planned action stops being a challenge and becomes part of an efficient workflow — even without connection.</p>
+          <ul class="bbee-case__highlights">
+            <li><span data-i18n="bbee_hl_1">Track and execute tasks even without connection.</span></li>
+            <li><span data-i18n="bbee_hl_2">Have a complete history of interventions and activities.</span></li>
+            <li><span data-i18n="bbee_hl_3">Teamwork in the apiary, with a clear and organized workflow.</span></li>
+            <li><span data-i18n="bbee_hl_4">Capture field information the moment it happens.</span></li>
+          </ul>
+          <img class="bbee-case__field-img" src="./images/bbee-case/field-flow.jpg" alt="" width="1920" height="1130" loading="lazy" />
+        </div>
+      </section>
+      <section class="orla-proto bbee-proto bbee-case__inner" aria-labelledby="bbee-proto-title" data-bbee-proto>
+        <header class="orla-proto__head">
+          <p class="orla-proto__eyebrow" data-i18n="bbee_proto_eyebrow">Try it yourself</p>
+          <h2 class="orla-proto__title" data-i18n="bbee_proto_title" id="bbee-proto-title">Field flow, step by step</h2>
+          <p class="orla-proto__intro" data-i18n="bbee_proto_intro">Follow a beekeeper from the task list to scanning the hive and completing the work. Tap through it yourself or let the guided tour play it.</p>
+        </header>
+        <div class="orla-proto__stage">
+          <div class="orla-proto__toolbar">
+            <span class="orla-proto__badge" data-i18n="bbee_proto_badge">Interactive prototype</span>
+            <button type="button" class="orla-proto__tool" data-proto-replay>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.6h3.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="orla_proto_replay">Replay</span>
+            </button>
+            <button type="button" class="orla-proto__tool" data-proto-autoplay aria-pressed="true">
+              <svg class="is-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <svg class="is-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5v13l11-6.5Z" fill="currentColor"/></svg>
+              <span data-i18n="orla_proto_tour">Guided tour</span>
+            </button>
+          </div>
+          <div class="orla-proto__layout">
+            <ol class="orla-proto__steps" data-proto-steps aria-label="Prototype steps">
+              <li><button type="button" class="orla-proto__step" data-step="0"><span class="orla-proto__step-num">01</span><span data-i18n="bbee_proto_step_1">My tasks</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="1"><span class="orla-proto__step-num">02</span><span data-i18n="bbee_proto_step_2">Task details</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="2"><span class="orla-proto__step-num">03</span><span data-i18n="bbee_proto_step_3">Scan the hive</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="3"><span class="orla-proto__step-num">04</span><span data-i18n="bbee_proto_step_4">Hive overview</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="4"><span class="orla-proto__step-num">05</span><span data-i18n="bbee_proto_step_5">Attach activities</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="5"><span class="orla-proto__step-num">06</span><span data-i18n="bbee_proto_step_6">Indicate presence</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="6"><span class="orla-proto__step-num">07</span><span data-i18n="bbee_proto_step_7">Task completed</span></button></li>
+            </ol>
+            <div class="orla-proto__device-col">
+              <div class="orla-proto__device" data-proto-device></div>
+              <p class="orla-proto__hint" data-proto-hint aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bbee-tour bbee-case__inner" aria-labelledby="bbee-tour-title" data-bbee-tour>
+        <p class="bbee-case__eyebrow" data-i18n="bbee_tour_eyebrow">Web platform</p>
+        <h2 class="bbee-case__h2" data-i18n="bbee_tour_title" id="bbee-tour-title">Explore the management platform</h2>
+        <div class="bbee-tour__tabs" role="tablist" aria-labelledby="bbee-tour-title">
+          <button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-dashboard" aria-controls="bbee-panel-dashboard" aria-selected="true" data-tour-tab="dashboard"><span class="bbee-tour__tab-num">01</span><span data-i18n="bbee_mod_dashboard_name">Dashboard</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-apiary" aria-controls="bbee-panel-apiary" aria-selected="false" data-tour-tab="apiary" tabindex="-1"><span class="bbee-tour__tab-num">02</span><span data-i18n="bbee_mod_apiary_name">Apiary details</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-hive" aria-controls="bbee-panel-hive" aria-selected="false" data-tour-tab="hive" tabindex="-1"><span class="bbee-tour__tab-num">03</span><span data-i18n="bbee_mod_hive_name">Hive details</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-operations" aria-controls="bbee-panel-operations" aria-selected="false" data-tour-tab="operations" tabindex="-1"><span class="bbee-tour__tab-num">04</span><span data-i18n="bbee_mod_operations_name">Operations</span></button><button type="button" class="bbee-tour__tab" role="tab" id="bbee-tab-planning" aria-controls="bbee-panel-planning" aria-selected="false" data-tour-tab="planning" tabindex="-1"><span class="bbee-tour__tab-num">05</span><span data-i18n="bbee_mod_planning_name">Planning</span></button>
+        </div>
+          <div class="bbee-tour__panel is-active" role="tabpanel" id="bbee-panel-dashboard" aria-labelledby="bbee-tab-dashboard" data-tour-panel="dashboard">
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_dashboard_desc">Consolidated view of key data.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_dashboard_b1">Total production</li><li data-i18n="bbee_mod_dashboard_b2">Tasks to be completed on the current day</li><li data-i18n="bbee_mod_dashboard_b3">Ranking of top-producing hives</li><li data-i18n="bbee_mod_dashboard_b4">Alerts for items below expected levels</li></ul>
+              
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-dashboard.jpg" alt="Dashboard" width="1152" height="820" loading="lazy" data-shot="0" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-apiary" aria-labelledby="bbee-tab-apiary" data-tour-panel="apiary" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_apiary_desc">Track objectives, monitor tasks, and keep complete control over apiary production.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_apiary_b1">Track each apiary&#x27;s objectives</li><li data-i18n="bbee_mod_apiary_b2">Adjust management daily based on weather data</li><li data-i18n="bbee_mod_apiary_b3">Monitor the overall production of the apiaries</li><li data-i18n="bbee_mod_apiary_b4">Access all hives grouped by apiary, with details on each one</li></ul>
+              <div class="bbee-tour__thumbs" role="group"><button type="button" class="bbee-tour__thumb" data-shot="0" aria-pressed="true"><img src="./images/bbee-case/web-apiary.jpg" alt="" width="1152" height="820" loading="lazy" /><span data-i18n="bbee_shot_web_apiary">Goals &amp; monitoring</span></button><button type="button" class="bbee-tour__thumb" data-shot="1" aria-pressed="false"><img src="./images/bbee-case/web-hives.jpg" alt="" width="1285" height="916" loading="lazy" /><span data-i18n="bbee_shot_web_hives">Production &amp; hives</span></button></div>
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-apiary.jpg" alt="Goals &amp; monitoring" width="1152" height="820" loading="lazy" data-shot="0" /><img class="bbee-tour__shot" src="./images/bbee-case/web-hives.jpg" alt="Production &amp; hives" width="1285" height="916" loading="lazy" data-shot="1" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-hive" aria-labelledby="bbee-tab-hive" data-tour-panel="hive" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_hive_desc">Individual hive view to monitor welfare.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_hive_b1">View key hive information while tracking operation progress</li><li data-i18n="bbee_mod_hive_b2">Alerts, last inspection, queen and colony strength at a glance</li><li data-i18n="bbee_mod_hive_b3">Generate a QR code to identify the hive in the field</li></ul>
+              
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-hive.jpg" alt="Hive sul" width="1286" height="922" loading="lazy" data-shot="0" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-operations" aria-labelledby="bbee-tab-operations" data-tour-panel="operations" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_operations_desc">Management of the activities to be performed, divided by type: analysis, operations, and harvest.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_operations_b1">Analysis: assessment of hive health and diagnosis of management needs</li><li data-i18n="bbee_mod_operations_b2">Operations: daily management activities and hive maintenance</li><li data-i18n="bbee_mod_operations_b3">Harvest: harvesting, extraction, and processing of honey</li><li data-i18n="bbee_mod_operations_b4">Each operation is assigned to a team, an apiary, a hive, and a date</li></ul>
+              <div class="bbee-tour__thumbs" role="group"><button type="button" class="bbee-tour__thumb" data-shot="0" aria-pressed="true"><img src="./images/bbee-case/web-operations.jpg" alt="" width="1336" height="950" loading="lazy" /><span data-i18n="bbee_shot_web_operations">Operations list</span></button><button type="button" class="bbee-tour__thumb" data-shot="1" aria-pressed="false"><img src="./images/bbee-case/web-create-operation.jpg" alt="" width="1338" height="960" loading="lazy" /><span data-i18n="bbee_shot_web_create_operation">Create operation</span></button></div>
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-operations.jpg" alt="Operations list" width="1336" height="950" loading="lazy" data-shot="0" /><img class="bbee-tour__shot" src="./images/bbee-case/web-create-operation.jpg" alt="Create operation" width="1338" height="960" loading="lazy" data-shot="1" /></div>
+          </div>
+          <div class="bbee-tour__panel" role="tabpanel" id="bbee-panel-planning" aria-labelledby="bbee-tab-planning" data-tour-panel="planning" hidden>
+            <div class="bbee-tour__copy">
+              <p class="bbee-tour__lead" data-i18n="bbee_mod_planning_desc">Planning and task tracking: clarity and easy management.</p>
+              <ul class="bbee-tour__list"><li data-i18n="bbee_mod_planning_b1">Turn operations into specific tasks</li><li data-i18n="bbee_mod_planning_b2">Assign responsible people and teams</li><li data-i18n="bbee_mod_planning_b3">Set dates for each field activity, by day, week, or month</li></ul>
+              <div class="bbee-tour__thumbs" role="group"><button type="button" class="bbee-tour__thumb" data-shot="0" aria-pressed="true"><img src="./images/bbee-case/web-schedule.jpg" alt="" width="1114" height="800" loading="lazy" /><span data-i18n="bbee_shot_web_schedule">Task schedule</span></button><button type="button" class="bbee-tour__thumb" data-shot="1" aria-pressed="false"><img src="./images/bbee-case/web-agenda.jpg" alt="" width="1920" height="892" loading="lazy" /><span data-i18n="bbee_shot_web_agenda">Calendar &amp; new task</span></button><button type="button" class="bbee-tour__thumb" data-shot="2" aria-pressed="false"><img src="./images/bbee-case/web-agenda-detail.jpg" alt="" width="1920" height="895" loading="lazy" /><span data-i18n="bbee_shot_web_agenda_detail">Task details</span></button></div>
+            </div>
+            <div class="bbee-tour__screen"><img class="bbee-tour__shot is-active" src="./images/bbee-case/web-schedule.jpg" alt="Task schedule" width="1114" height="800" loading="lazy" data-shot="0" /><img class="bbee-tour__shot" src="./images/bbee-case/web-agenda.jpg" alt="Calendar &amp; new task" width="1920" height="892" loading="lazy" data-shot="1" /><img class="bbee-tour__shot" src="./images/bbee-case/web-agenda-detail.jpg" alt="Task details" width="1920" height="895" loading="lazy" data-shot="2" /></div>
+          </div>
+      </section>
+      <section class="bbee-ds bbee-case__inner" aria-labelledby="bbee-ds-title">
+        <p class="bbee-case__eyebrow" data-i18n="bbee_ds_eyebrow">Visual identity</p>
+        <h2 class="bbee-case__h2" data-i18n="bbee_ds_title" id="bbee-ds-title">A warm, honey-toned system</h2>
+        <div class="bbee-ds__grid">
+          <div class="bbee-ds__type">
+            <p class="bbee-ds__label" data-i18n="bbee_ds_type">Typography</p>
+            <p class="bbee-ds__aa" aria-hidden="true">Aa</p>
+            <p class="bbee-ds__font">Poppins</p>
+            <ul class="bbee-ds__weights"><li>Regular</li><li>Medium</li><li>Semibold</li><li>Bold</li></ul>
+            <p class="bbee-ds__glyphs" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789</p>
+          </div>
+          <div class="bbee-ds__colors">
+            <p class="bbee-ds__label" data-i18n="bbee_ds_colors">Primary palette</p>
+            <ul class="bbee-ds__swatches"><li class="bbee-ds__swatch"><span style="background:#FFA41B"></span><b>#FFA41B</b></li><li class="bbee-ds__swatch"><span style="background:#FFC100"></span><b>#FFC100</b></li><li class="bbee-ds__swatch"><span style="background:#FFEBCD"></span><b>#FFEBCD</b></li><li class="bbee-ds__swatch"><span style="background:#F9F6EF"></span><b>#F9F6EF</b></li></ul>
+          </div>
+        </div>
+        <div class="bbee-ds__illus">
+          <p class="bbee-ds__label"><span data-i18n="bbee_ds_illus">Illustrations</span> <span class="bbee-ds__by" data-i18n="bbee_ds_by">— created by me</span></p>
+          <img src="./images/bbee-case/illustrations.jpg?v=2" alt="" width="1920" height="540" loading="lazy" />
+        </div>
+      </section>
+      <section class="bbee-case__closing bbee-case__inner">
+        <p class="bbee-case__closing-title" data-i18n="bbee_closing_title">Thank you for making it this far!</p>
+        <a class="bbee-case__site bbee-case__site--lg" href="https://ibbee.com.br/" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="bbee_closing_cta">Visit ibbee.com.br</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5 11.5 4.5M11.5 4.5H5.5M11.5 4.5v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </section>
+      <footer class="site-footer bbee-case__footer">
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__inner">
+          <div class="site-footer__profile">
+            <img src="./images/footer-profile.png?v=2" alt="" class="site-footer__avatar" width="72" height="72" loading="lazy" />
+            <div class="site-footer__profile-copy">
+              <p class="site-footer__name" data-i18n="footer_name">Geissy Maysla</p>
+              <p class="site-footer__role" data-i18n="hero_tagline">Product Designer</p>
+            </div>
+          </div>
+          <a href="#bbee-case" class="site-footer__back-to-top" data-bbee-case-top>
+            <span class="site-footer__back-icon" aria-hidden="true"><svg class="site-footer__back-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 9V3M6 3L3.5 5.5M6 3L8.5 5.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span data-i18n="footer_back_to_top">Back to top</span>
+          </a>
+          <p class="site-footer__copyright" data-i18n="footer_copyright">Copyright © Geissy Maysla, 2026</p>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section
+    class="orla-case"
+    id="orla-case"
+    hidden
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="orla-case-title"
+  >
+    <div class="orla-case__scroll">
+      <section class="orla-case__intro orla-case__inner">
+        <h1 id="orla-case-title" class="orla-case__title" tabindex="-1" data-i18n="orla_case_title">
+          A smart sales space connecting door-to-door sellers to offers tailored to each customer profile.
+        </h1>
+
+        <div class="orla-case__meta itf-info">
+          <div class="itf-info__cols">
+            <div class="itf-info__col">
+              <h2 class="itf-info__title" data-i18n="itf2_info_context">Context</h2>
+              <dl>
+                <div><dt data-i18n="itf2_meta_client">Client</dt><dd class="orla-client">Orla <span class="orla-nda"><span data-i18n="orla_fictional_name">Fictional name</span> · NDA <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span></dd></div>
+                <div><dt data-i18n="itf2_meta_company">Company</dt><dd>Loomi</dd></div>
+                <div><dt data-i18n="itf2_meta_year">Year</dt><dd>2026</dd></div>
+              </dl>
+            </div>
+            <div class="itf-info__col">
+              <h2 class="itf-info__title" data-i18n="itf2_info_work">My work</h2>
+              <dl>
+                <div><dt data-i18n="itf2_meta_role">My role</dt><dd>Product Designer</dd></div>
+                <div><dt data-i18n="itf2_meta_scope">Scope</dt><dd><ul class="itf-chips"><li data-i18n="orla_scope_1">Discovery</li><li data-i18n="orla_scope_2">Flows &amp; prototypes</li><li data-i18n="orla_scope_3">UX/UI</li><li data-i18n="orla_scope_4">Design System</li><li data-i18n="orla_scope_5">Usability testing</li><li data-i18n="orla_scope_6">Dev handoff</li></ul></dd></div>
+              </dl>
+            </div>
+            <div class="itf-info__col">
+              <h2 class="itf-info__title" data-i18n="itf2_info_delivery">Platform and tools</h2>
+              <dl>
+                <div><dt data-i18n="itf2_meta_platform">Platform</dt><dd data-i18n="orla_meta_platform_value">Mobile app</dd></div>
+                <div><dt data-i18n="itf2_meta_tools">Tools</dt><dd><ul class="itf-chips"><li>Figma</li><li>Claude</li><li>NotebookLM</li><li>Gemini</li></ul></dd></div>
+              </dl>
+            </div>
+          </div>
+          <aside class="orla-nda-card" aria-labelledby="orla-nda-title">
+            <p class="orla-nda-card__title" id="orla-nda-title"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span data-i18n="orla_nda_title">NDA project</span></p>
+            <p class="orla-nda-card__text" data-i18n-html="orla_nda_text">The real project is under an <strong>NDA</strong> (non-disclosure agreement). That's why the screens are illustrative, simplified adaptations, and sensitive business data has been omitted. The <em>design</em> problem and the reasoning behind each decision are mine.</p>
+          </aside>
+        </div>
+
+        <div class="orla-case__cover">
+          <img
+            class="orla-case__cover-img"
+            src="./images/orla-case/cover.jpg?v=o5"
+            alt="Orla Campo app screens next to a door-to-door seller talking to a customer"
+            width="5680"
+            height="2040"
+          />
+        </div>
+      </section>
+
+      <section class="orla-case__challenges orla-case__inner" aria-labelledby="orla-case-challenges-title">
+        <div class="orla-case__challenges-copy">
+          <h2 id="orla-case-challenges-title" class="orla-case__challenges-title" data-i18n="orla_case_challenges_title">
+            Challenges
+          </h2>
+
+          <ul class="orla-case__challenges-list">
+            <li class="orla-case__challenges-item" data-i18n="orla_case_challenges_1">
+              Create a direct, objective sales flow for door-to-door sellers
+            </li>
+            <li class="orla-case__challenges-item" data-i18n="orla_case_challenges_2">
+              Create an experience that accounts for systemic limitations and legacy systems.
+            </li>
+            <li class="orla-case__challenges-item" data-i18n="orla_case_challenges_3">
+              Comply with internal rules and policies
+            </li>
+          </ul>
+
+          <p class="orla-case__challenges-note" data-i18n="orla_case_challenges_note">
+            Some information in this case study was omitted or adapted to preserve the project's confidentiality. The content shown reflects my work on the project.
+          </p>
+        </div>
+
+        <div class="orla-case__challenges-art">
+          <img
+            class="orla-case__challenges-img"
+            src="./images/orla-case/challenges.png?v=o5"
+            alt=""
+            width="770"
+            height="776"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="orla-case__tasks orla-case__inner" aria-labelledby="orla-case-tasks-title">
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="orla-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/><path fill="currentColor" d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol></svg>
+        <div class="orla-case__tasks-head">
+          <h2 id="orla-case-tasks-title" class="orla-case__tasks-title" data-i18n="orla_case_tasks_title">Main tasks</h2>
+          <p class="orla-case__tasks-intro" data-i18n="orla_case_tasks_intro">What I lead, and where AI comes in to gain speed without losing depth.</p>
+        </div>
+        <div class="orla-lanes">
+          <div class="orla-lanes__label orla-lanes__label--phase" data-i18n="orla_lanes_row_phase">Tasks</div>
+          <div class="orla-lanes__label orla-lanes__label--role" data-i18n="orla_lanes_row_role">Role</div>
+          <div class="orla-lanes__label orla-lanes__label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></div>
+          <div class="orla-lanes__label orla-lanes__label--out" data-i18n="orla_lanes_row_out">Result</div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:11"><span class="orla-lanes__num">01</span><h3 data-i18n="orla_case_tasks_1_title">Map needs</h3></div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:21"><span class="orla-lanes__num">02</span><h3 data-i18n="orla_case_tasks_2_title">Design screens</h3></div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:31"><span class="orla-lanes__num">03</span><h3 data-i18n="orla_case_tasks_3_title">Run validations</h3></div>
+            <div class="orla-lanes__cell orla-lanes__phase" style="order:41"><span class="orla-lanes__num">04</span><h3 data-i18n="orla_case_tasks_4_title">Deliver handoff</h3></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:12"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_1_role">Discovery with users and stakeholders to understand the problem in depth.</p><ul class="orla-lanes__list"><li data-i18n="orla_lanes_1_role_1">Review of the existing documentation</li><li data-i18n="orla_lanes_1_role_2">Prioritizing the delivery's essential features together</li><li data-i18n="orla_lanes_1_role_3">Aligning the project's next steps</li></ul></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:22"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_2_role">Flows and screens in Figma with the Orla Design System.</p></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:32"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_3_role">Usability tests and alignment sessions to iterate on the solution.</p><ul class="orla-lanes__list"><li data-i18n="orla_lanes_3_role_1">Presenting the first version</li><li data-i18n="orla_lanes_3_role_2">Gathering stakeholder feedback</li><li data-i18n="orla_lanes_3_role_3">Making fine adjustments</li></ul></div>
+            <div class="orla-lanes__cell orla-lanes__me" style="order:42"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_role">Role</span><p data-i18n="orla_lanes_4_role">Interfaces delivered to the development team.</p><ul class="orla-lanes__list"><li data-i18n="orla_lanes_4_role_1">Full flow documentation</li><li data-i18n="orla_lanes_4_role_2">Use case mapping</li><li data-i18n="orla_lanes_4_role_3">Error scenarios</li></ul></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:13"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_1_ai">Fast, thorough reading of documents, asking questions across every source.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>NotebookLM</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:23"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_2_ai">Quick prototypes to validate and adjust before high fidelity.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>Claude</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:33"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_3_ai">Test structure: hypotheses, script, tasks and success criteria.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>Claude</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__ai" style="order:43"><span class="orla-lanes__cell-label orla-lanes__cell-label--ai"><span data-i18n="orla_lanes_row_ai">AI optimization</span></span><p data-i18n="orla_lanes_4_ai">Handoff doc with business rules, flows and error scenarios.</p><div class="orla-lanes__chips"><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>NotebookLM</span><span class="orla-lanes__chip"><svg class="orla-lanes__spark" aria-hidden="true"><use href="#orla-spark"/></svg>Claude</span></div></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:14"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_1_out">Clear problem and opportunities</p></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:24"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_2_out">Testable ideas, earlier</p></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:34"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_3_out">Evidence-based decisions</p></div>
+            <div class="orla-lanes__cell orla-lanes__out" style="order:44"><span class="orla-lanes__cell-label" data-i18n="orla_lanes_row_out">Result</span><span aria-hidden="true">→</span><p data-i18n="orla_lanes_4_out">Developers with full context</p></div>
+        </div>
+      </section>
+
+      <section class="orla-case__flow" aria-labelledby="orla-case-flow-title" style="--orla-case-flow-steps: 5">
+        <div class="orla-case__flow-track">
+          <div class="orla-case__flow-sticky orla-case__inner">
+            <h2 id="orla-case-flow-title" class="orla-case__flow-title" data-i18n="orla_case_flow_title">Solution flow</h2>
+
+            <div class="orla-case__flow-layout">
+              <div class="orla-case__flow-steps" role="tablist" aria-labelledby="orla-case-flow-title">
+                <button type="button" class="orla-case__flow-step is-active" role="tab" id="orla-flow-tab-1" aria-controls="orla-flow-panel-1" aria-selected="true" data-flow-step="0" data-i18n="orla_case_flow_step_1">1. Identify customer</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-2" aria-controls="orla-flow-panel-2" aria-selected="false" data-flow-step="1" data-i18n="orla_case_flow_step_2">2. Choose offer</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-3" aria-controls="orla-flow-panel-3" aria-selected="false" data-flow-step="2" data-i18n="orla_case_flow_step_3">3. Configure offer</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-4" aria-controls="orla-flow-panel-4" aria-selected="false" data-flow-step="3" data-i18n="orla_case_flow_step_4">4. Scheduling &amp; Summary</button>
+                <button type="button" class="orla-case__flow-step" role="tab" id="orla-flow-tab-5" aria-controls="orla-flow-panel-5" aria-selected="false" data-flow-step="4" data-i18n="orla_case_flow_step_5">5. Finish</button>
+              </div>
+
+              <div class="orla-case__flow-panels">
+                <div class="orla-case__flow-panel is-active" id="orla-flow-panel-1" role="tabpanel" aria-labelledby="orla-flow-tab-1" data-flow-panel="0">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-1.png?v=o5" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_1_text">The customer's CPF is entered to access their profile and consult essential information, such as address and contracted plans. This data helps the salesperson understand the customer profile and make a more assertive offer.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-2" role="tabpanel" aria-labelledby="orla-flow-tab-2" data-flow-panel="1" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-2.png?v=o5" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_2_text">Offers available according to the customer's credit score. On the contracting data screen, the customer provides the address that will be linked to the offer to check coverage availability.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-3" role="tabpanel" aria-labelledby="orla-flow-tab-3" data-flow-panel="2" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-3.png?v=o5" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_3_text">After the address is provided, we analyze the available coverage and start configuring the offer. In this step, the lines that will be linked to the chosen plan are defined, including the mobile and landline voice lines the customer wants to use.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-4" role="tabpanel" aria-labelledby="orla-flow-tab-4" data-flow-panel="3" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-4.png?v=o5" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_4_text">If the plan includes fiber, installation must be scheduled, with two date options for the technician's visit to the customer's home. Next, a summary screen is presented, where all information defined with the customer is reviewed before the sale is completed.</p>
+                </div>
+                <div class="orla-case__flow-panel" id="orla-flow-panel-5" role="tabpanel" aria-labelledby="orla-flow-tab-5" data-flow-panel="4" aria-hidden="true">
+                  <div class="orla-case__flow-visual">
+                    <img src="./images/orla-case/flow-5.png?v=o5" alt="" width="826" height="668" />
+                  </div>
+                  <p class="orla-case__flow-caption" data-i18n="orla_case_flow_5_text">As a security step, the customer's identity is verified through biometrics before the sale is finalized. After identity validation, the sale is completed successfully.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="orla-proto orla-case__inner" aria-labelledby="orla-proto-title" data-orla-proto>
+        <header class="orla-proto__head">
+          <p class="orla-proto__eyebrow" data-i18n="orla_proto_eyebrow">Try it yourself</p>
+          <h2 id="orla-proto-title" class="orla-proto__title" data-i18n="orla_proto_title">Interactive prototype</h2>
+          <p class="orla-proto__intro" data-i18n="orla_proto_intro">Tap through the whole sales flow, from identifying the customer to closing the sale, or let the guided tour play it for you.</p>
+        </header>
+        <div class="orla-proto__stage">
+          <div class="orla-proto__toolbar">
+            <span class="orla-proto__badge" data-i18n="orla_proto_badge">Illustrative · NDA</span>
+            <button type="button" class="orla-proto__tool" data-proto-replay>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.6h3.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="orla_proto_replay">Replay</span>
+            </button>
+            <button type="button" class="orla-proto__tool" data-proto-autoplay aria-pressed="true">
+              <svg class="is-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <svg class="is-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5v13l11-6.5Z" fill="currentColor"/></svg>
+              <span data-i18n="orla_proto_tour">Guided tour</span>
+            </button>
+          </div>
+          <div class="orla-proto__layout">
+            <ol class="orla-proto__steps" data-proto-steps aria-label="Prototype steps">
+              <li><button type="button" class="orla-proto__step" data-step="0"><span class="orla-proto__step-num">01</span><span data-i18n="orla_proto_step_1">Identify the customer</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="1"><span class="orla-proto__step-num">02</span><span data-i18n="orla_proto_step_2">Client profile</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="2"><span class="orla-proto__step-num">03</span><span data-i18n="orla_proto_step_3">Browse offers</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="3"><span class="orla-proto__step-num">04</span><span data-i18n="orla_proto_step_4">Contract details</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="4"><span class="orla-proto__step-num">05</span><span data-i18n="orla_proto_step_5">Coverage check</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="5"><span class="orla-proto__step-num">06</span><span data-i18n="orla_proto_step_6">Configure lines</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="6"><span class="orla-proto__step-num">07</span><span data-i18n="orla_proto_step_7">Schedule installation</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="7"><span class="orla-proto__step-num">08</span><span data-i18n="orla_proto_step_8">Order summary</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="8"><span class="orla-proto__step-num">09</span><span data-i18n="orla_proto_step_9">Identity check</span></button></li>
+              <li><button type="button" class="orla-proto__step" data-step="9"><span class="orla-proto__step-num">10</span><span data-i18n="orla_proto_step_10">Sale completed</span></button></li>
+            </ol>
+            <div class="orla-proto__device-col">
+              <div class="orla-proto__device" data-proto-device></div>
+              <p class="orla-proto__hint" data-proto-hint aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="orla-case__impact" aria-labelledby="orla-case-impact-title">
+        <div class="orla-case__impact-inner orla-case__inner">
+          <h2 id="orla-case-impact-title" class="orla-case__impact-title" data-i18n="orla_case_impact_title">Result</h2>
+          <p class="orla-impact__lead" data-i18n="orla_impact_lead">The project is still in development, so its impact hasn't been measured yet. These are the improvements we expect to consolidate.</p>
+
+          <div class="orla-impact">
+            <div class="orla-impact__col">
+              <p class="orla-impact__eyebrow" data-i18n="orla_impact_have">Sellers now have</p>
+              <ul class="orla-impact__list">
+                <li class="orla-impact__card"><span class="orla-impact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 19.5c.8-3.4 3.4-5 6.5-5s5.7 1.6 6.5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="orla-impact__text"><b data-i18n="orla_impact_have_1">The customer's information</b></span></li>
+                <li class="orla-impact__card"><span class="orla-impact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4.5" y="4.5" width="6" height="6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="4.5" width="6" height="6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="4.5" y="13.5" width="6" height="6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="6" height="6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="orla-impact__text"><b data-i18n="orla_impact_have_2">A catalog matched to their profile</b></span></li>
+              </ul>
+            </div>
+            <span class="orla-impact__arrow" aria-hidden="true"><svg viewBox="0 0 36 24"><path d="M2 12h31M24 4l9 8-9 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="orla-impact__col">
+              <p class="orla-impact__eyebrow" data-i18n="orla_impact_expect">What we expect</p>
+              <ul class="orla-impact__list">
+                <li class="orla-impact__card orla-impact__card--goal"><span class="orla-impact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 17 9.5 11l4 4 7-7.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7.5h5.5V13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="orla-impact__text"><b data-i18n="orla_impact_expect_1">Increase sales conversion</b><small data-i18n="orla_impact_unmeasured">Expectation, not yet measured</small></span></li>
+                <li class="orla-impact__card orla-impact__card--goal"><span class="orla-impact__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 7 9.5 13l4-4 7 7.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 16.5h5.5V11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="orla-impact__text"><b data-i18n="orla_impact_expect_2">Reduce sales time</b><small data-i18n="orla_impact_unmeasured">Expectation, not yet measured</small></span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="orla-case__impact-board">
+            <div class="orla-case__impact-badges">
+              <ul class="orla-case__impact-pills">
+                <li data-i18n="orla_case_impact_pill_3">+ Conversion potential</li>
+                <li data-i18n="orla_case_impact_pill_1">+ Assertiveness when offering a plan</li>
+                <li data-i18n="orla_case_impact_pill_2">+ Trust between Seller x Customer</li>
+              </ul>
+            </div>
+            <div class="orla-case__impact-visual">
+              <img
+                class="orla-case__impact-photo"
+                src="./images/orla-case/impact-seller.jpg?v=o3"
+                alt=""
+                width="1024"
+                height="961"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer orla-case__footer">
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__inner">
+          <div class="site-footer__profile">
+            <img
+              src="./images/footer-profile.png?v=2"
+              alt=""
+              class="site-footer__avatar"
+              width="72"
+              height="72"
+              loading="lazy"
+            />
+            <div class="site-footer__profile-copy">
+              <p class="site-footer__name" data-i18n="footer_name">Geissy Maysla</p>
+              <p class="site-footer__role" data-i18n="hero_tagline">Product Designer</p>
+            </div>
+          </div>
+
+          <a href="#orla-case" class="site-footer__back-to-top" data-orla-case-top>
+            <span class="site-footer__back-icon" aria-hidden="true">
+              <svg class="site-footer__back-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9V3M6 3L3.5 5.5M6 3L8.5 5.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span data-i18n="footer_back_to_top">Back to top</span>
+          </a>
+
+          <p class="site-footer__copyright" data-i18n="footer_copyright">Copyright © Geissy Maysla, 2026</p>
+
+          <nav class="site-footer__social" aria-label="Social media">
+            <a class="site-footer__social-link site-footer__social-link--linkedin" href="https://www.linkedin.com/in/geissy-nunes-683109196/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/linkedin.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/linkedin-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--dribbble" href="https://dribbble.com/Mayslassy" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/dribbble.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/dribbble-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--medium" href="https://medium.com/@Geissy" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/medium.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/medium-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+            <a class="site-footer__social-link site-footer__social-link--behance" href="https://www.behance.net/geissynunes" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+              <img class="site-footer__social-icon site-footer__social-icon--default" src="./images/social/behance.png" alt="" width="32" height="32" loading="lazy" />
+              <img class="site-footer__social-icon site-footer__social-icon--hover" src="./images/social/behance-hover.png" alt="" width="32" height="32" loading="lazy" />
+            </a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <script src="./scripts/scroll-handler.js?v=bbee1"></script>
   <script src="./scripts/main.js"></script>
   <script src="./scripts/about-tools-drag.js"></script>
   <script src="./scripts/projects-view-toggle.js"></script>
   <script src="./scripts/projects-scroll-drag.js"></script>
   <script src="./scripts/experience-scroll.js"></script>
-  <script src="./langs/strings.js"></script>
+  <script src="./langs/strings.js?v=itf39"></script>
   <script src="./scripts/translations.js"></script>
   <script src="./scripts/projects-filter.js"></script>
   <script src="./scripts/projects-card-reveal.js"></script>
-  <script src="./scripts/projects-spotlight-cursor.js"></script>
-  <script src="./scripts/resume.js"></script>
-  <script src="./scripts/about-video-modal.js"></script>
+  <script src="./scripts/projects-spotlight-cursor.js?v=orla1"></script>
+  <script src="./scripts/projects-spotlight-heights.js?v=orla1"></script>
+  <script src="./scripts/projects-scroll-stack.js?v=orla1"></script>
+  <script src="./scripts/resume.js?v=4"></script>
+  <script src="./scripts/itforum-mobile.js?v=1"></script>
+  <script src="./scripts/itforum-scores.js?v=4"></script>
+  <script src="./scripts/itforum-case.js?v=v2s33"></script>
+  <script src="./scripts/itforum-magnify.js?v=magnify"></script>
+  <script src="./scripts/orla-case.js?v=imp1"></script>
+  <script src="./scripts/orla-prototype.js?v=o4"></script>
+  <script src="./scripts/bbee-case.js?v=2"></script>
+  <script src="./scripts/bbee-prototype.js?v=1"></script>
+  <script src="./scripts/mockup-parallax.js?v=1"></script>
+  <script src="./scripts/itforum-portal-carousel.js"></script>
+  <script src="./scripts/header-nav.js?v=bbee1"></script>
+  <script src="./scripts/hero-intro.js"></script>
 </body>
 </html>

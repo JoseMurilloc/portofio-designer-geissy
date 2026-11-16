@@ -1,13 +1,14 @@
 const links = document.querySelectorAll('.resumes');
 
+/* Files in /assets (plain ASCII names) and the name each one downloads as */
 const RESUMES = {
   pt: {
-    href: './assets/resume-pt.pdf',
-    download: 'Curr\u00edculo - Geissy Maysla | Product Desiner.pdf',
+    href: './assets/curriculo-product-designer-geissy.pdf?v=2',
+    download: 'Currículo - Geissy Nunes | Product Designer.pdf',
   },
   en: {
-    href: './assets/resume-en.pdf',
-    download: 'Curr\u00edculo - Geissy Maysla | Product Designer:English.pdf',
+    href: './assets/resume-product-designer-geissy.pdf?v=2',
+    download: 'Resume - Geissy Nunes | Product Designer.pdf',
   },
 };
 

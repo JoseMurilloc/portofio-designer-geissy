@@ -80,7 +80,7 @@
   padding: 0.5625rem 1.125rem;
   border-radius: 62.4375rem;
   color: #989898;
-  cursor: pointer;
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
@@ -176,7 +176,7 @@
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  cursor: var(--cursor-click);
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
 }
 
 .projects-scroll:focus-visible {

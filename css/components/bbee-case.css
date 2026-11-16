@@ -271,7 +271,7 @@
   color: #5e5e5e;
   font: inherit;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
   transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -342,7 +342,7 @@
   font-size: 0.75rem;
   line-height: 1.3;
   text-align: left;
-  cursor: pointer;
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
   transition: box-shadow 0.2s ease, color 0.2s ease;
 }
 
@@ -501,18 +501,6 @@
 /* ---------- project card (Projects section) ---------- */
 .selected-project + .selected-project { margin-top: 1.5rem; }
 
-.selected-project.selected-project--bbee {
-  background:
-    radial-gradient(28rem 20rem at 92% 100%, rgba(255, 193, 0, 0.32), transparent 70%),
-    #fbf5e8;
-}
-
-.selected-project__media.selected-project__media--bbee {
-  background: linear-gradient(160deg, #fff8ea, #fdeccb);
-}
-
-.selected-project__glow.selected-project__glow--honey { background: radial-gradient(closest-side, rgba(255, 164, 27, 0.22), rgba(255, 164, 27, 0) 72%); }
-
 .selected-project__screen {
   position: absolute;
   left: 9%;
@@ -521,7 +509,7 @@
   width: 104%;
   height: auto;
   border-radius: 0.75rem;
-  box-shadow: 0 1rem 2rem -1rem rgba(106, 67, 0, 0.35);
+  box-shadow: 0 1rem 2rem -1rem rgba(36, 86, 99, 0.35);
   user-select: none;
   will-change: transform;
   transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);

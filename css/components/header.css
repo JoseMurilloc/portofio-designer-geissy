@@ -114,7 +114,7 @@ body.itforum-case-open .drawer-mobile {
   line-height: 0;
   color: inherit;
   text-decoration: none;
-  cursor: pointer;
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
 }
 
 .header-logo:focus-visible {

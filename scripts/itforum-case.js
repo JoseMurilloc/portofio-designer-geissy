@@ -135,10 +135,18 @@
       });
     };
 
-    add(panel.querySelectorAll('.itforum-case__challenges-title'));
-    add(panel.querySelectorAll('.itforum-case__challenges-item'), { stagger: 90 });
-    add(panel.querySelectorAll('.itforum-case__challenges-note'), { delay: 80 });
-    add(panel.querySelectorAll('.itforum-case__challenges-art'), { x: '1.75rem', y: '0.4rem' });
+    add(panel.querySelectorAll('.itf-sec__head'));
+    add(panel.querySelectorAll('.itf-problem'), { stagger: 90 });
+    add(panel.querySelectorAll('.itf-before .itf-shot'), { stagger: 90, y: '1.25rem' });
+    add(panel.querySelectorAll('.itf-decision__text'), { y: '1.25rem' });
+    add(panel.querySelectorAll('.itf-decision__media'), { delay: 90, y: '1.5rem' });
+    add(panel.querySelectorAll('.itf-ba'), { y: '1.5rem' });
+    add(panel.querySelectorAll('.itf-phone'), { stagger: 70, y: '1.5rem' });
+    add(panel.querySelectorAll('.itf-big > div'), { stagger: 90, y: '1.25rem' });
+    add(panel.querySelectorAll('.itf-bm__head'), { y: '1.25rem' });
+    add(panel.querySelectorAll('.itf-bm__card'), { stagger: 80, y: '1.25rem' });
+    add(panel.querySelectorAll('.itf-bm__subtitle, .itf-bm__table-wrap'), { stagger: 80, y: '1.25rem' });
+    add(panel.querySelectorAll('.itf-learn'), { y: '1.25rem' });
     add(panel.querySelectorAll('.itforum-case__tasks-intro'));
     add(panel.querySelectorAll('.itforum-case__task-item'), { stagger: 55 });
     add(panel.querySelectorAll('.itforum-case__process-row'), { stagger: 90 });
@@ -221,6 +229,17 @@
       revealVisibleOrPassed();
     }, 180);
   }
+
+  panel.querySelectorAll('[data-itf-goto]').forEach((el) => {
+    el.addEventListener('click', (event) => {
+      const target = document.getElementById(el.dataset.itfGoto);
+      if (!scrollEl || !target) return;
+      event.preventDefault();
+      const section = target.closest('section') || target;
+      const top = section.getBoundingClientRect().top - scrollEl.getBoundingClientRect().top + scrollEl.scrollTop;
+      scrollEl.scrollTo({ top, behavior: reduceMotionMq.matches ? 'auto' : 'smooth' });
+    });
+  });
 
   panel.querySelectorAll('[data-itforum-case-top]').forEach((el) => {
     el.addEventListener('click', (event) => {

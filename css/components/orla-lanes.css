@@ -11,9 +11,9 @@
   --lanes-line: #e3e6e6;
   --lanes-teal: #2f7369;
   --lanes-teal-d: #1f5149;
-  --lanes-ai: #6f55d6;
-  --lanes-ai-ink: #2e2470;
-  --lanes-ai-l: #eeeafc;
+  --lanes-ai: #315b85;
+  --lanes-ai-ink: #1f3d5c;
+  --lanes-ai-l: #e7eef5;
   --lanes-label-w: 9.5rem;
 }
 
@@ -105,6 +105,30 @@
 }
 
 .orla-lanes__me p { color: #3f4344; }
+.orla-lanes__list {
+  display: grid;
+  gap: 0.625rem;
+  margin: 0.875rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: #3f4344;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.orla-lanes__list li {
+  position: relative;
+  padding-left: 0.9375rem;
+}
+.orla-lanes__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  border-radius: 50%;
+  background: var(--lanes-teal);
+}
 .orla-lanes__ai p { color: var(--lanes-ai-ink); }
 
 .orla-lanes__out {
@@ -129,10 +153,10 @@
   align-items: center;
   gap: 0.375rem;
   padding: 0.375rem 0.6875rem;
-  border: 0.0625rem solid #d6ccf8;
+  border: 0.0625rem solid #c5d4e3;
   border-radius: 999px;
   background: #ffffff;
-  color: #3d2c96;
+  color: #1f3d5c;
   font-size: 0.8125rem;
   font-weight: 500;
   white-space: nowrap;

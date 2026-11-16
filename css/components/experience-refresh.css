@@ -78,7 +78,7 @@ section.slide-experience {
   color: #0d0d0d;
   font-size: 1rem;
   font-weight: 400;
-  cursor: pointer;
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
   transition: filter 0.2s ease;
 }
 

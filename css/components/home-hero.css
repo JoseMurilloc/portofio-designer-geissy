@@ -10,7 +10,7 @@
   /* O anel tem o mesmo diâmetro da foto e começa logo acima do cabelo. */
   --hero-orbit-size: var(--hero-photo-width);
   --hero-orbit-top: calc(var(--hero-photo-width) * -0.02);
-  --hero-stage-height: 24.5rem;
+  --hero-stage-height: 26rem;
   --hero-card-bg: #d8e9ef;
   --hero-ink: #1c1c1c;
   --hero-muted: #7b878c;
@@ -37,16 +37,16 @@
 .home-hero__eyebrow {
   margin: 0;
   color: #3d5459;
-  font-size: 1.0625rem;
+  font-size: 1.25rem; /* 20px */
   font-weight: 400;
   line-height: 1.4;
 }
 
 .home-hero__title {
-  max-width: 33rem;
+  max-width: 42rem; /* two lines in EN and PT */
   margin: 0;
   color: var(--hero-ink);
-  font-size: 2.5rem;
+  font-size: 2.75rem; /* 44px */
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.01em;
@@ -58,7 +58,7 @@
 .home-hero__stage {
   position: relative;
   height: var(--hero-stage-height);
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 /*
@@ -75,8 +75,15 @@
   border: 0.09375rem solid #2a2a2a;
   border-radius: 50%;
   transform: translateX(-50%);
-  -webkit-mask: conic-gradient(from -38deg, transparent 0deg 76deg, #000 76deg);
-  mask: conic-gradient(from -38deg, transparent 0deg 76deg, #000 76deg);
+  /* open at the top (±38°) and fading out at the bottom with the photo */
+  -webkit-mask-image:
+    conic-gradient(from -38deg, transparent 0deg 76deg, #000 76deg),
+    linear-gradient(to bottom, #000 45%, transparent 82%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    conic-gradient(from -38deg, transparent 0deg 76deg, #000 76deg),
+    linear-gradient(to bottom, #000 45%, transparent 82%);
+  mask-composite: intersect;
   pointer-events: none;
 }
 
@@ -114,8 +121,11 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.625rem;
-  padding: 0.75rem 0 0.75rem 1.75rem;
+  /* right-aligned: each row ends at the same spot before the photo in every
+     language, so longer translations grow to the left, never over the face */
+  padding: 0.75rem 12.9375rem 0.75rem 0;
   font-size: 1.0625rem;
   line-height: 1.4;
   white-space: nowrap;
@@ -135,7 +145,7 @@
 }
 
 .home-hero__skills-row:first-child {
-  padding-left: 7rem;
+  padding-right: 8.25rem;
 }
 
 .home-hero__skills-row span + span::before {
@@ -149,7 +159,7 @@
   vertical-align: middle;
 }
 
-/* Fundo branco + respiro: o bloco de texto interrompe o anel à direita. */
+/* Resumo à direita da foto (sem fundo). */
 .home-hero__summary {
   position: absolute;
   z-index: 3;
@@ -158,7 +168,6 @@
   width: min(24.75rem, calc(50% - 13.875rem));
   margin: 0;
   padding: 0.5rem 0 1rem 0.75rem;
-  background: #ffffff;
   color: var(--hero-ink);
   font-size: 1.1875rem;
   font-weight: 400;
@@ -246,11 +255,11 @@
 
   /* A foto encolhe mas o texto não: desloca as linhas para o disco continuar cortando. */
   .home-hero__skills-row {
-    padding-left: 3.6875rem;
+    padding-right: 10.5625rem;
   }
 
   .home-hero__skills-row:first-child {
-    padding-left: 8.4375rem;
+    padding-right: 6.375rem;
   }
 
   .home-hero__summary {

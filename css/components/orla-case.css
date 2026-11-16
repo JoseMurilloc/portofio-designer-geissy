@@ -1,11 +1,11 @@
 .orla-case {
   --orla-case-duration: 820ms;
   --orla-case-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --orla-case-bar: #5f0e81;
+  --orla-case-bar: #315b85;
   --orla-case-bg: #ffffff;
   --orla-case-text: #1c1c1c;
   --orla-case-muted: #6b6b6b;
-  --orla-case-cover-bg: #f9f1fe;
+  --orla-case-cover-bg: #f2f6fa;
   --orla-case-content-width: 90rem;
   --orla-case-gutter: clamp(1.5rem, 5.4vw, 4.875rem);
   --orla-case-topbar: 5rem;
@@ -302,9 +302,9 @@
   --orla-process-gap: 2.25rem;
   --orla-process-label-h: 1.5rem;
   --orla-process-line-gap: 3.5rem;
-  --orla-process-ink: #4a0a66;
-  --orla-process-lilac: #ead6f4;
-  --orla-process-soft: #f4e8fb;
+  --orla-process-ink: #1f3d5c;
+  --orla-process-lilac: #dbe6f0;
+  --orla-process-soft: #eaf0f6;
   background: var(--orla-case-cover-bg);
   padding-top: clamp(4.5rem, 9vw, 8.5rem);
   padding-bottom: clamp(5.5rem, 11vw, 10rem);
@@ -372,7 +372,7 @@
   top: calc(var(--orla-process-label-h) / 2);
   left: calc(var(--orla-process-card) / 2);
   width: calc(100% - var(--orla-process-card));
-  border-top: 1.5px dotted rgba(95, 14, 129, 0.38);
+  border-top: 1.5px dotted rgba(49, 91, 133, 0.38);
   pointer-events: none;
 }
 
@@ -382,7 +382,7 @@
   flex: 0 0 var(--orla-process-card);
   width: var(--orla-process-card);
   padding-top: calc(var(--orla-process-label-h) + var(--orla-process-line-gap));
-  cursor: var(--cursor-click);
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
 }
 
 .orla-case__process-item.is-active {
@@ -415,7 +415,7 @@
   z-index: 1;
   padding: 0 0.55rem;
   background: var(--orla-case-cover-bg);
-  color: rgba(74, 10, 102, 0.38);
+  color: rgba(31, 61, 92, 0.38);
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.2;
@@ -437,7 +437,7 @@
   z-index: 4;
   width: 1.125rem;
   height: 1.125rem;
-  border: 3px solid #d7b8ea;
+  border: 3px solid #b3c6da;
   border-radius: 50%;
   background: var(--orla-case-cover-bg);
   transform: translate(-50%, -50%);
@@ -453,11 +453,11 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  cursor: var(--cursor-click);
-  border: 1px solid #ead6f4;
+  cursor: url('../../images/cursors/cursor-click.svg') 6 2, pointer;
+  border: 1px solid #dbe6f0;
   border-radius: 1.75rem;
   background: rgba(255, 255, 255, 0.42);
-  color: rgba(74, 10, 102, 0.42);
+  color: rgba(31, 61, 92, 0.42);
   opacity: 0.55;
   transform: scale(0.96);
   transform-origin: top center;
@@ -470,7 +470,7 @@
 }
 
 .orla-case__process-item.is-active .orla-case__process-card {
-  border-color: #d9c0ea;
+  border-color: #b9cbdd;
   background: #ffffff;
   color: var(--orla-process-ink);
   opacity: 1;
@@ -512,7 +512,7 @@
 }
 
 .orla-case__process-card-list li + li {
-  border-top: 1px dotted rgba(95, 14, 129, 0.28);
+  border-top: 1px dotted rgba(49, 91, 133, 0.28);
 }
 
 .orla-case__impact {
@@ -589,7 +589,7 @@
   height: auto;
 }
 
-/* Result pills: real text (translates with the page) in the Vivo purple,
+/* Result pills: real text (translates with the page) in the Orla steel blue,
    slightly tilted and overlapping like stickers. */
 .orla-case__impact-pills {
   display: flex;
@@ -605,8 +605,8 @@
 .orla-case__impact-pills li {
   padding: 0.75rem 1.375rem;
   border-radius: 999px;
-  background: linear-gradient(120deg, #7a1fa8 0%, #660099 55%, #4a0a66 100%);
-  box-shadow: 0 0.75rem 1.75rem -0.75rem rgba(74, 10, 102, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  background: linear-gradient(120deg, #4a78a6 0%, #315b85 55%, #1f3d5c 100%);
+  box-shadow: 0 0.75rem 1.75rem -0.75rem rgba(31, 61, 92, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
   color: #ffffff;
   font-size: clamp(1rem, 1.6vw, 1.375rem);
   line-height: 1.2;
@@ -643,7 +643,7 @@
   overflow: hidden;
   border-radius: 1.25rem;
   aspect-ratio: 16 / 10;
-  background: #ece7ea;
+  background: #e6e9ec;
 }
 
 .orla-case__impact-photo {
@@ -755,7 +755,7 @@
   height: auto;
   overflow: hidden;
   border-radius: 1.75rem;
-  background: #faf1ff;
+  background: #f3f7fb;
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
@@ -792,7 +792,7 @@
   display: block;
   flex: 0 0 auto;
   overflow: hidden;
-  background: #faf1ff;
+  background: #f3f7fb;
 }
 
 .orla-case__flow-visual img {
@@ -807,8 +807,8 @@
   flex: 0 0 auto;
   margin: 0;
   padding: clamp(1.1rem, 2.2vw, 1.6rem) clamp(1.25rem, 2.4vw, 1.85rem) clamp(1.25rem, 2.4vw, 1.75rem);
-  background: #ead6f4;
-  color: #5f0e81;
+  background: #dbe6f0;
+  color: #315b85;
   font-size: clamp(0.95rem, 0.8rem + 0.45vw, 1.15rem);
   font-weight: 400;
   line-height: 1.45;
@@ -1067,3 +1067,171 @@ body.orla-case-open {
     transition: none;
   }
 }
+
+
+/* project info block: same three columns as the IT Forum case */
+.orla-case {
+  --itf-ink: #141414;
+  --itf-muted: #6c7a7e;
+  --itf-teal-line: #c9e3ea;
+  --itf-teal-ink: #2f6470;
+}
+
+.orla-case__meta.itf-info {
+  display: block;
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+}
+
+/* client: fictional name tag with NDA lock */
+.orla-client {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem 0.625rem;
+}
+
+.orla-nda {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  padding: 0.1875rem 0.5rem;
+  border: 0.0625rem solid var(--itf-teal-line);
+  border-radius: 999px;
+  color: var(--itf-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.orla-nda svg { flex: none; }
+
+/* ---------- impact: what the seller gets → what we expect ---------- */
+.orla-case__impact .orla-case__impact-title { margin-bottom: 1.25rem; }
+
+.orla-impact__lead {
+  max-width: 42rem;
+  margin: 0 0 clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--orla-case-muted);
+  font-size: clamp(1rem, 0.9rem + 0.35vw, 1.1875rem);
+  line-height: 1.55;
+}
+
+.orla-impact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0 1rem;
+  margin-bottom: clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.orla-impact__eyebrow {
+  margin: 0 0 1rem;
+  color: #6c7a7e;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.orla-impact__list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.orla-impact__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.375rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1.25rem;
+  background: #f0f0f0;
+}
+
+.orla-impact__card--goal {
+  min-height: 4.75rem;
+  background: #e1e9f2;
+}
+
+.orla-impact__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 50%;
+  background: radial-gradient(120% 120% at 25% 15%, #4a78a6 0%, #315b85 45%, #1f3d5c 100%);
+  box-shadow: 0 0.375rem 0.875rem -0.375rem rgba(31, 61, 92, 0.6);
+  color: #ffffff;
+}
+
+.orla-impact__icon svg { width: 1rem; height: 1rem; }
+
+.orla-impact__text { display: grid; gap: 0.125rem; min-width: 0; }
+
+.orla-impact__text b {
+  color: var(--orla-case-text);
+  font-size: clamp(1.0625rem, 0.95rem + 0.35vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.orla-impact__text small {
+  color: #5d6b78;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
+/* the arrow sits between the two columns, level with the cards */
+.orla-impact__arrow {
+  display: inline-flex;
+  align-self: center;
+  margin-top: 1.875rem;
+  color: #315b85;
+}
+
+.orla-impact__arrow svg { width: 2.25rem; height: 1.5rem; }
+
+@media (max-width: 48rem) {
+  .orla-impact { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .orla-impact__arrow { justify-self: center; margin: 0; transform: rotate(90deg); }
+}
+
+/* NDA note under the project info */
+.orla-nda-card {
+  margin-top: clamp(2rem, 3.5vw, 2.5rem);
+  padding: 1.5rem 1.75rem 1.625rem;
+  border-left: 0.3125rem solid #1f4e57;
+  border-radius: 1.25rem;
+  background: #e9f0f2;
+}
+
+.orla-nda-card__title {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 0 0.75rem;
+  color: #2f6470;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.orla-nda-card__title svg { flex: none; color: #1f4e57; }
+
+.orla-nda-card__text {
+  max-width: 52rem;
+  margin: 0;
+  color: #2a2f31;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.orla-nda-card__text strong { color: #1f4e57; font-weight: 600; }
+.orla-nda-card__text em { color: #2f6470; font-weight: 600; }

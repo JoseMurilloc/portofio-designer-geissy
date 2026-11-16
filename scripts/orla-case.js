@@ -156,7 +156,8 @@
     add(panel.querySelectorAll('.orla-case__flow-title'));
     add(panel.querySelectorAll('.orla-case__flow-layout'), { delay: 90, y: '1.5rem' });
     add(panel.querySelectorAll('.orla-case__impact-title'));
-    add(panel.querySelectorAll('.orla-case__impact-metric'), { stagger: 80 });
+    add(panel.querySelectorAll('.orla-impact__lead'));
+    add(panel.querySelectorAll('.orla-impact__card'), { stagger: 80 });
     add(panel.querySelectorAll('.orla-case__impact-board'), { delay: 90, y: '1.4rem' });
     add(panel.querySelectorAll('.orla-case__footer'), { y: '0px' });
   }

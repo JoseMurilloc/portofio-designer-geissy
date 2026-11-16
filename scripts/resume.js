@@ -1,15 +1,23 @@
 const links = document.querySelectorAll('.resumes');
 
-/* Files in /assets (plain ASCII names, so no Unicode-normalization issues) */
-const RESUME_PT = 'curriculo-product-designer-geissy.pdf';
-const RESUME_EN = 'resume-product-designer-geissy.pdf';
+/* Files in /assets (plain ASCII names) and the name each one downloads as */
+const RESUMES = {
+  pt: {
+    href: './assets/curriculo-product-designer-geissy.pdf?v=2',
+    download: 'Currículo - Geissy Nunes | Product Designer.pdf',
+  },
+  en: {
+    href: './assets/resume-product-designer-geissy.pdf?v=2',
+    download: 'Resume - Geissy Nunes | Product Designer.pdf',
+  },
+};
 
 function downloadResumeHandler(link) {
-  const lang = localStorage.getItem(Keys.LANG);
+  const lang = localStorage.getItem(Keys.LANG) || 'en';
+  const resume = RESUMES[lang === 'pt' ? 'pt' : 'en'];
 
-  const file = lang === 'pt' ? RESUME_PT : RESUME_EN;
-  link.href = './assets/' + encodeURIComponent(file) + '?v=2';
-  link.setAttribute('download', '');
+  link.href = resume.href;
+  link.setAttribute('download', resume.download);
   link.setAttribute('target', '_blank');
 }
 

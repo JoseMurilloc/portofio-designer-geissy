@@ -99,7 +99,7 @@ const translations = {
     about_fact_approach: "Human-first",
     about_me_title: "You can call me Gei",
     about_me_subtitle: "Product Designer",
-    about_me_paragraph_1: "With 4 years of experience in UX/UI Design, I work on end-to-end solutions for B2B and B2C products — from research to high-fidelity prototyping. I use Figma daily to create and iterate on intuitive interfaces, always aligned with business goals.",
+    about_me_paragraph_1: "With 5 years of experience in UX/UI Design, I work on end-to-end solutions for B2B and B2C products — from research to high-fidelity prototyping. I use Figma daily to create and iterate on intuitive interfaces, always aligned with business goals.",
     about_me_paragraph_2: "My background in Psychology led me to discover design as a way to solve real problems through technology, and that’s what motivates me.",
     about_me_paragraph_3: "In my free time, I enjoy discovering new places, having relaxed meetups with friends, and savoring good conversations, without rush.",
     about_me_psychology: "PSYCHOLOGY",
